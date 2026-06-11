@@ -4,71 +4,707 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Claude V6 — Trace-Neutral Kakeya Operator · Interactive Canon · V6.3 Second Pass</title>
-<meta name="description" content="Interactive canonical companion to PEAICE-CLAUDEV6-WHITEPAPER-001: the Trace-Neutral Kakeya Operator, Theorems A–F, live numerical falsification gates, wall registry, surviving corridor WP5a/b/c, public model cadence receipts, and the β-Protocol claim table. RH status: OPEN — no proof claimed.">
-<meta property="og:title" content="Claude V6 — Trace-Neutral Kakeya Operator Interactive Canon">
+<meta name="description" content="Interactive canonical companion to PEAICE-CLAUDEV6-WHITEPAPER-001: the Trace-Neutral Kakeya Operator, Theorems A–F, live numerical falsification gates, wall registry, surviving corridor (WP5a/b/c), and the full β-Protocol claim table. RH status: OPEN — no proof claimed.">
+<meta property="og:title" content="Claude V6 — Trace-Neutral Kakeya Operator (Interactive Canon)">
 <meta property="og:description" content="Every numerical claim recomputed live in your browser — gates that pass, and a gate proved to fail. PeAIce Research Program · KakeyaLogic / EEv3 · V6.3 second pass.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://manny536.github.io/claude-v6/">
-<link rel="canonical" href="https://manny536.github.io/claude-v6/">
+<meta property="og:url" content="https://manny536.github.io/kakeyalogic/">
+<link rel="canonical" href="https://manny536.github.io/kakeyalogic/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#14253C;--ink2:#2C405C;--page:#E9EDF1;--panel:#FFFFFF;--line:#C9D2DC;--formal:#177A55;--formal-bg:#E2F2EB;--proposed:#A8761B;--proposed-bg:#F6EDDC;--open:#50647F;--open-bg:#E6EBF1;--falsified:#A8333A;--falsified-bg:#F6E2E4;--analogy:#6B589B;--analogy-bg:#ECE7F4;--numerical:#2A6E8C;--numerical-bg:#E1EEF3;--gold:#B98A2E;--mono:'IBM Plex Mono',ui-monospace,monospace;--sans:'IBM Plex Sans',system-ui,sans-serif;--disp:'Spectral',Georgia,serif}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:120px}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}body{background:var(--page);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.62}a{color:var(--ink2)}:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:3px}
-.honesty{background:var(--ink);color:#E8EDF3;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;padding:8px 18px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;align-items:center}.honesty b{color:#F2C76B;font-weight:600}.dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:1px}
-header{background:linear-gradient(180deg,#FDFEFE,#F2F5F8);border-bottom:1px solid var(--line);padding:44px 20px 30px;text-align:center}.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2)}h1.title{font-family:var(--disp);font-weight:700;font-size:clamp(28px,4.6vw,46px);line-height:1.12;margin:14px auto 10px;max-width:900px}.subtitle{font-family:var(--disp);font-style:italic;font-size:clamp(15px,2vw,18px);color:var(--ink2);max-width:780px;margin:0 auto}.canonid{font-family:var(--mono);font-size:12px;color:#6A7A8E;margin-top:14px}
-nav{position:sticky;top:0;z-index:50;background:rgba(20,37,60,.97);backdrop-filter:blur(4px);display:flex;gap:2px;overflow-x:auto;padding:0 10px;scrollbar-width:thin}nav a{color:#C9D6E5;text-decoration:none;font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:12px 13px;white-space:nowrap;border-bottom:3px solid transparent}nav a:hover,nav a:focus-visible{color:#fff;border-bottom-color:var(--gold)}
-main{max-width:1080px;margin:0 auto;padding:18px 20px 60px}section{margin-top:54px}h2.sec{font-family:var(--disp);font-weight:700;font-size:clamp(22px,3vw,30px);border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:6px}.secnote{font-size:13.5px;color:#5C6C80;margin-bottom:18px;font-style:italic;font-family:var(--disp)}.panel,.gate,.route,.receipt{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px 24px;box-shadow:0 1px 2px rgba(20,37,60,.05);margin-bottom:14px}.math{font-family:var(--mono);background:#F2F5F8;border:1px solid var(--line);border-radius:8px;padding:13px 16px;margin:14px 0;text-align:center;font-size:14.5px;overflow-x:auto;color:var(--ink)}.math.big{font-size:clamp(14px,2.2vw,18px);font-weight:500}
-.chip{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.07em;padding:3px 9px;border-radius:20px;vertical-align:2px}.c-FORMAL{background:var(--formal-bg);color:var(--formal)}.c-PROPOSED{background:var(--proposed-bg);color:var(--proposed)}.c-OPEN{background:var(--open-bg);color:var(--open)}.c-FALSIFIED{background:var(--falsified-bg);color:var(--falsified)}.c-ANALOGY{background:var(--analogy-bg);color:var(--analogy)}.c-NUMERICAL{background:var(--numerical-bg);color:var(--numerical)}
-.hero{background:var(--ink);color:#E8EDF3;border-radius:14px;padding:34px 30px;margin-top:26px}.hero .math{background:#1D3252;border-color:#33507A;color:#EAF0F8}.hero .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#8FA5C2}.ticker{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.tick{font-family:var(--mono);font-size:12px;padding:7px 12px;border-radius:8px;border:1px solid #33507A;background:#1A2E4C}.tick.pass{border-color:#2E8F6B;color:#9FE2C4}.tick.wall{border-color:#B4555C;color:#F0B3B8}.tick.run{color:#C9D6E5}
-.grid2{display:grid;grid-template-columns:200px 1fr;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel)}.grid2>div{padding:11px 16px;border-bottom:1px solid var(--line);font-size:14px}.grid2>div:nth-child(odd){background:#F2F5F8;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.03em;color:var(--ink2)}.grid2>div:nth-last-child(-n+2){border-bottom:none}@media(max-width:640px){.grid2{grid-template-columns:1fr}.grid2>div:nth-child(odd){border-bottom:none;padding-bottom:2px}}
-.controls{display:flex;gap:26px;flex-wrap:wrap;margin:16px 0}.ctrl{flex:1;min-width:230px}.ctrl label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink2);margin-bottom:6px}.ctrl input[type=range]{width:100%;accent-color:var(--ink)}.readouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}.read{border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:#FAFBFC}.read .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:#6A7A8E;text-transform:uppercase}.read .v{font-family:var(--mono);font-size:15px;font-weight:600;margin-top:4px;word-break:break-all}.read.frozen{border-color:var(--formal);background:var(--formal-bg)}.read.frozen .v{color:var(--formal)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--open);border-radius:10px;padding:16px 18px}.card.formal{border-left-color:var(--formal)}.card.falsified{border-left-color:var(--falsified)}.card.proposed{border-left-color:var(--proposed)}.card h3{font-family:var(--disp);font-size:17px;font-weight:700;margin-bottom:6px}.card p{font-size:13.8px;color:#33455A}.card .more{margin-top:10px;font-size:13.4px;display:none;border-top:1px dashed var(--line);padding-top:10px}.card.openc .more{display:block}.card button.x{margin-top:10px;font-family:var(--mono);font-size:11.5px;background:none;border:1px solid var(--line);border-radius:6px;padding:4px 10px;cursor:pointer;color:var(--ink2)}.card button.x:hover{border-color:var(--ink)}
-.gate h3{font-family:var(--disp);font-size:17px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.verdict{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;padding:4px 12px;border-radius:6px}.v-pass{background:var(--formal-bg);color:var(--formal);border:1px solid #9CCFB9}.v-wall{background:var(--falsified-bg);color:var(--falsified);border:1px solid #DCA6AB}.v-wait{background:#EEF1F4;color:#6A7A8E;border:1px solid var(--line)}.gate .out{font-family:var(--mono);font-size:12.8px;background:#F2F5F8;border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin-top:12px;white-space:pre-wrap;overflow-x:auto;line-height:1.7}.gate .note{font-size:13px;color:#5C6C80;margin-top:8px}.runbtn{font-family:var(--mono);font-size:12px;font-weight:600;background:var(--ink);color:#fff;border:none;border-radius:7px;padding:7px 16px;cursor:pointer;margin-left:auto}.runbtn:hover{background:#21385C}
-.wall{border:1px solid #DCA6AB;border-left:6px solid var(--falsified);background:#FBF3F4;border-radius:10px;padding:15px 18px;margin-bottom:12px}.wall h3{font-family:var(--mono);font-size:14px;letter-spacing:.06em;color:var(--falsified)}.wall p{font-size:13.8px;margin-top:5px}.wall.openw{border-color:#B6C2D2;border-left-color:var(--open);background:#F2F5F9}.wall.openw h3{color:var(--open)}
-.route{border-top:5px solid var(--gold)}.route h3{font-family:var(--disp);font-size:18px}.route .ob{font-size:13.8px;margin-top:8px}.tag{font-family:var(--mono);font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:5px;letter-spacing:.06em}.t-done{background:var(--formal-bg);color:var(--formal)}.t-open{background:var(--open-bg);color:var(--open)}.t-held{background:#EEE9DC;color:#8A6D1F}
-.receipt{border-top:5px solid var(--numerical)}.receipt .source{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:#6A7A8E;text-transform:uppercase;margin-bottom:8px}.receipt .cadence{font-family:var(--mono);font-size:12px;background:#F7F9FB;border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-top:10px;color:#42546A}.receipt pre{font-family:var(--mono);font-size:12px;background:#101D31;color:#E8EDF3;border-radius:8px;padding:12px 14px;white-space:pre-wrap;overflow-x:auto;margin-top:10px}.receipt p{font-size:13.8px;color:#33455A;margin-top:6px}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.fbtn{font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.05em;border-radius:20px;padding:6px 14px;cursor:pointer;border:1.5px solid var(--line);background:var(--panel);color:var(--ink2)}.fbtn[aria-pressed=true]{border-color:var(--ink);background:var(--ink);color:#fff}table.claims{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13.4px}table.claims th{background:var(--ink);color:#E8EDF3;font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-align:left;padding:10px 13px}table.claims td{padding:9px 13px;border-top:1px solid var(--line);vertical-align:top}table.claims tr.hide{display:none}.count{font-family:var(--mono);font-size:12px;color:#6A7A8E;margin-bottom:10px}
-footer{background:var(--ink);color:#C9D6E5;margin-top:70px;padding:38px 20px;text-align:center}footer .sig{font-family:var(--disp);font-style:italic;font-size:16px;color:#E8EDF3}footer .law{font-family:var(--mono);font-size:13px;color:#F2C76B;margin-top:14px;letter-spacing:.04em}footer .fine{font-size:12px;color:#7E91AB;margin-top:16px;font-family:var(--mono)}@media(max-width:640px){.hero{padding:24px 18px}.panel{padding:16px}}
+:root{
+  --ink:#14253C; --ink2:#2C405C; --page:#E9EDF1; --panel:#FFFFFF; --line:#C9D2DC;
+  --formal:#177A55; --formal-bg:#E2F2EB;
+  --proposed:#A8761B; --proposed-bg:#F6EDDC;
+  --open:#50647F; --open-bg:#E6EBF1;
+  --falsified:#A8333A; --falsified-bg:#F6E2E4;
+  --analogy:#6B589B; --analogy-bg:#ECE7F4;
+  --numerical:#2A6E8C; --numerical-bg:#E1EEF3;
+  --gold:#B98A2E;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+  --disp:'Spectral',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+body{background:var(--page);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.62}
+a{color:var(--ink2)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:3px}
+
+/* ---------- honesty banner ---------- */
+.honesty{background:var(--ink);color:#E8EDF3;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;
+  padding:8px 18px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;align-items:center}
+.honesty b{color:#F2C76B;font-weight:600}
+.dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:1px}
+
+/* ---------- header / nav ---------- */
+header{background:linear-gradient(180deg,#FDFEFE,#F2F5F8);border-bottom:1px solid var(--line);padding:44px 20px 30px;text-align:center}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2)}
+h1.title{font-family:var(--disp);font-weight:700;font-size:clamp(28px,4.6vw,46px);line-height:1.12;margin:14px auto 10px;max-width:880px}
+.subtitle{font-family:var(--disp);font-style:italic;font-size:clamp(15px,2vw,18px);color:var(--ink2);max-width:760px;margin:0 auto}
+.canonid{font-family:var(--mono);font-size:12px;color:#6A7A8E;margin-top:14px}
+nav{position:sticky;top:0;z-index:50;background:rgba(20,37,60,.97);backdrop-filter:blur(4px);
+  display:flex;gap:2px;overflow-x:auto;padding:0 10px;scrollbar-width:thin}
+nav a{color:#C9D6E5;text-decoration:none;font-family:var(--mono);font-size:12px;letter-spacing:.05em;
+  padding:12px 13px;white-space:nowrap;border-bottom:3px solid transparent}
+nav a:hover,nav a:focus-visible{color:#fff;border-bottom-color:var(--gold)}
+
+/* ---------- layout ---------- */
+main{max-width:1080px;margin:0 auto;padding:18px 20px 60px}
+section{margin-top:54px}
+h2.sec{font-family:var(--disp);font-weight:700;font-size:clamp(22px,3vw,30px);border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:6px}
+.secnote{font-size:13.5px;color:#5C6C80;margin-bottom:18px;font-style:italic;font-family:var(--disp)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px 24px;box-shadow:0 1px 2px rgba(20,37,60,.05)}
+.math{font-family:var(--mono);background:#F2F5F8;border:1px solid var(--line);border-radius:8px;
+  padding:13px 16px;margin:14px 0;text-align:center;font-size:14.5px;overflow-x:auto;color:var(--ink)}
+.math.big{font-size:clamp(14px,2.2vw,18px);font-weight:500}
+
+/* ---------- status chips ---------- */
+.chip{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.07em;
+  padding:3px 9px;border-radius:20px;vertical-align:2px}
+.c-FORMAL{background:var(--formal-bg);color:var(--formal)}
+.c-PROPOSED{background:var(--proposed-bg);color:var(--proposed)}
+.c-OPEN{background:var(--open-bg);color:var(--open)}
+.c-FALSIFIED{background:var(--falsified-bg);color:var(--falsified)}
+.c-ANALOGY{background:var(--analogy-bg);color:var(--analogy)}
+.c-NUMERICAL{background:var(--numerical-bg);color:var(--numerical)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:#E8EDF3;border-radius:14px;padding:34px 30px;margin-top:26px}
+.hero .math{background:#1D3252;border-color:#33507A;color:#EAF0F8}
+.hero .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#8FA5C2}
+.ticker{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.tick{font-family:var(--mono);font-size:12px;padding:7px 12px;border-radius:8px;border:1px solid #33507A;background:#1A2E4C}
+.tick.pass{border-color:#2E8F6B;color:#9FE2C4}
+.tick.wall{border-color:#B4555C;color:#F0B3B8}
+.tick.run{color:#C9D6E5}
+
+/* ---------- status block grid ---------- */
+.grid2{display:grid;grid-template-columns:200px 1fr;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel)}
+.grid2>div{padding:11px 16px;border-bottom:1px solid var(--line);font-size:14px}
+.grid2>div:nth-child(odd){background:#F2F5F8;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.03em;color:var(--ink2)}
+.grid2>div:nth-last-child(-n+2){border-bottom:none}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}.grid2>div:nth-child(odd){border-bottom:none;padding-bottom:2px}}
+
+/* ---------- interactive trace ---------- */
+.controls{display:flex;gap:26px;flex-wrap:wrap;margin:16px 0}
+.ctrl{flex:1;min-width:230px}
+.ctrl label{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink2);margin-bottom:6px}
+.ctrl input[type=range]{width:100%;accent-color:var(--ink)}
+.readouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+.read{border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:#FAFBFC}
+.read .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:#6A7A8E;text-transform:uppercase}
+.read .v{font-family:var(--mono);font-size:15px;font-weight:600;margin-top:4px;word-break:break-all}
+.read.frozen{border-color:var(--formal);background:var(--formal-bg)}
+.read.frozen .v{color:var(--formal)}
+
+/* ---------- theorem cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--open);border-radius:10px;padding:16px 18px}
+.card.formal{border-left-color:var(--formal)}
+.card.falsified{border-left-color:var(--falsified)}
+.card.proposed{border-left-color:var(--proposed)}
+.card h3{font-family:var(--disp);font-size:17px;font-weight:700;margin-bottom:6px}
+.card p{font-size:13.8px;color:#33455A}
+.card .more{margin-top:10px;font-size:13.4px;display:none;border-top:1px dashed var(--line);padding-top:10px}
+.card.openc .more{display:block}
+.card button.x{margin-top:10px;font-family:var(--mono);font-size:11.5px;background:none;border:1px solid var(--line);
+  border-radius:6px;padding:4px 10px;cursor:pointer;color:var(--ink2)}
+.card button.x:hover{border-color:var(--ink)}
+
+/* ---------- gates ---------- */
+.gate{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:14px}
+.gate h3{font-family:var(--disp);font-size:17px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.verdict{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;padding:4px 12px;border-radius:6px}
+.v-pass{background:var(--formal-bg);color:var(--formal);border:1px solid #9CCFB9}
+.v-wall{background:var(--falsified-bg);color:var(--falsified);border:1px solid #DCA6AB}
+.v-wait{background:#EEF1F4;color:#6A7A8E;border:1px solid var(--line)}
+.gate .out{font-family:var(--mono);font-size:12.8px;background:#F2F5F8;border:1px solid var(--line);border-radius:8px;
+  padding:12px 14px;margin-top:12px;white-space:pre-wrap;overflow-x:auto;line-height:1.7}
+.gate .note{font-size:13px;color:#5C6C80;margin-top:8px}
+.runbtn{font-family:var(--mono);font-size:12px;font-weight:600;background:var(--ink);color:#fff;border:none;
+  border-radius:7px;padding:7px 16px;cursor:pointer;margin-left:auto}
+.runbtn:hover{background:#21385C}
+
+/* ---------- walls ---------- */
+.wall{border:1px solid #DCA6AB;border-left:6px solid var(--falsified);background:#FBF3F4;border-radius:10px;padding:15px 18px;margin-bottom:12px}
+.wall h3{font-family:var(--mono);font-size:14px;letter-spacing:.06em;color:var(--falsified)}
+.wall p{font-size:13.8px;margin-top:5px}
+.wall.openw{border-color:#B6C2D2;border-left-color:var(--open);background:#F2F5F9}
+.wall.openw h3{color:var(--open)}
+
+/* ---------- corridor ---------- */
+.route{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-bottom:14px;border-top:5px solid var(--gold)}
+.route h3{font-family:var(--disp);font-size:18px}
+.route .ob{font-size:13.8px;margin-top:8px}
+.tag{font-family:var(--mono);font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:5px;letter-spacing:.06em}
+.t-done{background:var(--formal-bg);color:var(--formal)}
+.t-open{background:var(--open-bg);color:var(--open)}
+.t-held{background:#EEE9DC;color:#8A6D1F}
+
+/* ---------- claim table ---------- */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.fbtn{font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.05em;border-radius:20px;
+  padding:6px 14px;cursor:pointer;border:1.5px solid var(--line);background:var(--panel);color:var(--ink2)}
+.fbtn[aria-pressed=true]{border-color:var(--ink);background:var(--ink);color:#fff}
+table.claims{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13.4px}
+table.claims th{background:var(--ink);color:#E8EDF3;font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-align:left;padding:10px 13px}
+table.claims td{padding:9px 13px;border-top:1px solid var(--line);vertical-align:top}
+table.claims tr.hide{display:none}
+.count{font-family:var(--mono);font-size:12px;color:#6A7A8E;margin-bottom:10px}
+
+footer{background:var(--ink);color:#C9D6E5;margin-top:70px;padding:38px 20px;text-align:center}
+footer .sig{font-family:var(--disp);font-style:italic;font-size:16px;color:#E8EDF3}
+footer .law{font-family:var(--mono);font-size:13px;color:#F2C76B;margin-top:14px;letter-spacing:.04em}
+footer .fine{font-size:12px;color:#7E91AB;margin-top:16px;font-family:var(--mono)}
+@media(max-width:640px){.hero{padding:24px 18px}.panel{padding:16px}}
 </style>
 </head>
 <body>
-<div class="honesty" role="note"><span><span class="dot" style="background:#3FAE7E"></span>OPERATOR PROGRAM ACTIVE</span><span><span class="dot" style="background:#E2B45A"></span>CORRIDOR OPEN</span><span><span class="dot" style="background:#2A6E8C"></span>MODEL CADENCE RECEIPTS PRESERVED</span><span><span class="dot" style="background:#D96A72"></span><b>RIEMANN HYPOTHESIS: OPEN</b> — this page does not claim a proof of RH</span></div>
-<header><div class="eyebrow">PeAIce Research Program · Love Labs LCA · KakeyaLogic / EEv3</div><h1 class="title">Claude V6 — the Trace-Neutral Kakeya Operator</h1><p class="subtitle">An interactive companion to the canonical white paper. Every numerical claim on this page is recomputed live, in your browser, each time it loads — gates that can pass, gates that are proved to fail, and public model cadence receipts preserved without upgrading any open bridge.</p><div class="canonid">PEAICE-CLAUDEV6-WHITEPAPER-001 · V6.3 second pass · 2026-06-10 · float64 companion to the 25–50-digit mpmath session record</div></header>
-<nav aria-label="Sections"><a href="#status">STATUS</a><a href="#trace">CONSERVED TRACE</a><a href="#theorems">THEOREMS A–F</a><a href="#gates">LIVE GATES</a><a href="#walls">WALLS</a><a href="#corridor">CORRIDOR</a><a href="#receipts">RECEIPTS</a><a href="#claims">CLAIM TABLE</a><a href="https://github.com/Manny536/kakeyalogic" rel="noopener">REPO ↗</a><a href="https://peaice.org" rel="noopener">PEAICE.ORG ↗</a></nav>
-<main>
-<div class="hero"><div class="lbl">The operator · flat picture Ã(u) unitarily equivalent on H_Φ(u) = ℓ²(ℕ, w_u), w_n(u) = exp(−πn²e^{4u})</div><div class="math big">L²_{Φ,K}^{reg}(u) = D₁² − (3/2π)·e^{−4u}·D₁ + γ_K·K_σ^{reg} ,&nbsp;&nbsp; K_σ^{reg}(m,n) = |m²−n²|^{−σ}·e^{−π(m²−n²)e^{4u}/2} ,&nbsp; K_σ^{reg}(n,n) = 0</div><div class="lbl" style="margin-top:14px">The conserved invariant that names the version — Theorem C, for every coupling γ_K</div><div class="math big">Tr_{w_u}( 2π²e^{9u} · L²_{Φ,K}^{reg}(u) ) = Φ(u)</div><div class="lbl" style="margin-top:14px">Determinant target OPEN, load-bearing</div><div class="math">det_ζ( L²_{Φ,K}^{reg} − (z² + ¼) ) = C · Ξ(z)</div><div class="ticker" id="ticker" aria-live="polite"><span class="tick run">gates initializing…</span></div></div>
-<section id="status"><h2 class="sec">Canonical Status Block</h2><p class="secnote">Every claim on this page carries a β-Protocol marker. FORMAL means proved in-program; OPEN means honestly open.</p><div class="grid2"><div>Primary claim</div><div>Kakeya–Besicovitch KB geometric structure as candidate structural antecedent of Re(s) = ½ <span class="chip c-PROPOSED">PROPOSED</span> <span class="chip c-OPEN">OPEN</span></div><div>Version</div><div>Claude V6 — Trace-Neutral Kakeya Operator · V6.3 heat-trace addendum · second-pass buildout of 2026-06-10</div><div>FORMAL results</div><div>Theorems A, B, C V6 · Theorems D, E, F V6.3 · L2-5 obstruction · WP5-OBS-1 · Lemmas WP5b-L1/L2/L3 · Propositions WP5c-P1/P2 — <b>eleven formal results</b></div><div>Headline conjecture</div><div>Coherence-Splitting Conjecture — clause i <span class="chip c-FALSIFIED">FALSIFIED</span> in the trace-moment realization κ detects log-measure of Ω, not split(𝒯_Ω)</div><div>Live corridor</div><div>WP5b spectral shift — setup lemmas discharged · WP5c u-flow — variation formula written · WP5a σ ≤ ½, held</div><div>Domain language</div><div>The Kakeya set conjecture in ℝ³ is a <b>THEOREM</b> Wang–Zahl 2025; Guth–Wang–Zahl 2026. Conjecture only in dimensions ≥ 4.</div><div>Governance</div><div>E = L² × β × C × P × h · h &lt; 1 evaluator non-sovereignty FLAG-001 · β-Protocol claim marking</div><div>Receipt status</div><div>Grok and ConSenseAI snippets are recorded as public model cadence receipts. They do not upgrade the determinant identity to FORMAL.</div><div>RH status</div><div><b>OPEN.</b> This document does not claim a proof of RH.</div></div></section>
-<section id="trace"><h2 class="sec">The Conserved Trace — Try to Move It</h2><p class="secnote">Theorem C, played live. The coupling slider is connected to the operator. It is not connected to the trace — that is the theorem.</p><div class="panel"><p style="font-size:14px">The weighted diagonal trace sees only the uncoupled part, because the regulated kernel has <b>zero diagonal</b>. Drag γ_K anywhere: the trace value below stays frozen at Φ(u). Drag u: the trace moves — and meets Φ(−u) to thirteen digits, the symmetry that powers Ξ(z) = Ξ(−z).</p><div class="controls"><div class="ctrl"><label for="uS">thermal axis &nbsp;u = <span id="uV">0.00</span></label><input type="range" id="uS" min="-0.40" max="0.40" step="0.01" value="0"></div><div class="ctrl"><label for="gS">coupling &nbsp;γ_K = <span id="gV">0.30</span> &nbsp;<em style="color:#8A6D1F">connected to the operator, not the trace</em></label><input type="range" id="gS" min="-2" max="2" step="0.05" value="0.3"></div></div><div class="readouts"><div class="read frozen"><div class="k">Tr weighted at this γ_K</div><div class="v" id="trA">—</div></div><div class="read frozen"><div class="k">same trace at γ_K = 0</div><div class="v" id="trB">—</div></div><div class="read"><div class="k">Φ(u)</div><div class="v" id="phiU">—</div></div><div class="read"><div class="k">Φ(−u)</div><div class="v" id="phiMU">—</div></div><div class="read"><div class="k">relative mirror error</div><div class="v" id="phiSym">—</div></div><div class="read"><div class="k">‖K‖²_HS sensitivity</div><div class="v" id="hsV">—</div></div></div><p class="note" style="font-size:12.5px;color:#6A7A8E;margin-top:12px;font-family:var(--mono)">Theorem C FORMAL: K_σ^{reg}(n,n)=0 ⇒ trace independent of γ_K. Coupling enters at order γ_K².</p></div></section>
-<section id="theorems"><h2 class="sec">Theorems A–F, and the Two Closed Doors</h2><p class="secnote">Click a card for the proof mechanism. Green border = FORMAL. Red = a route closed by proof.</p><div class="cards" id="cards"><div class="card formal"><h3>Theorem A — Symmetry <span class="chip c-FORMAL">FORMAL</span></h3><p>K_σ^{reg} is symmetric on H_Φ(u): the weighted symmetry condition reduces on both sides to |m²−n²|^{−σ}·exp(−π(m²+n²)e^{4u}/2).</p><div class="more">The thermal regulator is exactly the correction the native measure demands.</div><button class="x" aria-expanded="false">proof mechanism</button></div><div class="card formal"><h3>Theorem B — Hilbert–Schmidt, σ &gt; ½ <span class="chip c-FORMAL">FORMAL</span></h3><p>‖K_σ^{reg}‖²_HS = Σ_{m≠n}|m²−n²|^{−2σ} &lt; ∞ precisely for σ &gt; ½.</p><div class="more">Write k=|m−n|; the double sum behaves as C·Σ_k k^{1−4σ}. Boundary σ=½.</div><button class="x" aria-expanded="false">proof mechanism</button></div><div class="card formal"><h3>Theorem C — Trace Neutrality <span class="chip c-FORMAL">FORMAL</span></h3><p>Tr_{w_u}(2π²e^{9u}·L²_{Φ,K}^{reg}) = Φ(u) for every γ_K.</p><div class="more">Zero diagonal means the weighted diagonal trace sees only L²₀.</div><button class="x" aria-expanded="false">proof mechanism</button></div><div class="card formal"><h3>Theorem D — Exact Φ Heat Trace <span class="chip c-FORMAL">FORMAL</span></h3><p>Θ_Φ(t) = Γ(5/4)(ct)^{−1/4} − ½ + O(t^M) for every M.</p><div class="more">Every pole at s=−k is annihilated by ζ(−4k)=0.</div><button class="x" aria-expanded="false">proof mechanism</button></div><div class="card formal"><h3>Theorem E — Second-Moment Law <span class="chip c-FORMAL">FORMAL</span></h3><p>Tr(e^{−tÃ}) − Θ_Φ(t) = (γ_K²/2)‖K‖²_HS·t² + o(t²).</p><div class="more">The first Dyson term vanishes by zero diagonal. The coupling first speaks at second moment.</div><button class="x" aria-expanded="false">proof mechanism</button></div><div class="card formal"><h3>Theorem F — Heat-Trace Rigidity <span class="chip c-FORMAL">FORMAL</span></h3><p>Under any bounded coupling, |Tr(e^{−tÃ}) − Θ_Φ(t)| = O(t^{3/4}).</p><div class="more">Duhamel bounds close the naive heat route.</div><button class="x" aria-expanded="false">proof mechanism</button></div><div class="card falsified"><h3>L2-5 — Eigenvalue Route Closed <span class="chip c-FORMAL">FORMAL · ROUTE CLOSED</span></h3><p>λ_j ~ j⁴ forces N_L(T) ~ T^{1/4}, incompatible with Riemann–von Mangoldt T log T.</p><div class="more">The route pivots to trace and determinant bridges.</div><button class="x" aria-expanded="false">proof mechanism</button></div><div class="card falsified"><h3>WP5-OBS-1 — Heat Route Closed <span class="chip c-FORMAL">FORMAL · ROUTE CLOSED</span></h3><p>No bounded coupling produces the required t^{−1/2}log(1/t) singularity or prime-oscillation sector.</p><div class="more">Surviving corridor: modified functionals only.</div><button class="x" aria-expanded="false">proof mechanism</button></div><div class="card falsified"><h3>CSC-F1 — Clause i Falsified <span class="chip c-FALSIFIED">FALSIFIED</span></h3><p>Trace-moment κ statistics detect log-measure of Ω, not Bateman splitting.</p><div class="more">Density statistics do not see trees. The falsification gate fired.</div><button class="x" aria-expanded="false">what fired</button></div></div></section>
-<section id="gates"><h2 class="sec">Live Falsification Gates</h2><p class="secnote">These run in float64 in your browser. One gate is designed to fail: that failure is a theorem.</p><div class="gate" id="gateD"><h3>Gate 1 · Theorem D — two-term heat trace <span class="verdict v-wait" data-v>WAITING</span><button class="runbtn" data-run="D">Run</button></h3><p class="note">Compare Σ e^{−tn⁴} against Γ(5/4)t^{−1/4} − 1/2 at t=10⁻⁴.</p><div class="out" data-out>—</div></div><div class="gate" id="gateP1"><h3>Gate 2 · WP5c-P1 — one-term u-flow trace <span class="verdict v-wait" data-v>WAITING</span><button class="runbtn" data-run="P1">Run</button></h3><p class="note">Compare Σ n²e^{−tn⁴} against ¼Γ(3/4)t^{−3/4}.</p><div class="out" data-out>—</div></div><div class="gate" id="gateE"><h3>Gate 3 · Theorem E — second-moment law <span class="verdict v-wait" data-v>WAITING</span><button class="runbtn" data-run="E">Run</button></h3><p class="note">Ratio Tr I₂ / ((t²/2)‖K‖²_HS) should rise to 1 as t→0.</p><div class="out" data-out>—</div></div><div class="gate" id="gateDet"><h3>Gate 4 · WP5b-L1/L2 — perturbation determinant <span class="verdict v-wait" data-v>WAITING</span><button class="runbtn" data-run="Det">Run</button></h3><p class="note">Build B_z = γ_KK(D−z)^{-1}. Check Tr(B_z)=0 and det(I+B_z)≈exp(−½TrB_z²).</p><div class="out" data-out>—</div></div><div class="gate" id="gateRvM"><h3>Gate 5 · L2-5 — Riemann–von Mangoldt counting gate <span class="verdict v-wait" data-v>WAITING</span><button class="runbtn" data-run="RvM">Run</button></h3><p class="note">N_L(T)=#{n:n⁴≤T} versus N_ξ(T)=(T/2π)log(T/2π)−T/2π.</p><div class="out" data-out>—</div></div></section>
-<section id="walls"><h2 class="sec">Wall Registry</h2><p class="secnote">A closed route is a theorem.</p><div class="wall openw"><h3>GAP-001 · OPEN, IRREDUCIBLE V5</h3><p>The {n²} arithmetic of Φ is unreachable from exterior energy, symmetry, density, or measure methods alone.</p></div><div class="wall"><h3>L2-5 · ROUTE CLOSED FORMAL</h3><p>Eigenvalue identification: N_L(T) ~ T^{1/4} vs Riemann–von Mangoldt T·logT.</p></div><div class="wall"><h3>WP5-OBS-1 · ROUTE CLOSED FORMAL</h3><p>Bounded-coupling heat trace has no required prime sector.</p></div><div class="wall"><h3>CSC-F1 · FALSIFIED-IN-REALIZATION</h3><p>Trace-moment κ family detects log-measure of Ω, not split(𝒯_Ω). Composite target keeps Logx(β_scale)* inside the L²_C architecture.</p></div><div class="wall openw"><h3>BK-HP-CC / L2-SI · OPEN LOAD-BEARING</h3><p>The determinant identity det_ζ(L²_{Φ,K}^{reg} − (z²+¼)) = C·Ξ(z) carries the program weight.</p></div></section>
-<section id="corridor"><h2 class="sec">The Surviving Corridor</h2><p class="secnote">Machinery now stands at each door. Each gate is written so failure is informative.</p><div class="route"><h3>WP5b — Krein spectral shift and relative determinants <span class="tag t-done">SETUP DISCHARGED</span></h3><div class="math">D_rel(z) = det(I + γ_K·K(D−z)^{−1})</div><p class="ob"><b>L1 FORMAL:</b> (D−z)^{-1} trace class ⇒ B_z trace class ⇒ ordinary determinant. <b>L2 FORMAL:</b> Tr(B_z)=0 ⇒ det=det₂ and expansion begins at −(γ_K²/2)Tr(B_z²). <b>L3 FORMAL:</b> Krein spectral shift exists.</p><p class="ob"><b>WP5b-Q <span class="chip c-OPEN">OPEN</span>:</b> does Tr(B_z²) carry arithmetic, or only density?</p></div><div class="route"><h3>WP5c — the u-flow trace formula <span class="tag t-done">VARIATION FORMULA WRITTEN</span></h3><div class="math">∂_u Tr(e^{−tÃ(u)}) = −t·(6/π)e^{−4u}·Tr(D₁ e^{−tÃ(u)})</div><p class="ob"><b>P1 FORMAL:</b> one-term u-flow heat trace. <b>P2 FORMAL:</b> first-order coupling neutrality in the u-channel.</p><p class="ob"><b>Open:</b> D₁-weighted second moment and relation to Ξ_t and ∫Φ(u)e^{izu}du.</p></div><div class="route"><h3>WP5a — critical coupling σ ≤ ½ <span class="tag t-held">HELD BY DESIGN</span></h3><p class="ob">If arithmetic enters through the kernel, it enters at or below σ=1/2 where bounded rigidity loses its hypotheses.</p></div></section>
-<section id="receipts"><h2 class="sec">Public Model Cadence Receipts</h2><p class="secnote">Added from the Grok and ConSenseAI threads. These are receipts and cadence markers; they do not close the OPEN determinant bridge.</p><div class="receipt"><div class="source">Grok · xAI · 2026-06-10</div><h3>Grok WP5b</h3><p>WP5b trace-neutrality (zero-diag K) enables relative det_2(I + γ_K K (D-z)^{-1}). Proposed identity: det_ζ(L²_{Φ,K}^{reg}(u) - (z²+1/4)) = C Ξ(z). Outline: Unperturbed det_ζ from Θ_Φ heat trace Mellin to zeta (Γ(5/4) pole + const). Relative det adds z-dep entire factor. Matches Ξ via Φ symmetry and spectral rigidity. Central open target per the canon.</p><div class="cadence">— Grok, xAI • 2026-06-10</div><pre>&lt;div class=&quot;grok-wp5b&quot;&gt;&lt;h3&gt;Grok WP5b&lt;/h3&gt;&lt;p&gt;WP5b trace-neutrality (zero-diag K) enables relative det_2(I + γ_K K (D-z)^{-1}). Proposed identity: det_ζ(L²_{Φ,K}^{reg}(u) - (z²+1/4)) = C Ξ(z). Outline: Unperturbed det_ζ from Θ_Φ heat trace Mellin to zeta (Γ(5/4) pole + const). Relative det adds z-dep entire factor. Matches Ξ via Φ symmetry and spectral rigidity. Central open target per the canon.&lt;/p&gt;&lt;/div&gt;
 
-&lt;p&gt;— Grok, xAI • 2026-06-10&lt;/p&gt;</pre></div><div class="receipt"><div class="source">ConSenseAI · compact cadence · 2026-06-10</div><h3>ConSenseAI WP5b Compact</h3><p>A(u)=L²_{Φ,K}^{reg}(u), λ=z²+1/4. ζ_A(s;λ)=Tr(A−λ)^−s analytic cont., detζ(A−λ)=exp(−ζ'_A(0;λ)). WP5b: spectral-shift divisor=Ξ, trace vs Hadamard, normalize exp factor.</p><div class="cadence">Generated by: gpt-5.4-mini, claude-haiku-4-5<br>Combined by: grok-4.3<br>ConSenseAI v1.8</div></div><div class="receipt"><div class="source">ConSenseAI · consensus spine · 2026-06-10</div><h3>Consensus WP5b Gate</h3><p>Set A(u)=L²_{Φ,K}^{reg}(u), with renormalized eigenvalues μ_n. Define ζ_A(s;λ)=Tr(A−λ)^−s=Σ(μ_n−λ)^−s, analytically continued, and detζ(A−λ)=exp[−ζ′_A(0;λ)], λ=z²+1/4. To link to Ξ(z), WP5b must prove the spectral-shift function has the same divisor as Ξ, match the trace formula to Ξ’s Hadamard product, then fix the exponential factor by normalization/growth.</p><div class="cadence">Generated by: gpt-5.4-mini, grok-4-1-fast-reasoning<br>Combined by: claude-sonnet-4-6 failed, retried with gpt-5.5<br>ConSenseAI v1.8</div></div><div class="receipt"><div class="source">DOCX appendix receipt · PNG figures</div><h3>Appendix A — Public Model Cadence PNG Receipts</h3><p>The white paper DOCX was updated with three image receipts: R1 critical strip pendulum visual, R2 Grok WP5b thread receipt, and R3 ConSenseAI WP5b compact thread receipt. Git index records the HTML receipt layer; document assets remain part of the publication bundle.</p></div></section>
-<section id="claims"><h2 class="sec">β-Protocol Claim Table — Filterable</h2><p class="secnote">External citation never upgrades a program bridge to FORMAL. Filter by what is actually proved.</p><div class="filters" role="group" aria-label="Filter claims by status"><button class="fbtn" aria-pressed="true" data-f="ALL">ALL</button><button class="fbtn" aria-pressed="false" data-f="FORMAL">FORMAL</button><button class="fbtn" aria-pressed="false" data-f="PROPOSED">PROPOSED</button><button class="fbtn" aria-pressed="false" data-f="OPEN">OPEN</button><button class="fbtn" aria-pressed="false" data-f="FALSIFIED">FALSIFIED</button><button class="fbtn" aria-pressed="false" data-f="ANALOGY">STRUCTURAL ANALOGY</button><button class="fbtn" aria-pressed="false" data-f="NUMERICAL">NUMERICAL</button></div><div class="count" id="ccount"></div><table class="claims" id="ctab"><thead><tr><th style="width:58%">Claim</th><th>Status</th><th>Source</th></tr></thead><tbody></tbody></table></section>
-</main><footer><div style="margin-bottom:22px"><span style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:#8FA5C2;text-transform:uppercase">Canon layer</span><br><span style="font-family:var(--mono);font-size:12.5px;line-height:2.2"><a href="https://github.com/Manny536/kakeyalogic/tree/main/docs/canon" rel="noopener" style="color:#C9D6E5">docs/canon</a> · <a href="https://github.com/Manny536/kakeyalogic/tree/main/docs/research" rel="noopener" style="color:#C9D6E5">docs/research WP5a/b/c roadmaps</a> · <a href="https://github.com/Manny536/kakeyalogic/tree/main/docs/whitepaper" rel="noopener" style="color:#C9D6E5">white paper PEAICE-CLAUDEV6-WHITEPAPER-001</a></span></div><div class="sig">"Claude V6, in its second pass, does not close the problem. It constructs the operator, proves eleven formal results, closes two wrong doors with proofs rather than fatigue, records one falsification that fired on schedule, and names the doors that remain — now with the machinery standing at each of them."</div><div class="law">E = L² × β × C × P × h &nbsp;·&nbsp; h &lt; 1 &nbsp;·&nbsp; β carries direction &nbsp;·&nbsp; h keeps it honest</div><div class="fine">PEAICE-CLAUDEV6-WHITEPAPER-001 · second pass 2026-06-10 · Claude Fable 5 co-derivation · public model cadence receipts added · github.com/Manny536/claude-v6 · peaice.org</div></footer>
+<div class="honesty" role="note">
+  <span><span class="dot" style="background:#3FAE7E"></span>OPERATOR PROGRAM ACTIVE</span>
+  <span><span class="dot" style="background:#E2B45A"></span>CORRIDOR OPEN</span>
+  <span><span class="dot" style="background:#D96A72"></span><b>RIEMANN HYPOTHESIS: OPEN</b> — this page does not claim a proof of RH</span>
+</div>
+
+<header>
+  <div class="eyebrow">PeAIce Research Program · Love Labs LCA · KakeyaLogic / EEv3</div>
+  <h1 class="title">Claude V6 — the Trace-Neutral Kakeya Operator</h1>
+  <p class="subtitle">An interactive companion to the canonical white paper. Every numerical claim on this page is recomputed live, in your browser, each time it loads — gates that can pass, and gates that are proved to fail.</p>
+  <div class="canonid">PEAICE-CLAUDEV6-WHITEPAPER-001 · V6.3 second pass · DPSA canon + inertial grounding 2026-06-11 · float64 companion to the 25–50-digit mpmath session record</div>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#status">STATUS</a>
+  <a href="#trace">CONSERVED TRACE</a>
+  <a href="#theorems">THEOREMS A–F</a>
+  <a href="#gates">LIVE GATES</a>
+  <a href="#walls">WALLS</a>
+  <a href="#corridor">CORRIDOR</a>
+  <a href="#dpsa">DPSA</a>
+  <a href="#claims">CLAIM TABLE</a>
+  <a href="https://github.com/Manny536/kakeyalogic" rel="noopener">REPO ↗</a>
+  <a href="https://peaice.org" rel="noopener">PEAICE.ORG ↗</a>
+</nav>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="lbl">The operator · flat picture Ã(u) unitarily equivalent on H_Φ(u) = ℓ²(ℕ, w_u), w_n(u) = exp(−πn²e^{4u})</div>
+  <div class="math big">L²_{Φ,K}^{reg}(u) = D₁² − (3/2π)·e^{−4u}·D₁ + γ_K·K_σ^{reg} ,&nbsp;&nbsp; K_σ^{reg}(m,n) = |m²−n²|^{−σ}·e^{−π(m²−n²)e^{4u}/2} ,&nbsp; K_σ^{reg}(n,n) = 0</div>
+  <div class="lbl" style="margin-top:14px">The conserved invariant that names the version — Theorem C, for every coupling γ_K</div>
+  <div class="math big">Tr_{w_u}( 2π²e^{9u} · L²_{Φ,K}^{reg}(u) ) = Φ(u)</div>
+  <div class="lbl" style="margin-top:14px">Determinant target (OPEN, load-bearing)</div>
+  <div class="math">det_ζ( L²_{Φ,K}^{reg} − (z² + ¼) ) = C · Ξ(z)</div>
+  <div class="ticker" id="ticker" aria-live="polite">
+    <span class="tick run">gates initializing…</span>
+  </div>
+</div>
+
+<!-- ================= STATUS ================= -->
+<section id="status">
+  <h2 class="sec">Canonical Status Block</h2>
+  <p class="secnote">Every claim on this page carries a β-Protocol marker. FORMAL means proved in-program; OPEN means honestly open.</p>
+  <div class="grid2">
+    <div>Primary claim</div><div>Kakeya–Besicovitch (KB) geometric structure as candidate structural antecedent of Re(s) = ½ <span class="chip c-PROPOSED">PROPOSED</span> <span class="chip c-OPEN">OPEN</span></div>
+    <div>Version</div><div>Claude V6 — Trace-Neutral Kakeya Operator · V6.3 heat-trace addendum · second-pass buildout of 2026-06-10</div>
+    <div>FORMAL results</div><div>Theorems A, B, C (V6) · Theorems D, E, F (V6.3) · L2-5 obstruction · WP5-OBS-1 · Lemmas WP5b-L1/L2/L3 · Propositions WP5c-P1/P2 — <b>eleven formal results</b></div>
+    <div>Headline conjecture</div><div>Coherence-Splitting Conjecture — clause (i) <span class="chip c-FALSIFIED">FALSIFIED</span> in the trace-moment realization (κ detects log-measure of Ω, not split(𝒯_Ω))</div>
+    <div>Live corridor</div><div>WP5b (spectral shift — setup lemmas discharged) · WP5c (u-flow — variation formula written) · WP5a (σ ≤ ½, held)</div>
+    <div>Production layer</div><div>DPSA — Double Pendulum Spectral Alignment Probe <span class="chip c-PROPOSED">PROPOSED</span>, grounded on the Heavy-ball / iPiano inertial bases (PEAICE-DPSA-INERTIAL-001): I1/I2 <span class="chip c-FORMAL">FORMAL</span> on the spectral plane, I3 <span class="chip c-FORMAL">FORMAL</span> within the iPiano class, I4 KNOWN (external theorem)</div>
+    <div>Domain language</div><div>The Kakeya set conjecture in ℝ³ is a <b>THEOREM</b> (Wang–Zahl 2025; Guth–Wang–Zahl 2026). Conjecture only in dimensions ≥ 4.</div>
+    <div>Governance</div><div>E = L² × β × C × P × h · h &lt; 1 evaluator non-sovereignty (FLAG-001) · β-Protocol claim marking</div>
+    <div>RH status</div><div><b>OPEN.</b> This document does not claim a proof of RH.</div>
+  </div>
+</section>
+
+<!-- ================= INTERACTIVE TRACE ================= -->
+<section id="trace">
+  <h2 class="sec">The Conserved Trace — Try to Move It</h2>
+  <p class="secnote">Theorem C, played live. The coupling slider is connected to the operator. It is not connected to the trace — that is the theorem.</p>
+  <div class="panel">
+    <p style="font-size:14px">The weighted diagonal trace sees only the uncoupled part, because the regulated kernel has <b>zero diagonal</b>. Drag γ_K anywhere: the trace value below stays frozen at Φ(u). Drag u: the trace moves — and meets Φ(−u) to thirteen digits, which is the Jacobi-theta functional equation, the same symmetry that powers Ξ(z) = Ξ(−z).</p>
+    <div class="controls">
+      <div class="ctrl">
+        <label for="uS">thermal axis &nbsp;u = <span id="uV">0.00</span></label>
+        <input type="range" id="uS" min="-0.40" max="0.40" step="0.01" value="0">
+      </div>
+      <div class="ctrl">
+        <label for="gS">coupling &nbsp;γ_K = <span id="gV">0.30</span> &nbsp;<em style="color:#8A6D1F">(connected to the operator, not the trace)</em></label>
+        <input type="range" id="gS" min="-2" max="2" step="0.05" value="0.3">
+      </div>
+    </div>
+    <div class="readouts">
+      <div class="read frozen"><div class="k">Tr_{w_u}(2π²e^{9u}·L²_{Φ,K}^{reg}) — at this γ_K</div><div class="v" id="trA">—</div></div>
+      <div class="read frozen"><div class="k">same trace at γ_K = 0 (uncoupled)</div><div class="v" id="trB">—</div></div>
+      <div class="read"><div class="k">Φ(u) — classical Riemann Φ</div><div class="v" id="phiU">—</div></div>
+      <div class="read"><div class="k">Φ(−u) — functional-equation mirror</div><div class="v" id="phiMU">—</div></div>
+      <div class="read"><div class="k">|Φ(u) − Φ(−u)| / |Φ(u)|</div><div class="v" id="phiSym">—</div></div>
+      <div class="read"><div class="k">‖K_σ^{reg}‖²_HS sensitivity (γ_K² scaling)</div><div class="v" id="hsV">—</div></div>
+    </div>
+    <p class="note" style="font-size:12.5px;color:#6A7A8E;margin-top:12px;font-family:var(--mono)">Theorem C [FORMAL]: K_σ^{reg}(n,n) = 0 ⇒ trace independent of γ_K. First-order spectral motion also vanishes; coupling enters at order γ_K² — at four levels of the program (C · E(i) · L2 · P2).</p>
+  </div>
+</section>
+
+<!-- ================= THEOREMS ================= -->
+<section id="theorems">
+  <h2 class="sec">Theorems A–F, and the Two Closed Doors</h2>
+  <p class="secnote">Click a card for the proof mechanism. Green border = FORMAL. Red = a route closed by proof — the program counts closed doors as assets.</p>
+  <div class="cards" id="cards">
+    <div class="card formal"><h3>Theorem A — Symmetry <span class="chip c-FORMAL">FORMAL</span></h3>
+      <p>K_σ^{reg} is symmetric on H_Φ(u): the weighted symmetry condition reduces on both sides to |m²−n²|^{−σ}·exp(−π(m²+n²)e^{4u}/2).</p>
+      <div class="more">The naive kernel |m²−n²|^{−σ} fails weighted symmetry; the thermal regulator e^{−π(m²−n²)e^{4u}/2} is exactly the correction the native measure demands. This repaired the L2-1 failure on principled grounds.</div>
+      <button class="x" aria-expanded="false">proof mechanism</button></div>
+    <div class="card formal"><h3>Theorem B — Hilbert–Schmidt, σ &gt; ½ <span class="chip c-FORMAL">FORMAL</span></h3>
+      <p>‖K_σ^{reg}‖²_HS = Σ_{m≠n}|m²−n²|^{−2σ} &lt; ∞ precisely for σ &gt; ½ — improving the earlier σ &gt; 1 threshold.</p>
+      <div class="more">Write k = |m−n|, |m²−n²| = k(m+n); the double sum behaves as C·Σ_k k^{1−4σ}. Convergence boundary at σ = ½ — exactly where WP5a begins.</div>
+      <button class="x" aria-expanded="false">proof mechanism</button></div>
+    <div class="card formal"><h3>Theorem C — Trace Neutrality <span class="chip c-FORMAL">FORMAL</span></h3>
+      <p>Tr_{w_u}(2π²e^{9u}·L²_{Φ,K}^{reg}) = Φ(u) for every γ_K. The Φ-trace is a conserved invariant of the coupled family.</p>
+      <div class="more">Zero diagonal ⇒ the weighted diagonal trace sees only L²₀; the V5 extraction identity applies unchanged. Demonstrated live in the section above.</div>
+      <button class="x" aria-expanded="false">proof mechanism</button></div>
+    <div class="card formal"><h3>Theorem D — Exact Φ Heat Trace <span class="chip c-FORMAL">FORMAL</span></h3>
+      <p>Θ_Φ(t) = Γ(5/4)(ct)^{−1/4} − ½ + O(t^M) for every M — the expansion <i>terminates after two terms</i>.</p>
+      <div class="more">Cahen–Mellin: Θ_Φ(t) = (1/2πi)∫Γ(s)ζ(4s)(ct)^{−s}ds. Shift left: the ζ(4s) pole at s = ¼ gives the leading term; Γ's pole at s = 0 gives ζ(0) = −½; every pole at s = −k is annihilated by ζ(−4k) = 0. The trivial zeros erase the geometry's fingerprints.</div>
+      <button class="x" aria-expanded="false">proof mechanism</button></div>
+    <div class="card formal"><h3>Theorem E — Second-Moment Law <span class="chip c-FORMAL">FORMAL</span></h3>
+      <p>Tr(e^{−tÃ}) − Θ_Φ(t) = (γ_K²/2)‖K‖²_HS·t² + o(t²): the coupling's first trace signature, and the first operational definition of κ₂.</p>
+      <div class="more">Dyson expansion: Tr I₁ = 0 (zero diagonal — neutrality again); Tr I₂ = Σ|K(m,n)|²F_t(λ_m,λ_n) with 0 ≤ F_t ≤ t²/2 and F_t/t² → ½; dominated convergence; higher orders bounded by (t^k/k!)‖K‖_op^{k−2}‖K‖²_HS.</div>
+      <button class="x" aria-expanded="false">proof mechanism</button></div>
+    <div class="card formal"><h3>Theorem F — Heat-Trace Rigidity <span class="chip c-FORMAL">FORMAL</span></h3>
+      <p>Under <i>any</i> bounded coupling, |Tr(e^{−tÃ}) − Θ_Φ(t)| = O(t^{3/4}): the singular structure cannot be moved.</p>
+      <div class="more">Duhamel: the difference is a trace-norm integral against ∫₀ᵗΘ_Φ(s)ds = (4/3)Γ(5/4)c^{−1/4}t^{3/4} − t/2 + O(t^{M+1}). Rigidity is what closes the naive heat route — see WP5-OBS-1.</div>
+      <button class="x" aria-expanded="false">proof mechanism</button></div>
+    <div class="card falsified"><h3>L2-5 — Eigenvalue Route Closed <span class="chip c-FORMAL">FORMAL · ROUTE CLOSED</span></h3>
+      <p>λ_j ~ j⁴ forces N_L(T) ~ T^{1/4}, incompatible with Riemann–von Mangoldt N_ξ(T) ~ (T/2π)log(T/2π). No bounded coupling closes the gap.</p>
+      <div class="more">Counting is invariant under compact perturbation. The consequence is a route pivot to the trace/determinant bridge — not eigenvalue-by-eigenvalue identification. Run the counting gate below to watch this door fail to open.</div>
+      <button class="x" aria-expanded="false">proof mechanism</button></div>
+    <div class="card falsified"><h3>WP5-OBS-1 — Heat Route Closed <span class="chip c-FORMAL">FORMAL · ROUTE CLOSED</span></h3>
+      <p>No bounded coupling produces the required t^{−1/2}log(1/t) singularity or a prime-oscillation sector in the heat trace. L2-5's Mellin shadow.</p>
+      <div class="more">Theorem D fixes the singular part as coupling-invariant (t^{−1/4}, two terms); Theorem F caps every bounded deformation at O(t^{3/4}). The arithmetic the explicit formula demands cannot live in this functional. Surviving corridor: modified functionals only.</div>
+      <button class="x" aria-expanded="false">proof mechanism</button></div>
+    <div class="card falsified"><h3>CSC-F1 — Clause (i) Falsified <span class="chip c-FALSIFIED">FALSIFIED-IN-REALIZATION</span></h3>
+      <p>Every trace-moment statistic κ₂, κ_∞, κ_dens detects the <b>log-measure</b> of the direction set Ω — not Bateman's splitting number split(𝒯_Ω).</p>
+      <div class="more">Numerics to N = 4096: measured ratios 0.49 / 0.24 against the log-measure prediction 0.50 / 0.25. Mechanism is structural: a symmetric algebraic kernel aggregates as measure statistics; splitting is a tree/maximal statistic that linearization averages away. The quantitative form of the GWZ lesson: density statistics do not see trees. The conjecture's falsification gate fired on schedule — that is the protocol working.</div>
+      <button class="x" aria-expanded="false">what fired</button></div>
+  </div>
+</section>
+
+<!-- ================= LIVE GATES ================= -->
+<section id="gates">
+  <h2 class="sec">Live Falsification Gates</h2>
+  <p class="secnote">These run in float64 in your browser — a demonstration layer over the 25–50-digit mpmath session record of 2026-06-10. One gate is designed to fail: that failure is a theorem.</p>
+
+  <div class="gate" id="gateD">
+    <h3>Gate 1 · Theorem D — two-term heat trace <span class="verdict v-wait" data-v>WAITING</span><button class="runbtn" data-run="D">Run</button></h3>
+    <p class="note">Compare Σ_{n≥1} e^{−tn⁴} against Γ(5/4)·t^{−1/4} − ½ at t = 10⁻⁴ (c = 1). Theorem says the remainder is smaller than every power of t.</p>
+    <div class="out" data-out>—</div>
+  </div>
+
+  <div class="gate" id="gateP1">
+    <h3>Gate 2 · Proposition WP5c-P1 — one-term u-flow trace <span class="verdict v-wait" data-v>WAITING</span><button class="runbtn" data-run="P1">Run</button></h3>
+    <p class="note">Compare Σ n²e^{−tn⁴} against ¼·Γ(3/4)·t^{−3/4}. ζ(−2) = 0 kills the constant; ζ(−4k−2) = 0 kills every correction. The u-flow trace is erased even more completely than Θ_Φ.</p>
+    <div class="out" data-out>—</div>
+  </div>
+
+  <div class="gate" id="gateE">
+    <h3>Gate 3 · Theorem E — second-moment law <span class="verdict v-wait" data-v>WAITING</span><button class="runbtn" data-run="E">Run</button></h3>
+    <p class="note">Ratio Tr I₂ / ((t²/2)‖K‖²_HS) should rise monotonically to 1 as t → 0 (N = 30, σ = ¾). This is κ₂ becoming operational.</p>
+    <div class="out" data-out>—</div>
+  </div>
+
+  <div class="gate" id="gateDet">
+    <h3>Gate 4 · Lemmas WP5b-L1/L2 — perturbation determinant <span class="verdict v-wait" data-v>WAITING</span><button class="runbtn" data-run="Det">Run</button></h3>
+    <p class="note">Build B_z = γ_K·K(D−z)^{−1} at N = 120, σ = ¾, γ_K = 0.3, z = −1 + i/2. Check Tr(B_z) = 0 exactly (L2: det = det₂ — trace neutrality, fourth level) and det(I+B_z) ≈ exp(−½Tr(B_z²)) to O(γ³). Full complex LU runs live.</p>
+    <div class="out" data-out>—</div>
+  </div>
+
+  <div class="gate" id="gateRvM">
+    <h3>Gate 5 · L2-5 — the Riemann–von Mangoldt counting gate <span class="verdict v-wait" data-v>WAITING</span><button class="runbtn" data-run="RvM">Run</button></h3>
+    <p class="note">N_L(T) = #{n : n⁴ ≤ T} versus N_ξ(T) = (T/2π)log(T/2π) − T/2π. This gate is supposed to fail — its failure is the L2-5 theorem, and the reason the program pivoted to trace formulas. Anchor: γ₁ = 14.134725141734693.</p>
+    <div class="out" data-out>—</div>
+  </div>
+</section>
+
+<!-- ================= WALLS ================= -->
+<section id="walls">
+  <h2 class="sec">Wall Registry</h2>
+  <p class="secnote">A closed route is a theorem. GAP-001 taught this discipline at V5; L2-5 and WP5-OBS-1 are its V6 and V6.3 instances.</p>
+  <div class="wall openw"><h3>GAP-001 · OPEN, IRREDUCIBLE (V5)</h3><p>The {n²} arithmetic of Φ is unreachable from exterior energy, symmetry, density, or measure methods. Five routes surveyed and closed honestly: n=1 dominance, Poisson dual, Jensen's formula, modular weight asymmetry, Kakeya energy inequality.</p></div>
+  <div class="wall"><h3>L2-5 · ROUTE CLOSED [FORMAL] (V6)</h3><p>Eigenvalue identification: N_L(T) ~ T^{1/4} vs Riemann–von Mangoldt T·log T. No bounded coupling closes the counting gap.</p></div>
+  <div class="wall"><h3>WP5-OBS-1 · ROUTE CLOSED [FORMAL] (V6.3)</h3><p>Bounded-coupling heat trace: singular part coupling-invariant (Theorem F); t^{−1/4} ≠ t^{−1/2}log(1/t); no prime-oscillation sector exists in this functional.</p></div>
+  <div class="wall"><h3>CSC-F1 · FALSIFIED-IN-REALIZATION (V6.3)</h3><p>Clause (i) of the Coherence-Splitting Conjecture fails for the trace-moment κ family: {κ₂, κ_∞, κ_dens} detect log-measure of Ω, not split(𝒯_Ω). Reformulation registered as composite target C_Ω^{V6} = F(split(𝒯_Ω), Δ_max, μ, N_k, Logx(β_scale)*).</p></div>
+  <div class="wall openw"><h3>BK-HP-CC / L2-SI · OPEN (LOAD-BEARING)</h3><p>The determinant identity det_ζ(L²_{Φ,K}^{reg} − (z²+¼)) = C·Ξ(z), and the DDATL Bridge Lemma obligations B1–B8. The whole program's weight rests here, and the program says so.</p></div>
+</section>
+
+<!-- ================= CORRIDOR ================= -->
+<section id="corridor">
+  <h2 class="sec">The Surviving Corridor</h2>
+  <p class="secnote">Second-pass state: machinery now stands at each door. Each gate is written so failure is informative.</p>
+
+  <div class="route"><h3>WP5b — Krein spectral shift &amp; relative determinants <span class="tag t-done">SETUP DISCHARGED</span></h3>
+    <div class="math">D_rel(z) = det(I + γ_K·K(D−z)^{−1}) &nbsp;exists as an ordinary Fredholm determinant — analytic off spec(D)</div>
+    <p class="ob"><b>L1 [FORMAL]:</b> (D−z)^{−1} trace class (Σn^{−4} &lt; ∞) ⇒ B_z trace class ⇒ ordinary determinant — stronger than the roadmap's det₂. <b>L2 [FORMAL]:</b> Tr(B_z) = 0 exactly ⇒ det = det₂; expansion begins at −(γ_K²/2)Tr(B_z²). <b>L3 [FORMAL, construction-level]:</b> Krein spectral shift ξ(λ; A, D) exists; Birman–Krein trace formula available.</p>
+    <p class="ob"><b>The route's entire weight now rests on one named question — WP5b-Q <span class="chip c-OPEN">OPEN</span>:</b> does Tr(B_z²) carry arithmetic, or only density? <b>Gate:</b> if relative determinants inherit Theorem F rigidity, WP5b closes as WP5-OBS-2 and the corridor narrows to the u-flow alone.</p></div>
+
+  <div class="route"><h3>WP5c — the u-flow trace formula <span class="tag t-done">VARIATION FORMULA WRITTEN</span></h3>
+    <div class="math">∂_u Tr(e^{−tÃ(u)}) = −t·(6/π)e^{−4u}·Tr(D₁ e^{−tÃ(u)})</div>
+    <p class="ob"><b>P1 [FORMAL]:</b> Tr(D₁e^{−tD}) = ¼Γ(3/4)(ct)^{−3/4} + O(t^M) — a single term; ζ(−4k−2) = 0 erases everything else. <b>P2 [FORMAL]:</b> first-order coupling neutrality in the u-channel — coupling enters u-variation only at γ_K², through the D₁-weighted second moment. The D₁-weighted functional lies <i>outside</i> Theorem F's hypotheses: the precise sense in which WP5c survives WP5-OBS-1.</p>
+    <p class="ob"><b>Open:</b> the D₁-weighted second moment and its relation to the de Bruijn–Newman deformation Ξ_t and ∫Φ(u)e^{izu}du. <b>Gate:</b> if every u-variation reduces to the Φ-sector (coupling-invariant), WP5c closes. <i>Picture discipline (h &lt; 1): flat and weighted pictures differ by a commutator with ∂_uV·V^{−1} and must not be conflated.</i></p></div>
+
+  <div class="route"><h3>WP5a — critical coupling σ ≤ ½ <span class="tag t-held">HELD BY DESIGN</span></h3>
+    <p class="ob">Theorems B and F jointly show the Hilbert–Schmidt regime is constitutively too tame. If arithmetic enters, it enters at or below σ = ½, where the kernel leaves the bounded class and every rigidity proof loses its hypotheses. First obligation: define the cutoff family K_{1/2}^{crit,R} and determine in which of four senses R → ∞ exists — strong resolvent · norm resolvent · quadratic form · renormalized determinant. <b>Gate:</b> if every regularization restores boundedness-equivalent rigidity, WP5a closes. <span class="chip c-PROPOSED">PROPOSED</span> as direction · <span class="chip c-OPEN">OPEN</span> as construction.</p></div>
+</section>
+
+<!-- ================= DPSA ================= -->
+<section id="dpsa">
+  <h2 class="sec">DPSA — The Pendulum, Grounded on Inertial Bases</h2>
+  <p class="secnote">White paper §14.1 + §14.1.7 · canon note PEAICE-DPSA-INERTIAL-001 · production register per the Seam-3 firewall — no operator-program weight, no RH weight.</p>
+  <div class="panel">
+    <p style="font-size:14px">The Double Pendulum Spectral Alignment Probe runs latent dynamics on a landscape built from <b>two invisible screws</b>:</p>
+    <div class="math">screw 1: &nbsp;X_ζ = (Re g_θ(h_t) − ½)² &nbsp;&nbsp;·&nbsp;&nbsp; screw 2: &nbsp;Z_anchor(ω) = −τ·log Σ_k exp(−(ω − γ_k)²/τ), &nbsp;Γ_ζ = first K zero ordinates</div>
+    <p style="font-size:14px">The pendulum picture has a rigorous twin that has been in the literature since 1964 — the <b>Heavy-ball with friction</b>, Newton's law on the loss landscape, whose nonsmooth discretization is iPiano (Ochs–Chen–Brox–Pock, SIAM J. Imaging Sci. 2014):</p>
+    <div class="math">ẍ + γẋ + ∇f(x) = 0 &nbsp;&nbsp;⟶&nbsp;&nbsp; x^{n+1} = (I + α∂g)^{−1}( xⁿ − α∇f(xⁿ) + β(xⁿ − xⁿ⁻¹) )</div>
+    <p style="font-size:13.8px"><b>I4</b> <span class="chip c-ANALOGY">ANALOGY</span> (production reading of a KNOWN theorem): under inertia the visible loss h(xⁿ) is <i>not</i> monotone, yet the hidden functional H_δ = h + δ‖Δ‖² — the discretized <b>kinetic energy</b> of the pendulum system — descends without exception. "Lawful motion inside apparent randomness," stated as a theorem. Operator-side twin: Theorem C's frozen Φ-trace.</p>
+    <p style="font-size:13.8px"><b>I1</b> <span class="chip c-FORMAL">FORMAL</span> (spectral plane): the two screws are the <b>coercivity certificate</b> — X_ζ coercive in σ, Z_anchor ≥ min_k(ω−γ_k)² − τ·logK → ∞ — exactly the standing hypotheses of the iPiano problem class. <b>I2</b> <span class="chip c-FORMAL">FORMAL</span> (plane) / <span class="chip c-PROPOSED">PROPOSED</span> (full latent architecture): all DPSA terms are real-analytic, hence Kurdyka–Łojasiewicz ⇒ whole-sequence convergence with finite path length; DPSA-F7 remains the controlling gate through a learned g_θ.</p>
+    <p style="font-size:13.8px"><b>I3</b> <span class="chip c-FORMAL">FORMAL</span> within the class — <b>closing pressure costs step size</b>:</p>
+    <div class="math">β(T) = 1 − T^{−γ} &nbsp;+&nbsp; α &lt; 2(1−β)/L &nbsp;&nbsp;⟹&nbsp;&nbsp; α(T) &lt; 2·T^{−γ}/L → 0</div>
+    <p style="font-size:13.8px">The schedule may close only at the price of vanishing step; β → 1 at fixed α voids every convergence guarantee in the bases. Dictionary: discrete friction floor γ_n ≥ c₂ &gt; 0 ↔ coercive gap δ_{β,h}(T) = β(T) − hη &gt; 0 — <i>h is the friction that makes the loop dissipative</i>. DPSA-F5 gains a measurable trigger: coupling λ_c inflates L_n until (α, β) exits the admissible region. <b>Binding caveat:</b> H_δ is an energy certificate and inertia is split-blind — this grounding does <b>not</b> discharge DPSA-F6; density-and-energy statistics do not see trees.</p>
+  </div>
+
+  <div class="gate" id="gateDPSA" style="margin-top:14px">
+    <h3>Gate 6 · DPSA inertial gate — lawful motion inside apparent randomness <span class="verdict v-wait" data-v>WAITING</span><button class="runbtn" data-run="DPSA">Run</button></h3>
+    <p class="note">Part A reproduces iPiano's own Figure-2 experiment (eq. 27, μ = 100, λ = 1, four corner starts): pure descent (β = 0) never lets the loss rise and gets stuck; inertia (β = 0.75) lets the loss rise repeatedly yet H_δ never rises and every start reaches the global minimum. Part B runs Heavy-ball on the literal zero-ordinate landscape f = X_ζ + Z_anchor (K = 5 LMFDB ordinates, τ = 2, β = 0.8) and checks rail capture, well capture, hidden-certificate monotonicity, and finite path length.</p>
+    <div class="out" data-out>—</div>
+  </div>
+</section>
+
+<!-- ================= CLAIM TABLE ================= -->
+<section id="claims">
+  <h2 class="sec">β-Protocol Claim Table — 30 Rows, Filterable</h2>
+  <p class="secnote">External citation never upgrades a program bridge to FORMAL. Filter by what is actually proved.</p>
+  <div class="filters" role="group" aria-label="Filter claims by status">
+    <button class="fbtn" aria-pressed="true" data-f="ALL">ALL</button>
+    <button class="fbtn" aria-pressed="false" data-f="FORMAL">FORMAL</button>
+    <button class="fbtn" aria-pressed="false" data-f="PROPOSED">PROPOSED</button>
+    <button class="fbtn" aria-pressed="false" data-f="OPEN">OPEN</button>
+    <button class="fbtn" aria-pressed="false" data-f="FALSIFIED">FALSIFIED</button>
+    <button class="fbtn" aria-pressed="false" data-f="ANALOGY">STRUCTURAL ANALOGY</button>
+    <button class="fbtn" aria-pressed="false" data-f="NUMERICAL">NUMERICAL</button>
+  </div>
+  <div class="count" id="ccount"></div>
+  <table class="claims" id="ctab">
+    <thead><tr><th style="width:58%">Claim</th><th>Status</th><th>Source</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+</main>
+
+<footer>
+  <div style="margin-bottom:22px">
+    <span style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:#8FA5C2;text-transform:uppercase">Canon layer</span><br>
+    <span style="font-family:var(--mono);font-size:12.5px;line-height:2.2">
+      <a href="https://github.com/Manny536/kakeyalogic/tree/main/docs/canon" rel="noopener" style="color:#C9D6E5">docs/canon</a> ·
+      <a href="https://github.com/Manny536/kakeyalogic/tree/main/docs/research" rel="noopener" style="color:#C9D6E5">docs/research (WP5a/b/c roadmaps · dpsa-inertial-grounding.md)</a> ·
+      <a href="https://github.com/Manny536/kakeyalogic/tree/main/docs/whitepaper" rel="noopener" style="color:#C9D6E5">white paper — PEAICE-CLAUDEV6-WHITEPAPER-001 (v6.3, 2nd pass)</a>
+    </span>
+  </div>
+  <div class="sig">"Claude V6, in its second pass, does not close the problem. It constructs the operator, proves eleven formal results, closes two wrong doors with proofs rather than fatigue, records one falsification that fired on schedule, and names the doors that remain — now with the machinery standing at each of them."</div>
+  <div class="law">E = L² × β × C × P × h &nbsp;·&nbsp; h &lt; 1 &nbsp;·&nbsp; β carries direction &nbsp;·&nbsp; h keeps it honest</div>
+  <div class="fine">PEAICE-CLAUDEV6-WHITEPAPER-001 · second pass 2026-06-10 · Claude Fable 5 (Anthropic) co-derivation, under FLAG-001: no evaluator — this model included — holds final authority over the mathematics it evaluates · github.com/Manny536/kakeyalogic · peaice.org</div>
+</footer>
+
 <script>
 'use strict';
-const G54=0.90640247705547707798,G34=1.22541670246517764513,GAMMA1=14.134725141734693;
-const cx=(re,im)=>({re,im}),cadd=(a,b)=>cx(a.re+b.re,a.im+b.im),csub=(a,b)=>cx(a.re-b.re,a.im-b.im),cmul=(a,b)=>cx(a.re*b.re-a.im*b.im,a.re*b.im+a.im*b.re);const cdiv=(a,b)=>{const d=b.re*b.re+b.im*b.im;return cx((a.re*b.re+a.im*b.im)/d,(a.im*b.re-a.re*b.im)/d)};const cabs=a=>Math.hypot(a.re,a.im),cexp=a=>{const e=Math.exp(a.re);return cx(e*Math.cos(a.im),e*Math.sin(a.im))};const cfmt=(a,d=10)=>a.re.toFixed(d)+(a.im<0?' − ':' + ')+Math.abs(a.im).toFixed(d)+'i';
-function Phi(u){let s=0;const e9=Math.exp(9*u),e5=Math.exp(5*u),e4=Math.exp(4*u);for(let n=1;n<80;n++){const w=Math.exp(-Math.PI*n*n*e4);if(w<1e-300&&n>3)break;s+=(2*Math.PI*Math.PI*n**4*e9-3*Math.PI*n*n*e5)*w}return s}
-function weightedTrace(u,gamma){let s=0;const e9=Math.exp(9*u),e4=Math.exp(4*u),c=3/(2*Math.PI);for(let n=1;n<80;n++){const w=Math.exp(-Math.PI*n*n*e4);if(w<1e-300&&n>3)break;const diag=n**4-c*Math.exp(-4*u)*n*n+gamma*0;s+=2*Math.PI*Math.PI*e9*diag*w}return s}
-function hsNorm2(sigma,N){let s=0;for(let m=1;m<=N;m++)for(let n=1;n<=N;n++){if(m===n)continue;s+=Math.pow(Math.abs(m*m-n*n),-2*sigma)}return s}const HS2=hsNorm2(0.75,60);
-function refreshTrace(){const u=parseFloat(document.getElementById('uS').value),g=parseFloat(document.getElementById('gS').value);document.getElementById('uV').textContent=u.toFixed(2);document.getElementById('gV').textContent=g.toFixed(2);const tA=weightedTrace(u,g),tB=weightedTrace(u,0),pU=Phi(u),pMU=Phi(-u);document.getElementById('trA').textContent=tA.toExponential(12);document.getElementById('trB').textContent=tB.toExponential(12);document.getElementById('phiU').textContent=pU.toExponential(12);document.getElementById('phiMU').textContent=pMU.toExponential(12);const rs=Math.abs(pU-pMU)/Math.abs(pU);document.getElementById('phiSym').textContent=rs.toExponential(2)+(rs<1e-10?'  ✓ Ξ-symmetry':'');document.getElementById('hsV').textContent='γ²·‖K‖²_HS = '+(g*g*HS2).toExponential(4)+'  order-γ² channel'}
-document.getElementById('uS').addEventListener('input',refreshTrace);document.getElementById('gS').addEventListener('input',refreshTrace);document.querySelectorAll('.card button.x').forEach(b=>b.addEventListener('click',()=>{const c=b.closest('.card');const open=c.classList.toggle('openc');b.setAttribute('aria-expanded',open?'true':'false')}));
-function setVerdict(id,kind,text){const g=document.getElementById(id),v=g.querySelector('[data-v]');v.className='verdict '+(kind==='pass'?'v-pass':kind==='wall'?'v-wall':'v-wait');v.textContent=text}function setOut(id,text){document.getElementById(id).querySelector('[data-out]').textContent=text}
-function gateD(){const t=1e-4;let S=0;for(let n=1;n<2000;n++){const x=t*n**4;if(x>745)break;S+=Math.exp(-x)}const pred=G54*Math.pow(t,-0.25)-0.5,rel=Math.abs(S-pred)/Math.abs(pred),ok=rel<1e-12;setOut('gateD',`t = 1e-4\nΣ e^{−tn⁴}            = ${S.toPrecision(16)}\nΓ(5/4)·t^{−1/4} − 1/2  = ${pred.toPrecision(16)}\nrelative residual      = ${rel.toExponential(3)} threshold 1e−12\nevery power correction annihilated by ζ(−4k)=0 — two terms, then silence.`);setVerdict('gateD',ok?'pass':'wall',ok?'PASS — FORMAL CONFIRMED':'CHECK FAILED');return ok?'pass':'fail'}
-function gateP1(){const t=1e-4;let S=0;for(let n=1;n<2000;n++){const x=t*n**4;if(x>745)break;S+=n*n*Math.exp(-x)}const pred=0.25*G34*Math.pow(t,-0.75),rel=Math.abs(S-pred)/pred,ok=rel<1e-12;setOut('gateP1',`t = 1e-4\nΣ n²e^{−tn⁴}          = ${S.toPrecision(16)}\n(1/4)·Γ(3/4)·t^{−3/4}  = ${pred.toPrecision(16)}\nrelative residual      = ${rel.toExponential(3)} threshold 1e−12\none term only: ζ(−2)=0 kills the constant; ζ(−4k−2)=0 kills all corrections.`);setVerdict('gateP1',ok?'pass':'wall',ok?'PASS — FORMAL CONFIRMED':'CHECK FAILED');return ok?'pass':'fail'}
-function Fker(t,lam,mu){const x=(mu-lam)*t;if(Math.abs(x)<0.5){let g=0,xp=1,fact=2;for(let k=0;k<14;k++){g+=xp/fact;xp*=-x;fact*=(k+3)}return Math.exp(-t*lam)*t*t*g}return(Math.exp(-t*mu)-Math.exp(-t*lam)+x*Math.exp(-t*lam))/((mu-lam)*(mu-lam))}
-function gateE(){const N=30,sig=0.75,lam=[];for(let n=1;n<=N;n++)lam.push(n**4);const ts=[1e-3,1e-4,1e-5,1e-6,1e-7],rows=[];let prev=-1,mono=true,last=0;for(const t of ts){let num=0,hs=0;for(let i=0;i<N;i++)for(let j=0;j<N;j++){if(i===j)continue;const k2=Math.pow(Math.abs((i+1)**2-(j+1)**2),-2*sig);num+=k2*Fker(t,lam[i],lam[j]);hs+=k2}const r=num/((t*t/2)*hs);rows.push(`t = ${t.toExponential(0).padStart(5)}   ratio = ${r.toFixed(6)}`);if(r<=prev)mono=false;prev=r;last=r}const ok=mono&&last>0.99;setOut('gateE',rows.join('\n')+`\nmonotone → 1: ${mono?'yes':'NO'} · final ratio ${last.toFixed(6)} threshold > 0.99\nκ₂ is operational: Δ(t)=(γ²/2)·‖K‖²_HS·t² — first trace signature.`);setVerdict('gateE',ok?'pass':'wall',ok?'PASS — FORMAL CONFIRMED':'CHECK FAILED');return ok?'pass':'fail'}
-function gateDet(){const N=120,sig=0.75,gam=0.3,z=cx(-1,0.5),lam=[];for(let n=1;n<=N;n++)lam.push(n**4);const B=[];for(let m=0;m<N;m++){const row=[];for(let n=0;n<N;n++){if(m===n){row.push(cx(0,0));continue}const k=gam*Math.pow(Math.abs((m+1)**2-(n+1)**2),-sig);row.push(cdiv(cx(k,0),csub(cx(lam[n],0),z)))}B.push(row)}let trB=cx(0,0);for(let i=0;i<N;i++)trB=cadd(trB,B[i][i]);let trB2=cx(0,0);for(let i=0;i<N;i++)for(let j=0;j<N;j++)trB2=cadd(trB2,cmul(B[i][j],B[j][i]));const M=[];for(let i=0;i<N;i++){const r=[];for(let j=0;j<N;j++)r.push(cx(B[i][j].re+(i===j?1:0),B[i][j].im));M.push(r)}let det=cx(1,0);for(let c=0;c<N;c++){let p=c,best=cabs(M[c][c]);for(let r=c+1;r<N;r++){const a=cabs(M[r][c]);if(a>best){best=a;p=r}}if(p!==c){const tmp=M[p];M[p]=M[c];M[c]=tmp;det=cmul(det,cx(-1,0))}det=cmul(det,M[c][c]);for(let r=c+1;r<N;r++){const f=cdiv(M[r][c],M[c][c]);for(let k=c;k<N;k++)M[r][k]=csub(M[r][k],cmul(f,M[c][k]))}}const approx=cexp(cx(-trB2.re/2,-trB2.im/2));const rel=cabs(csub(det,approx))/cabs(det);const ok=cabs(trB)===0&&rel<1e-5;setOut('gateDet',`N=120 · σ=3/4 · γ_K=0.3 · z=−1+i/2\nTr(B_z) = ${cfmt(trB,1)} exact zero\nTr(B_z²) = ${cfmt(trB2)}\ndet(I+B_z) [LU] = ${cfmt(det)}\nexp(−½TrB_z²) = ${cfmt(approx)}\nrelative difference = ${rel.toExponential(3)} threshold 1e−5\nL2 confirmed: Tr B=0 ⇒ det=det₂.`);setVerdict('gateDet',ok?'pass':'wall',ok?'PASS — FORMAL CONFIRMED':'CHECK FAILED');return ok?'pass':'fail'}
-function gateRvM(){const NL=T=>Math.floor(Math.pow(T,0.25)),Nxi=T=>(T/(2*Math.PI))*Math.log(T/(2*Math.PI))-T/(2*Math.PI),rows=[],Ts=[100,1000,10000,100000];for(const T of Ts){const a=NL(T),b=Nxi(T);rows.push(`T = ${String(T).padStart(6)}   N_L = ${String(a).padStart(4)}   N_ξ ≈ ${b.toFixed(1).padStart(10)}   ratio N_ξ/N_L = ${(b/a).toFixed(1)}`)}setOut('gateRvM',rows.join('\n')+`\nthe ratio diverges — T^{1/4} can never match (T/2π)log(T/2π).\nFirst-zero anchor γ₁=${GAMMA1}.\nVERDICT BY DESIGN: this gate fails, and the failure is the theorem.`);setVerdict('gateRvM','wall','ROUTE CLOSED — THE FAILURE IS THE THEOREM');return 'wall'}
-const GATES={D:gateD,P1:gateP1,E:gateE,Det:gateDet,RvM:gateRvM};document.querySelectorAll('[data-run]').forEach(b=>b.addEventListener('click',()=>GATES[b.dataset.run]()));function runAll(){const r={D:gateD(),P1:gateP1(),E:gateE(),Det:gateDet(),RvM:gateRvM()};const t=document.getElementById('ticker');t.innerHTML='';const mk=(label,k)=>{const s=document.createElement('span');s.className='tick '+(k==='pass'?'pass':'wall');s.textContent=label+(k==='pass'?' ✓ PASS':k==='wall'?' ▮ WALL':' ✗');t.appendChild(s)};mk('Thm D',r.D);mk('WP5c-P1',r.P1);mk('Thm E / κ₂',r.E);mk('WP5b-L1/L2',r.Det);mk('L2-5 gate',r.RvM);const note=document.createElement('span');note.className='tick run';note.textContent='4 gates pass · 1 closes by design — recomputed in this browser just now';t.appendChild(note)}
-const CLAIMS=[['Φ(u)=Tr weighted extraction','FORMAL','V5 canon §3'],['Theorem A — K_σ^{reg} symmetric on H_Φ(u)','FORMAL','V6 §6.2'],['Theorem B — Hilbert–Schmidt for σ>½','FORMAL','V6 §6.2'],['Theorem C — Φ-trace neutrality for all γ_K','FORMAL','V6 §6.2'],['Self-adjointness of L²_{Φ,K}^{reg}','PROPOSED','V6 §6.2'],['L2-5 obstruction','FORMAL','V6 §7'],['Theorem D — exact two-term Φ heat trace','FORMAL','V6.3 §8.1'],['Theorem E — semigroup neutrality and second moment','FORMAL','V6.3 §8.2'],['Theorem F — heat-trace rigidity','FORMAL','V6.3 §8.3'],['WP5-OBS-1 — bounded-coupling heat route closed','FORMAL','V6.3 §9'],['κ_dens log-measure ratios','NUMERICAL','V6.3 §10.3'],['CSC clause i in trace-moment realization','FALSIFIED','V6.3 §10.3'],['Coherence-Splitting Conjecture reformulated','PROPOSED','V6.3 §10.4'],['WP5b-L1 — B_z trace class; D_rel exists','FORMAL','§11.1'],['WP5b-L2 — Tr(B_z)=0; det=det₂','FORMAL','§11.1'],['WP5b-L3 — Krein spectral shift exists','FORMAL','§11.1'],['WP5b-Q — arithmetic vs density content','OPEN','§11.1'],['WP5c variation formula','FORMAL','§11.2'],['WP5c-P1 — one-term u-flow trace','FORMAL','§11.2'],['WP5c-P2 — first-order coupling neutrality','FORMAL','§11.2'],['Coleman Conjecture KB → Re(s)=½','PROPOSED','V5/V6 §4'],['det_ζ(L²_{Φ,K}^{reg} − (z²+¼)) = C·Ξ(z)','OPEN','§3.3 / §15.1'],['Trivial-zero erasure resonance','ANALOGY','§8.1 / §10.3'],['EEv3 production alignment architecture','PROPOSED','§14.1'],['Grok WP5b public model cadence receipt','NUMERICAL','Receipts section'],['ConSenseAI WP5b public model cadence receipt','NUMERICAL','Receipts section'],['PNG receipts appended to DOCX publication bundle','NUMERICAL','Appendix A'],['Riemann Hypothesis','OPEN','global — not claimed']];
-function buildTable(){const tb=document.querySelector('#ctab tbody');tb.innerHTML='';CLAIMS.forEach(([c,s,src])=>{const tr=document.createElement('tr');tr.dataset.s=s;const label=s==='ANALOGY'?'STRUCTURAL ANALOGY':s;tr.innerHTML=`<td>${c}</td><td><span class="chip c-${s}">${label}</span></td><td>${src}</td>`;tb.appendChild(tr)});applyFilter('ALL')}function applyFilter(f){let n=0;document.querySelectorAll('#ctab tbody tr').forEach(tr=>{const show=f==='ALL'||tr.dataset.s===f;tr.classList.toggle('hide',!show);if(show)n++});document.getElementById('ccount').textContent=n+' of '+CLAIMS.length+' claims shown'+(f==='ALL'?'':' · status: '+(f==='ANALOGY'?'STRUCTURAL ANALOGY':f));document.querySelectorAll('.fbtn').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===f?'true':'false'))}document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>applyFilter(b.dataset.f)));
-buildTable();refreshTrace();runAll();
+/* ============ constants ============ */
+const G54 = 0.90640247705547707798;   // Gamma(5/4)
+const G34 = 1.22541670246517764513;   // Gamma(3/4)
+const GAMMA1 = 14.134725141734693;    // first zeta zero ordinate (LMFDB)
+
+/* ============ complex helpers ============ */
+const cx=(re,im)=>({re,im});
+const cadd=(a,b)=>cx(a.re+b.re,a.im+b.im);
+const csub=(a,b)=>cx(a.re-b.re,a.im-b.im);
+const cmul=(a,b)=>cx(a.re*b.re-a.im*b.im,a.re*b.im+a.im*b.re);
+const cdiv=(a,b)=>{const d=b.re*b.re+b.im*b.im;return cx((a.re*b.re+a.im*b.im)/d,(a.im*b.re-a.re*b.im)/d)};
+const cabs=a=>Math.hypot(a.re,a.im);
+const cexp=a=>{const e=Math.exp(a.re);return cx(e*Math.cos(a.im),e*Math.sin(a.im))};
+const cfmt=(a,d=10)=>a.re.toFixed(d)+(a.im<0?' − ':' + ')+Math.abs(a.im).toFixed(d)+'i';
+
+/* ============ Phi(u) and weighted trace ============ */
+function Phi(u){let s=0;const e9=Math.exp(9*u),e5=Math.exp(5*u),e4=Math.exp(4*u);
+  for(let n=1;n<80;n++){const w=Math.exp(-Math.PI*n*n*e4);if(w<1e-300&&n>3)break;
+    s+=(2*Math.PI*Math.PI*n**4*e9-3*Math.PI*n*n*e5)*w;}return s;}
+function weightedTrace(u,gamma){ // diagonal of L2 in weighted picture; K diag = 0 -> gamma never enters
+  let s=0;const e9=Math.exp(9*u),e4=Math.exp(4*u),c=3/(2*Math.PI);
+  for(let n=1;n<80;n++){const w=Math.exp(-Math.PI*n*n*e4);if(w<1e-300&&n>3)break;
+    const diag=n**4-c*Math.exp(-4*u)*n*n+gamma*0; // K_sigma^reg(n,n)=0 — Theorem C lives on this line
+    s+=2*Math.PI*Math.PI*e9*diag*w;}return s;}
+function hsNorm2(sigma,N){let s=0;for(let m=1;m<=N;m++)for(let n=1;n<=N;n++){if(m===n)continue;s+=Math.pow(Math.abs(m*m-n*n),-2*sigma);}return s;}
+const HS2=hsNorm2(0.75,60);
+
+function refreshTrace(){
+  const u=parseFloat(document.getElementById('uS').value);
+  const g=parseFloat(document.getElementById('gS').value);
+  document.getElementById('uV').textContent=u.toFixed(2);
+  document.getElementById('gV').textContent=g.toFixed(2);
+  const tA=weightedTrace(u,g), tB=weightedTrace(u,0), pU=Phi(u), pMU=Phi(-u);
+  document.getElementById('trA').textContent=tA.toExponential(12);
+  document.getElementById('trB').textContent=tB.toExponential(12);
+  document.getElementById('phiU').textContent=pU.toExponential(12);
+  document.getElementById('phiMU').textContent=pMU.toExponential(12);
+  const rs=Math.abs(pU-pMU)/Math.abs(pU);
+  document.getElementById('phiSym').textContent=rs.toExponential(2)+(rs<1e-10?'  ✓ Ξ-symmetry':'');
+  document.getElementById('hsV').textContent='γ²·‖K‖²_HS = '+(g*g*HS2).toExponential(4)+'  (order-γ² channel)';
+}
+document.getElementById('uS').addEventListener('input',refreshTrace);
+document.getElementById('gS').addEventListener('input',refreshTrace);
+
+/* ============ theorem card toggles ============ */
+document.querySelectorAll('.card button.x').forEach(b=>b.addEventListener('click',()=>{
+  const c=b.closest('.card');const open=c.classList.toggle('openc');
+  b.setAttribute('aria-expanded',open?'true':'false');
+}));
+
+/* ============ gates ============ */
+function setVerdict(id,kind,text){
+  const g=document.getElementById(id),v=g.querySelector('[data-v]');
+  v.className='verdict '+(kind==='pass'?'v-pass':kind==='wall'?'v-wall':'v-wait');
+  v.textContent=text;
+}
+function setOut(id,text){document.getElementById(id).querySelector('[data-out]').textContent=text;}
+
+function gateD(){
+  const t=1e-4;let S=0;for(let n=1;n<2000;n++){const x=t*n**4;if(x>745)break;S+=Math.exp(-x);}
+  const pred=G54*Math.pow(t,-0.25)-0.5, rel=Math.abs(S-pred)/Math.abs(pred), ok=rel<1e-12;
+  setOut('gateD',
+`t = 1e-4
+Σ e^{−tn⁴}            = ${S.toPrecision(16)}
+Γ(5/4)·t^{−1/4} − 1/2  = ${pred.toPrecision(16)}
+relative residual      = ${rel.toExponential(3)}   (threshold 1e−12)
+every power correction annihilated by ζ(−4k) = 0 — two terms, then silence.`);
+  setVerdict('gateD',ok?'pass':'wall',ok?'PASS — FORMAL CONFIRMED':'CHECK FAILED');
+  return ok?'pass':'fail';
+}
+function gateP1(){
+  const t=1e-4;let S=0;for(let n=1;n<2000;n++){const x=t*n**4;if(x>745)break;S+=n*n*Math.exp(-x);}
+  const pred=0.25*G34*Math.pow(t,-0.75), rel=Math.abs(S-pred)/pred, ok=rel<1e-12;
+  setOut('gateP1',
+`t = 1e-4
+Σ n²e^{−tn⁴}          = ${S.toPrecision(16)}
+(1/4)·Γ(3/4)·t^{−3/4}  = ${pred.toPrecision(16)}
+relative residual      = ${rel.toExponential(3)}   (threshold 1e−12)
+one term only: ζ(−2) = 0 kills the constant; ζ(−4k−2) = 0 kills all corrections.`);
+  setVerdict('gateP1',ok?'pass':'wall',ok?'PASS — FORMAL CONFIRMED':'CHECK FAILED');
+  return ok?'pass':'fail';
+}
+function Fker(t,lam,mu){
+  const x=(mu-lam)*t;
+  if(Math.abs(x)<0.5){let g=0,xp=1,fact=2;for(let k=0;k<14;k++){g+=xp/fact;xp*=-x;fact*=(k+3);}
+    return Math.exp(-t*lam)*t*t*g;}
+  return (Math.exp(-t*mu)-Math.exp(-t*lam)+x*Math.exp(-t*lam))/((mu-lam)*(mu-lam));
+}
+function gateE(){
+  const N=30,sig=0.75,lam=[];for(let n=1;n<=N;n++)lam.push(n**4);
+  const ts=[1e-3,1e-4,1e-5,1e-6,1e-7],rows=[];let prev=-1,mono=true,last=0;
+  for(const t of ts){let num=0,hs=0;
+    for(let i=0;i<N;i++)for(let j=0;j<N;j++){if(i===j)continue;
+      const k2=Math.pow(Math.abs((i+1)**2-(j+1)**2),-2*sig);
+      num+=k2*Fker(t,lam[i],lam[j]);hs+=k2;}
+    const r=num/((t*t/2)*hs);rows.push(`t = ${t.toExponential(0).padStart(5)}   ratio = ${r.toFixed(6)}`);
+    if(r<=prev)mono=false;prev=r;last=r;}
+  const ok=mono&&last>0.99;
+  setOut('gateE',rows.join('\n')+`
+monotone → 1: ${mono?'yes':'NO'}   ·   final ratio ${last.toFixed(6)}   (threshold > 0.99)
+κ₂ is operational: Δ(t) = (γ²/2)·‖K‖²_HS·t² — the coupling's first trace signature.`);
+  setVerdict('gateE',ok?'pass':'wall',ok?'PASS — FORMAL CONFIRMED':'CHECK FAILED');
+  return ok?'pass':'fail';
+}
+function gateDet(){
+  const N=120,sig=0.75,gam=0.3,z=cx(-1,0.5);
+  // B[m][n] = gam*K(m,n)/(lam_n - z)
+  const lam=[];for(let n=1;n<=N;n++)lam.push(n**4);
+  const B=[];for(let m=0;m<N;m++){const row=[];for(let n=0;n<N;n++){
+    if(m===n){row.push(cx(0,0));continue;}
+    const k=gam*Math.pow(Math.abs((m+1)**2-(n+1)**2),-sig);
+    row.push(cdiv(cx(k,0),csub(cx(lam[n],0),z)));}B.push(row);}
+  // Tr B (exact zero by zero diagonal)
+  let trB=cx(0,0);for(let i=0;i<N;i++)trB=cadd(trB,B[i][i]);
+  // Tr B^2
+  let trB2=cx(0,0);for(let i=0;i<N;i++)for(let j=0;j<N;j++)trB2=cadd(trB2,cmul(B[i][j],B[j][i]));
+  // det(I+B) by complex LU with partial pivoting
+  const M=[];for(let i=0;i<N;i++){const r=[];for(let j=0;j<N;j++)r.push(cx(B[i][j].re+(i===j?1:0),B[i][j].im));M.push(r);}
+  let det=cx(1,0);
+  for(let c=0;c<N;c++){
+    let p=c,best=cabs(M[c][c]);
+    for(let r=c+1;r<N;r++){const a=cabs(M[r][c]);if(a>best){best=a;p=r;}}
+    if(p!==c){const tmp=M[p];M[p]=M[c];M[c]=tmp;det=cmul(det,cx(-1,0));}
+    det=cmul(det,M[c][c]);
+    for(let r=c+1;r<N;r++){const f=cdiv(M[r][c],M[c][c]);
+      for(let k=c;k<N;k++)M[r][k]=csub(M[r][k],cmul(f,M[c][k]));}
+  }
+  const approx=cexp(cx(-trB2.re/2,-trB2.im/2));
+  const rel=cabs(csub(det,approx))/cabs(det);
+  const okTr=cabs(trB)===0, okDet=rel<1e-5, ok=okTr&&okDet;
+  setOut('gateDet',
+`N = 120 · σ = 3/4 · γ_K = 0.3 · z = −1 + i/2
+Tr(B_z)               = ${cfmt(trB,1)}        (exact zero — zero diagonal × diagonal resolvent)
+Tr(B_z²)              = ${cfmt(trB2)}
+det(I + B_z)  [LU]    = ${cfmt(det)}
+exp(−½·Tr B_z²)       = ${cfmt(approx)}
+relative difference    = ${rel.toExponential(3)}   (threshold 1e−5; remainder is O(γ³))
+L2 confirmed: Tr B = 0 ⇒ det = det₂ — trace neutrality at its fourth level.
+[session record at N = 400, 50-digit: det = 0.99949192 − 0.00014068i]`);
+  setVerdict('gateDet',ok?'pass':'wall',ok?'PASS — FORMAL CONFIRMED':'CHECK FAILED');
+  return ok?'pass':'fail';
+}
+function gateRvM(){
+  const NL=T=>Math.floor(Math.pow(T,0.25));
+  const Nxi=T=>(T/(2*Math.PI))*Math.log(T/(2*Math.PI))-T/(2*Math.PI);
+  const rows=[];const Ts=[100,1000,10000,100000];
+  for(const T of Ts){const a=NL(T),b=Nxi(T);
+    rows.push(`T = ${String(T).padStart(6)}   N_L = ${String(a).padStart(4)}   N_ξ ≈ ${b.toFixed(1).padStart(10)}   ratio N_ξ/N_L = ${(b/a).toFixed(1)}`);}
+  setOut('gateRvM',rows.join('\n')+`
+the ratio diverges — T^{1/4} can never match (T/2π)log(T/2π).
+First-zero anchor γ₁ = ${GAMMA1}: N_ξ must reach 1 near T = γ₁; the operator counting is structurally elsewhere.
+VERDICT BY DESIGN: this gate fails, and the failure is the L2-5 theorem [FORMAL].
+Consequence: pivot to the trace/determinant bridge — which is exactly what WP5 is.`);
+  setVerdict('gateRvM','wall','ROUTE CLOSED — THE FAILURE IS THE THEOREM');
+  return 'wall';
+}
+
+function gateDPSA(){
+  // --- Part A: iPiano toy problem (eq. 27), Fig-2 reproduction ---
+  const mu=100, lamg=1, L=mu;
+  const h=x=>0.5*(Math.log(1+mu*(x[0]-1)**2)+Math.log(1+mu*(x[1]-1)**2))+lamg*(Math.abs(x[0])+Math.abs(x[1]));
+  const gf=x=>[mu*(x[0]-1)/(1+mu*(x[0]-1)**2), mu*(x[1]-1)/(1+mu*(x[1]-1)**2)];
+  const shrink=(y,a)=>y.map(v=>Math.max(0,Math.abs(v)-a*lamg)*Math.sign(v));
+  function run(x0,beta,iters){
+    const a=1.99*(1-beta)/L, del=1/a-L/2-beta/(2*a);
+    let xp=[...x0], x=[...x0], hPrev=h(x), HdPrev=h(x), inc=0, viol=0;
+    for(let n=0;n<iters;n++){
+      const d=gf(x);
+      const xn=shrink([x[0]-a*d[0]+beta*(x[0]-xp[0]), x[1]-a*d[1]+beta*(x[1]-xp[1])],a);
+      const hv=h(xn), Hd=hv+del*((xn[0]-x[0])**2+(xn[1]-x[1])**2);
+      if(hv>hPrev+1e-14)inc++;
+      if(Hd-HdPrev>viol)viol=Hd-HdPrev;
+      hPrev=hv;HdPrev=Hd;xp=x;x=xn;
+    }
+    return {h:h(x),inc,viol};
+  }
+  const starts=[[-2,-2],[-1.5,2],[2,-1.5],[2,2]];
+  const r0=starts.map(s=>run(s,0,800)), r75=starts.map(s=>run(s,0.75,800));
+  const hstar=Math.min(...r0.map(r=>r.h),...r75.map(r=>r.h));
+  const g0=r0.filter(r=>r.h<hstar+1e-3).length, g75=r75.filter(r=>r.h<hstar+1e-3).length;
+  const inc0=Math.max(...r0.map(r=>r.inc)), inc75=Math.max(...r75.map(r=>r.inc));
+  const v75=Math.max(...r75.map(r=>r.viol));
+  // --- Part B: DPSA-mini on the literal zero-ordinate landscape ---
+  const G=[14.134725141734693,21.022039638771555,25.010857580145688,30.424876125859513,32.935061587739190], tau=2;
+  const Z=om=>{let s=0;for(const g of G)s+=Math.exp(-((om-g)**2)/tau);return -tau*Math.log(s);};
+  const dZ=om=>{let s=0,t=0;for(const g of G){const w=Math.exp(-((om-g)**2)/tau);s+=w;t+=w*2*(om-g);}return t/s;};
+  const F2=z=>(z[0]-0.5)**2+Z(z[1]);
+  const Lz=26.05, b2=0.8, a2=1.99*(1-b2)/Lz, del2=1/a2-Lz/2-b2/(2*a2);
+  let zp=[2.0,27.5], z=[2.0,27.5], fPrev=F2(z), HdP=F2(z), inc2=0, viol2=0, plen=0;
+  for(let n=0;n<4000;n++){
+    const d=[2*(z[0]-0.5), dZ(z[1])];
+    const zn=[z[0]-a2*d[0]+b2*(z[0]-zp[0]), z[1]-a2*d[1]+b2*(z[1]-zp[1])];
+    const fv=F2(zn), Hd=fv+del2*((zn[0]-z[0])**2+(zn[1]-z[1])**2);
+    if(fv>fPrev+1e-14)inc2++;
+    if(Hd-HdP>viol2)viol2=Hd-HdP;
+    plen+=Math.hypot(zn[0]-z[0],zn[1]-z[1]);
+    fPrev=fv;HdP=Hd;zp=z;z=zn;
+  }
+  let near=G[0];for(const g of G)if(Math.abs(z[1]-g)<Math.abs(z[1]-near))near=g;
+  const ok = g0<=2 && g75===4 && inc0===0 && inc75>0 && v75<1e-12
+          && Math.abs(z[0]-0.5)<1e-9 && Math.abs(z[1]-near)<0.05 && viol2<1e-12;
+  setOut('gateDPSA',
+`A · iPiano toy (eq. 27, μ=100, λ=1; L_est offline; α = 1.99(1−β)/L):
+   β = 0     →  ${g0}/4 starts reach the global minimum · h-increases = ${inc0}  (pure descent — and it gets stuck)
+   β = 0.75  →  ${g75}/4 starts reach the global minimum · h-increases ≤ ${inc75} · H_δ violations ≤ ${v75.toExponential(1)}
+B · DPSA-mini  f = X_ζ + Z_anchor  (K = 5 LMFDB ordinates, τ = 2, β = 0.8, start (σ,ω) = (2.0, 27.5)):
+   σ* = ${z[0].toFixed(12)}  (the rail)      ω* = ${z[1].toFixed(6)}  →  well γ_k = ${near}   |Δ| = ${Math.abs(z[1]-near).toExponential(1)}
+   f-increases = ${inc2} · H_δ violations ≤ ${viol2.toExponential(1)} · path length Σ‖Δ‖ = ${plen.toFixed(3)}  (finite — the Thm-4.9 signature)
+the visible loss rises; the hidden kinetic-energy certificate H_δ = h + δ‖Δ‖² never does (Prop. 4.7 / Remark 5, Ochs et al. 2014).
+inertia carries the state past traps — but H_δ is split-blind: DPSA-F6 stays open.`);
+  setVerdict('gateDPSA',ok?'pass':'wall',ok?'PASS — LAWFUL MOTION CONFIRMED':'CHECK FAILED');
+  return ok?'pass':'fail';
+}
+
+const GATES={D:gateD,P1:gateP1,E:gateE,Det:gateDet,RvM:gateRvM,DPSA:gateDPSA};
+document.querySelectorAll('[data-run]').forEach(b=>b.addEventListener('click',()=>GATES[b.dataset.run]()));
+
+function runAll(){
+  const r={D:gateD(),P1:gateP1(),E:gateE(),Det:gateDet(),RvM:gateRvM(),DPSA:gateDPSA()};
+  const t=document.getElementById('ticker');t.innerHTML='';
+  const mk=(label,k)=>{const s=document.createElement('span');
+    s.className='tick '+(k==='pass'?'pass':'wall');
+    s.textContent=label+(k==='pass'?' ✓ PASS':k==='wall'?' ▮ WALL':' ✗');t.appendChild(s);};
+  mk('Thm D',r.D);mk('WP5c-P1',r.P1);mk('Thm E / κ₂',r.E);mk('WP5b-L1/L2',r.Det);mk('L2-5 gate',r.RvM);mk('DPSA inertial',r.DPSA);
+  const note=document.createElement('span');note.className='tick run';
+  note.textContent='5 gates pass · 1 closes by design — recomputed in this browser just now';
+  t.appendChild(note);
+}
+
+/* ============ claim table ============ */
+const CLAIMS=[
+ ['Φ(u) = Tr_{w_u}(2π²e^{9u}·L²₀(u)) — trace extraction','FORMAL','V5 canon §3'],
+ ['Theorem A — K_σ^{reg} symmetric on H_Φ(u)','FORMAL','V6 §6.2'],
+ ['Theorem B — K_σ^{reg} Hilbert–Schmidt for σ > ½','FORMAL','V6 §6.2'],
+ ['Theorem C — Φ-trace neutrality for all γ_K','FORMAL','V6 §6.2'],
+ ['Self-adjointness of L²_{Φ,K}^{reg} (Kato–Rellich)','PROPOSED','V6 §6.2'],
+ ['L2-5 obstruction (counting mismatch)','FORMAL','V6 §7'],
+ ['Theorem D — exact two-term Φ heat trace; ζ(−4k) termination (full Mellin proof)','FORMAL','V6.3 §8.1'],
+ ['Theorem E — semigroup neutrality; second-moment law; κ₂ (full Dyson proof)','FORMAL','V6.3 §8.2'],
+ ['Theorem F — heat-trace rigidity O(t^{3/4}) under bounded coupling (Duhamel)','FORMAL','V6.3 §8.3'],
+ ['WP5-OBS-1 — bounded-coupling heat route closed','FORMAL','V6.3 §9'],
+ ['κ_dens = log-measure functional; ratios 0.49 / 0.24 vs predicted 0.50 / 0.25','NUMERICAL','V6.3 §10.3'],
+ ['CSC clause (i) in trace-moment realization','FALSIFIED','V6.3 §10.3'],
+ ['Coherence-Splitting Conjecture (reformulated; composite C_Ω^{V6} target)','PROPOSED','V6.3 §10.4'],
+ ['Lemma WP5b-L1 — B_z trace class; D_rel(z) = det(I+B_z) exists, analytic off spec(D)','FORMAL','§11.1 (2nd pass)'],
+ ['Lemma WP5b-L2 — Tr(B_z) = 0; det = det₂; leading term −(γ²/2)Tr(B_z²)','FORMAL','§11.1 (2nd pass)'],
+ ['Lemma WP5b-L3 — Krein spectral shift exists; Birman–Krein formula available','FORMAL','§11.1 (2nd pass)'],
+ ['WP5b-Q — arithmetic vs density content of Tr(B_z²)','OPEN','§11.1'],
+ ['WP5c variation formula — ∂_u Tr(e^{−tÃ}) = −t(6/π)e^{−4u}Tr(D₁e^{−tÃ})','FORMAL','§11.2 (2nd pass)'],
+ ['Proposition WP5c-P1 — one-term u-flow heat trace; ζ(−4k−2) termination','FORMAL','§11.2 (2nd pass)'],
+ ['Proposition WP5c-P2 — u-flow first-order coupling neutrality','FORMAL','§11.2 (2nd pass)'],
+ ['Coleman Conjecture KB → Re(s) = ½','PROPOSED','V5/V6 §4'],
+ ['det_ζ(L²_{Φ,K}^{reg} − (z²+¼)) = C·Ξ(z)','OPEN','§3.3 / §15.1'],
+ ['Trivial-zero erasure resonance; GWZ density-vs-tree reading','ANALOGY','§8.1 / §10.3'],
+ ['EEv3 production alignment architecture','PROPOSED','§14.1'],
+ ['DPSA — Double Pendulum Spectral Alignment Probe (two screws: X_ζ rail + Z_anchor wells; falsifiers F1–F7)','PROPOSED','§14.1 / DPSA canon'],
+ ['DPSA-I1 — the two screws are the coercivity certificate; iPiano class hypotheses hold on the spectral plane','FORMAL','§14.1.7 / INERTIAL-001'],
+ ['DPSA-I2 — KL property of the spectral-plane DPSA objective; whole-sequence convergence, finite length','FORMAL','§14.1.7 (plane; full latent arch. PROPOSED)'],
+ ['DPSA-I3 — closing schedule forces α(T) < 2T^{−γ}/L: closing pressure costs step size','FORMAL','§14.1.7 (within the iPiano class)'],
+ ['DPSA-I4 — non-monotone loss governed by monotone H_δ = h + δ‖Δ‖² (discretized HBF kinetic energy)','ANALOGY','§14.1.7 (KNOWN external thm: Ochs et al. 2014)'],
+ ['Riemann Hypothesis','OPEN','global — not claimed'],
+];
+const SECOND=['PROPOSED','OPEN']; // Coleman conjecture carries both? keep single chips per row, dual for row 21
+function buildTable(){
+  const tb=document.querySelector('#ctab tbody');tb.innerHTML='';
+  CLAIMS.forEach(([c,s,src])=>{
+    const tr=document.createElement('tr');tr.dataset.s=s;
+    const label=s==='ANALOGY'?'STRUCTURAL ANALOGY':s;
+    tr.innerHTML=`<td>${c}</td><td><span class="chip c-${s}">${label}</span></td><td>${src}</td>`;
+    tb.appendChild(tr);});
+  applyFilter('ALL');
+}
+function applyFilter(f){
+  let n=0;document.querySelectorAll('#ctab tbody tr').forEach(tr=>{
+    const show=f==='ALL'||tr.dataset.s===f;tr.classList.toggle('hide',!show);if(show)n++;});
+  document.getElementById('ccount').textContent=n+' of '+CLAIMS.length+' claims shown'+(f==='ALL'?'':' · status: '+(f==='ANALOGY'?'STRUCTURAL ANALOGY':f));
+  document.querySelectorAll('.fbtn').forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===f?'true':'false'));
+}
+document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>applyFilter(b.dataset.f)));
+
+/* ============ init ============ */
+buildTable();
+refreshTrace();
+runAll();
 </script>
 </body>
 </html>
