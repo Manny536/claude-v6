@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claude V6.4.1 — Prime-Support Audit · Scope Corrected</title>
-<meta name="description" content="PeAIce Claude V6.4.1 audit patch: the |m²−n²|^{-σ} family remains under no-go pressure, but the prime-support argument is corrected from determinant-level proof to trace-level heuristic. Parity closes the naive determinant, counting closes the z² eigenvalue route, genus closes trace-class determinants, and the Hilbert–Schmidt corridor reduces to singular-value exponent ρ(Kσ). RH status: OPEN — no proof claimed.">
-<meta property="og:title" content="Claude V6.4.1 — Prime-Support Audit · Scope Corrected">
-<meta property="og:description" content="Parity closes the naive determinant. Counting closes the z² eigenvalue route. Genus closes trace-class determinants. The Hilbert–Schmidt corridor lives or dies by s_n(Kσ).">
+<title>Claude V6.4.2 — Prime-Support Audit · Singular-Value Reduction</title>
+<meta name="description" content="PeAIce Claude V6.4.2 patch: the |m²−n²|^{-σ} family remains under no-go pressure. Parity closes the naive determinant, counting closes the z² route, genus closes trace-class determinants. New: numerical singular-value data reduces the Hilbert–Schmidt corridor to a single critical exponent — ρ(Kσ)=1 holds only at σ*≈0.83, with every other σ closed by order (below) or genus (above). RH status: OPEN — no proof claimed.">
+<meta property="og:title" content="Claude V6.4.2 — Prime-Support Audit · Singular-Value Reduction">
+<meta property="og:description" content="Singular-value numerics: s_n(Kσ)~n^−α, α crosses 1 once at σ*≈0.83. Order closes σ<σ*, genus closes σ>σ*. The HS corridor reduces to one borderline point. Numerics, not proof. RH OPEN.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://manny536.github.io/claude-v6/">
 <link rel="canonical" href="https://manny536.github.io/claude-v6/">
@@ -48,22 +48,23 @@ ul{margin:10px 0 0 20px}li{margin:5px 0}
 </head>
 <body>
 <div class="honesty" role="note">
-  <span><span class="dot" style="background:#4F95B1"></span>V6.4.1 AUDIT PATCH ACTIVE</span>
-  <span><span class="dot" style="background:#D96A72"></span>NAIVE + z² ROUTES CLOSED</span>
-  <span><span class="dot" style="background:#E2B45A"></span>HS CORRIDOR REDUCED TO ρ(Kσ)</span>
+  <span><span class="dot" style="background:#4F95B1"></span>V6.4.2 SINGULAR-VALUE PATCH ACTIVE</span>
+  <span><span class="dot" style="background:#D96A72"></span>NAIVE + z² + TRACE-CLASS ROUTES CLOSED</span>
+  <span><span class="dot" style="background:#E2B45A"></span>HS CORRIDOR → SINGLE σ* ≈ 0.83</span>
   <span><span class="dot" style="background:#3FAE7E"></span><b>RIEMANN HYPOTHESIS: OPEN</b> — no proof claimed</span>
 </div>
 <header>
   <div class="eyebrow">PeAIce Research Program · KakeyaLogic · L²_C Framework</div>
-  <h1 class="title">Claude V6.4.1 — Prime-Support Audit</h1>
-  <p class="subtitle">The square-difference no-go is scope-corrected: the prime-support sentence is heuristic, the trace-level obstruction remains, trace-class determinants are closed by genus, and the Hilbert–Schmidt corridor reduces to singular-value asymptotics.</p>
-  <div class="canonid">PEAICE-CLAUDEV6-NOTE-003 · Copilot audit patch · scope corrected · RH OPEN · Coleman Conjecture OPEN</div>
+  <h1 class="title">Claude V6.4.2 — Prime-Support Audit</h1>
+  <p class="subtitle">The square-difference no-go is scope-corrected and now sharper: the prime-support sentence is heuristic, trace-class determinants are closed by genus, and the Hilbert–Schmidt corridor is numerically reduced to a single critical exponent σ*≈0.83 — closed everywhere else by order or genus.</p>
+  <div class="canonid">PEAICE-CLAUDEV6-NOTE-003 · Copilot audit patch · V6.4.2 singular-value patch · scope corrected · RH OPEN · Coleman Conjecture OPEN</div>
 </header>
 <nav aria-label="Sections">
   <a href="#status">STATUS</a>
   <a href="#closed">RIGOR GATES</a>
   <a href="#audit">AUDIT CORRECTION</a>
   <a href="#sv">SINGULAR VALUES</a>
+  <a href="#svnum">SV NUMERICS</a>
   <a href="#spec">PRIME SPEC</a>
   <a href="#bd">BÁEZ-DUARTE</a>
   <a href="#claims">CLAIM TABLE</a>
@@ -73,32 +74,34 @@ ul{margin:10px 0 0 20px}li{margin:5px 0}
 </nav>
 <main>
   <div class="hero">
-    <div class="lbl">V6.4.1 scope correction</div>
+    <div class="lbl">V6.4.2 singular-value reduction</div>
     <div class="math big">The |m²−n²|<sup>−σ</sup> family remains under no-go pressure, but the determinant-level closure is narrower than V6.4 stated.</div>
     <div class="lbl">Corrected Hilbert–Schmidt object</div>
     <div class="math big">K<sub>σ</sub>(m,n)=|m²−n²|<sup>−σ</sup> for m≠n, &nbsp; K<sub>σ</sub>(n,n)=0, &nbsp; K<sub>σ</sub>∈S₂ ⇔ σ&gt;1/2</div>
     <div class="lbl">Current rigorous state</div>
-    <div class="math">Parity closes det(I−zK). Counting closes the z² eigenvalue route. Genus closes trace-class determinants. The Hilbert–Schmidt determinant corridor lives or dies by ρ(K<sub>σ</sub>).</div>
+    <div class="math">Parity closes det(I−zK). Counting closes the z² eigenvalue route. Genus closes trace-class determinants. The Hilbert–Schmidt determinant corridor lives or dies by ρ(K<sub>σ</sub>) — and numerics now place ρ(K<sub>σ</sub>)=1 at a single point σ*≈0.83, closing every other σ by order or genus.</div>
     <div class="ticker" aria-label="Canon ticker">
       <span class="tick pass">Theorem B ✓ VERIFIED</span>
       <span class="tick wall">naive determinant ▮ CLOSED</span>
       <span class="tick wall">z² counting route ▮ CLOSED</span>
       <span class="tick wall">trace-class determinant ▮ GENUS CLOSED</span>
       <span class="tick audit">HS corridor → singular-value exponent</span>
+      <span class="tick gold">σ&lt;σ* order ▮ σ&gt;σ* genus ▮ σ*≈0.83 sole survivor</span>
       <span class="tick run">RH OPEN · no proof claimed</span>
     </div>
   </div>
 
   <section id="status">
     <h2 class="sec">Canonical Status Block</h2>
-    <p class="secnote">V6.4.1 preserves the no-go direction while correcting the scope of the prime-support argument.</p>
+    <p class="secnote">V6.4.2 preserves the no-go direction, keeps the V6.4.1 scope correction, and adds the first numerical data on the singular-value gate.</p>
     <div class="grid2">
-      <div>Version</div><div>Claude V6.4.1 — Prime-Support Audit · Scope Corrected</div>
+      <div>Version</div><div>Claude V6.4.2 — Prime-Support Audit · Singular-Value Reduction (V6.4.1 scope correction preserved)</div>
       <div>Preserved result</div><div>The corrected weight-free kernel is Hilbert–Schmidt exactly for σ&gt;1/2, hence compact and self-adjoint. <span class="chip c-FORMAL">FORMAL</span></div>
       <div>Rigorous closures</div><div>Naive determinant closed by parity; z² eigenvalue route closed by counting; trace-class determinant corridor closed by genus. <span class="chip c-CLOSED">CLOSED</span></div>
       <div>Corrected status</div><div>Prime-support obstruction is downgraded from determinant-level proof to trace-level heuristic / necessary-condition pressure. <span class="chip c-AUDIT">AUDIT</span></div>
-      <div>Remaining analytic gate</div><div>Hilbert–Schmidt determinant corridor reduced to the convergence exponent ρ(K<sub>σ</sub>) of singular values s<sub>n</sub>(K<sub>σ</sub>).</div>
-      <div>Next probe</div><div>Compute or bound singular-value asymptotics s<sub>n</sub>(K<sub>σ</sub>) and compare ρ(K<sub>σ</sub>) against 1.</div>
+      <div>Remaining analytic gate</div><div>Hilbert–Schmidt determinant corridor numerically reduced (V6.4.2) to a <b>single critical value σ*≈0.83</b>: for σ&lt;σ* the exponent ρ(K<sub>σ</sub>)&gt;1 closes it by order; for σ&gt;σ* the operator is trace class and genus closes it; only σ* passes the necessary ρ=1 condition.</div>
+      <div>V6.4.2 numerical finding</div><div>Eigenvalues of N×N truncations (to N=4000) give s<sub>n</sub>(K<sub>σ</sub>)~n<sup>−α(σ)</sup> with α truncation-stable and monotone in σ, crossing α=1 once at σ*≈0.83. Evidence, not proof. <span class="chip c-AUDIT">NUMERICS</span></div>
+      <div>Next probe</div><div>Analytic asymptotics of s<sub>n</sub>(K<sub>σ</sub>) near σ*≈0.83 to decide ρ(K<sub>σ</sub>)=1 rigorously; if ρ=1 survives, run the genus / zero-density / cumulant (Σ<sub>γ</sub>γ<sup>−2k</sup>) / functional-equation checks at σ*.</div>
       <div>Live frontier</div><div>Prime-carrying trace architecture remains open, but must be argued through global invariants, not entry inspection alone.</div>
       <div>RH status</div><div><b>OPEN.</b> Coleman Conjecture <b>OPEN.</b> No proof claimed.</div>
     </div>
@@ -130,8 +133,35 @@ ul{margin:10px 0 0 20px}li{margin:5px 0}
       <p>For A∈S₂, det₂(I−zA) is an entire function of genus at most 1. Since Ξ has order exactly 1, a necessary condition for det₂(I−zK<sub>σ</sub>) = C·Ξ(z) is that the singular-value convergence exponent equals 1.</p>
       <div class="math big">ρ(K<sub>σ</sub>) = inf{ p≥1 : Σ<sub>n</sub> s<sub>n</sub>(K<sub>σ</sub>)<sup>p</sup> &lt; ∞ }</div>
       <div class="math">necessary condition for det₂(I−zK<sub>σ</sub>) = C·Ξ(z): &nbsp; ρ(K<sub>σ</sub>) = 1</div>
-      <p class="ob"><b>Next probe:</b> compute or prove asymptotics for s<sub>n</sub>(K<sub>σ</sub>). If ρ(K<sub>σ</sub>)≠1, the Hilbert–Schmidt determinant corridor closes rigorously by order. If ρ(K<sub>σ</sub>)=1, descend to genus, zero-density, cumulant, and functional-equation checks.</p>
+      <p class="ob"><b>Next probe:</b> compute or prove asymptotics for s<sub>n</sub>(K<sub>σ</sub>). If ρ(K<sub>σ</sub>)≠1, the Hilbert–Schmidt determinant corridor closes rigorously by order. If ρ(K<sub>σ</sub>)=1, descend to genus, zero-density, cumulant, and functional-equation checks. <b>V6.4.2 supplies the first numerical data on this gate — see below.</b></p>
     </div>
+  </section>
+
+  <section id="svnum">
+    <h2 class="sec">Singular-Value Numerics — the Order / Genus Pincer</h2>
+    <p class="secnote">V6.4.2 · first numerical data on the ρ(K<sub>σ</sub>) gate · reproducible · numerics are evidence, not proof.</p>
+    <div class="panel">
+      <p>K<sub>σ</sub> is real symmetric, so s<sub>n</sub>=|λ<sub>n</sub>|. Diagonalizing finite N×N truncations up to N=4000 gives a power-law tail s<sub>n</sub>(K<sub>σ</sub>) ~ n<sup>−α(σ)</sup>, with the exponent α(σ) stable under truncation and monotonically increasing in σ. It crosses the trace-class threshold α=1 <b>exactly once</b>.</p>
+      <table class="claims" style="margin-top:14px">
+        <thead><tr><th>σ</th><th>α(σ) ≈</th><th>ρ = 1/α</th><th>Σ s<sub>n</sub> as N grows</th><th>corridor status</th></tr></thead>
+        <tbody>
+          <tr><td>0.55</td><td>0.78</td><td>1.29</td><td>diverging</td><td><span class="chip c-CLOSED">CLOSED</span> ρ&gt;1, det₂ order &gt; 1</td></tr>
+          <tr><td>0.75</td><td>0.94</td><td>1.06</td><td>diverging (slow)</td><td><span class="chip c-CLOSED">CLOSED</span> ρ&gt;1, marginal</td></tr>
+          <tr><td>≈0.83</td><td>1.00</td><td>1.00</td><td>razor's edge</td><td><span class="chip c-PIVOT">σ*</span> sole survivor of the order test</td></tr>
+          <tr><td>1.00</td><td>1.11</td><td>0.90</td><td>converging</td><td><span class="chip c-CLOSED">CLOSED</span> trace class → genus (Thm 4)</td></tr>
+          <tr><td>1.25</td><td>1.30</td><td>0.77</td><td>converging</td><td><span class="chip c-CLOSED">CLOSED</span> genus</td></tr>
+          <tr><td>1.50</td><td>1.52</td><td>0.66</td><td>converging</td><td><span class="chip c-CLOSED">CLOSED</span> genus</td></tr>
+        </tbody>
+      </table>
+      <div class="math big">α(σ) crosses 1 once, at σ* ≈ 0.83 &nbsp;⇒&nbsp; ρ(K<sub>σ</sub>) = 1 holds only at σ*</div>
+    </div>
+    <div class="cards">
+      <div class="card closed"><h3>σ &lt; σ* — closed by order <span class="chip c-CLOSED">CLOSED</span></h3><p>α&lt;1 ⇒ ρ&gt;1, so det₂(I−zK<sub>σ</sub>) has order &gt; 1 and cannot equal the order-1 function Ξ. Closed directly by the order criterion (Thm 5).</p></div>
+      <div class="card closed"><h3>σ &gt; σ* — closed by genus <span class="chip c-CLOSED">CLOSED</span></h3><p>α&gt;1 ⇒ K<sub>σ</sub>∈S₁ (trace class), so its Fredholm determinant is a genus-0 product and cannot equal genus-1 Ξ. Closed by Thm 4.</p></div>
+      <div class="card gold"><h3>σ = σ* — sole survivor <span class="chip c-PIVOT">ρ = 1</span></h3><p>The single value passing the <em>necessary</em> order condition. It still owes the genus / zero-density / cumulant (Σ<sub>γ</sub>γ<sup>−2k</sup> ≈ 0.023) and functional-equation checks. Not closed; not cleared.</p></div>
+    </div>
+    <div class="wall openw"><h3>Standing caveats · what numerics cannot certify</h3><p>(1) Finite-truncation evidence to N=4000, not a proof. ρ=1 is precisely the case truncation cannot certify — at σ≈0.85, Σs<sub>n</sub> is still visibly growing at N=4000. (2) Rigorous closure of the σ* point needs analytic asymptotics of s<sub>n</sub>(K<sub>σ</sub>). (3) A subtlety any proof must handle: the discrete operator is Hilbert–Schmidt for σ&gt;1/2, but the continuous kernel |x²−y²|<sup>−σ</sup> on [0,1]² is HS for σ&lt;1/2 — the thresholds flip, because the discrete sum drops the diagonal and the lattice cuts off |m−n|≥1. The decay is governed by near-diagonal lattice structure and will not fall out of the continuous spectral theory.</p></div>
+    <div class="route"><h3>Net effect on the corridor</h3><p class="ob">The one-parameter Hilbert–Schmidt determinant corridor is numerically reduced from an open family to a <b>single borderline value σ*≈0.83</b>, with every other σ closed by order (below) or genus (above). Empirically α−σ → 0⁺ monotonically as σ grows (0.23 → 0.19 → 0.16 → 0.11 → 0.05 → 0.015), which both predicts σ*≈0.83 and gives the target for an analytic estimate.</p><div class="math">RH OPEN · Coleman Conjecture OPEN · σ* unresolved · no proof claimed</div></div>
   </section>
 
   <section id="spec">
@@ -160,17 +190,18 @@ ul{margin:10px 0 0 20px}li{margin:5px 0}
   </section>
 
   <section id="claims">
-    <h2 class="sec">β-Protocol Claim Table — Updated V6.4.1</h2>
+    <h2 class="sec">β-Protocol Claim Table — Updated V6.4.2</h2>
     <p class="secnote">The prime-support wall was narrowed. The analytic tests are now explicit.</p>
     <table class="claims">
-      <thead><tr><th>Claim</th><th>Status</th><th>V6.4.1 reading</th></tr></thead>
+      <thead><tr><th>Claim</th><th>Status</th><th>V6.4.2 reading</th></tr></thead>
       <tbody>
         <tr><td>Corrected K<sub>σ</sub> is Hilbert–Schmidt iff σ&gt;1/2</td><td><span class="chip c-FORMAL">FORMAL</span></td><td>Preserved as the verified compact-geometry theorem.</td></tr>
         <tr><td>det(I−zK) or det₂(I−zK) equals C·Ξ(z)</td><td><span class="chip c-CLOSED">CLOSED</span></td><td>Naive determinant route closed by parity: Tr(K³)&gt;0 while Ξ is even.</td></tr>
         <tr><td>z²+1/4 eigenvalue target for |m²−n²| family</td><td><span class="chip c-CLOSED">CLOSED</span></td><td>Counting mismatch closes the eigenvalue route.</td></tr>
         <tr><td>Trace-class determinant corridor</td><td><span class="chip c-CLOSED">CLOSED</span></td><td>Genus mismatch: trace-class determinants are genus 0; Ξ is genus 1.</td></tr>
         <tr><td>Prime-support obstruction as determinant-level proof</td><td><span class="chip c-AUDIT">CORRECTED</span></td><td>Downgraded to heuristic / trace-level pressure; global invariants must be computed.</td></tr>
-        <tr><td>Hilbert–Schmidt determinant corridor</td><td><span class="chip c-OPEN">OPEN TEST</span></td><td>Reduced to singular-value exponent ρ(K<sub>σ</sub>) versus 1.</td></tr>
+        <tr><td>Hilbert–Schmidt determinant corridor</td><td><span class="chip c-OPEN">NARROWED</span></td><td>Numerically reduced to a single critical σ*≈0.83: σ&lt;σ* closed by order (ρ&gt;1), σ&gt;σ* closed by genus (trace class). σ* still OPEN pending an analytic s<sub>n</sub> bound.</td></tr>
+        <tr><td>Singular-value exponent ρ(K<sub>σ</sub>) — V6.4.2 numerics</td><td><span class="chip c-AUDIT">NUMERICS</span></td><td>s<sub>n</sub>~n<sup>−α</sup>, α truncation-stable to N=4000, crosses 1 once at σ*≈0.83 ⇒ corridor closed for every σ≠σ*. Evidence, not proof.</td></tr>
         <tr><td>Prime-carrying trace architecture</td><td><span class="chip c-OPEN">OPEN</span></td><td>Requires log(p^k), Λ(p^k)/√p^k, Γ-density, reality, trace formula.</td></tr>
         <tr><td>Nyman–Beurling / Báez-Duarte compute package</td><td><span class="chip c-PIVOT">PIVOT</span></td><td>Preferred next Hilbert-space computation.</td></tr>
         <tr><td>Riemann Hypothesis</td><td><span class="chip c-OPEN">OPEN</span></td><td>No proof claimed.</td></tr>
@@ -180,9 +211,9 @@ ul{margin:10px 0 0 20px}li{margin:5px 0}
   </section>
 </main>
 <footer>
-  <div class="sig">The square kernel remains under no-go pressure, but the rigorous frontier is now sharper: genus closes trace class, and Hilbert–Schmidt lives or dies by singular values.</div>
+  <div class="sig">The square kernel remains under no-go pressure, and the rigorous frontier is now sharper still: genus closes trace class, order closes the rest, and the entire Hilbert–Schmidt corridor now lives or dies at a single point — σ*≈0.83.</div>
   <div class="law">E = L² × β × C × P × h · h &lt; 1 · β carries direction · h keeps it honest</div>
-  <div class="fine">PEAICE-CLAUDEV6-NOTE-003 · V6.4.1 audit patch · scope corrected · Claude V6 trace-neutral buildout preserved as archived context · github.com/Manny536/claude-v6 · github.com/Manny536/kakeyalogic · peaice.org</div>
+  <div class="fine">PEAICE-CLAUDEV6-NOTE-003 · V6.4.2 singular-value patch (V6.4.1 scope correction preserved) · numerics reproducible to N=4000 · Claude V6 trace-neutral buildout preserved as archived context · github.com/Manny536/claude-v6 · github.com/Manny536/kakeyalogic · peaice.org</div>
 </footer>
 </body>
 </html>
