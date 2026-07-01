@@ -81,13 +81,16 @@ Clause (i) fails in the natural trace-moment realization.
 
 ## BK-HP-CC / L2-SI
 
-**Status:** OPEN, load-bearing
+**Status:** OPEN for a prime-carrying operator · CLOSED-NEGATIVE for the `K_σ` realization (V6.4.3)
 
 Determinant identity target:
 
 ```text
 det_ζ(L²_{Φ,K}^{reg} - (z² + 1/4)) = C · Ξ(z)
 ```
+
+The square-difference (`K_σ`) realization of this target is closed — see `#hs-corridor`.
+The target is retained only for a prime-carrying length/weight operator.
 
 Bridge obligations include:
 
@@ -97,6 +100,52 @@ Bridge obligations include:
 - Riemann-von Mangoldt counting,
 - explicit-formula recovery,
 - off-critical leakage suppression.
+
+## HS-CORRIDOR (V6.4.3)
+
+**Status:** FORMAL / CLOSED-NEGATIVE — determinant lane closed
+
+The V6.4.3 singular-value reduction upgrades L2-5 from "eigenvalue-by-eigenvalue closed"
+to "determinant lane closed" for the square-difference kernel.
+
+Singular-value law (Weyl symbol `x^{-σ}|ξ|^{σ-1}`; rigorous route Birman–Solomyak):
+
+```text
+s_n(K_σ) ~ c_σ n^{-α(σ)},   α(σ) = σ (leading order),   ρ(K_σ) = 1/σ
+```
+
+Three-gate pincer on `det₂(I - z K_σ) = C·Ξ`:
+
+```text
+σ < σ* :  α<1 ⇒ ρ>1 ⇒ det₂ order > 1 ≠ order-1 Ξ         CLOSED (order)
+σ > σ* :  α>1 ⇒ K_σ ∈ S₁ ⇒ Fredholm det genus 0 ≠ Ξ      CLOSED (genus)
+σ = σ* :  λ_n ~ n^{-1} ⇒ det-zeros ~ R (linear) ≠ T logT  CLOSED (density)
+```
+
+Full-operator closure (this is L2-5 sharpened): `γ_K K_σ` is relatively compact w.r.t.
+`D₁²`, so Weyl-class invariance preserves `N(Λ) ~ Λ^{1/4}` and never reaches
+`√Λ log Λ`. Hence the squared-determinant target is CLOSED-NEGATIVE for the `K_σ`
+realization. The finite crossing `σ*_N ≈ 0.83–0.92` is a truncation artifact; `σ_c = 1`
+is the analytic boundary. Gap relocates to the prime-carrying operator.
+
+## LINDELÖF CEILING (background wall)
+
+**Status:** KNOWN (background) — motivates the operator route
+
+The harmonic-analytic dependency tower (Kakeya/restriction → ℓ²-decoupling →
+Dirichlet-polynomial large values → zero-density) outputs only **bounds**. The strongest
+conjectural output of this lineage is Lindelöf-type:
+
+```text
+RH ⇒ LH (Lindelöf) ⇒ Density Hypothesis     (all reverse implications OPEN)
+LH is not known to imply RH; LH is strictly weaker than RH.
+```
+
+Current frontier bound: Guth–Maynard `N(σ,T) ≤ T^{30(1-σ)/13 + o(1)}` (arXiv:2405.20552,
+2024) — the first substantial improvement to Ingham (1940) — characterized by Tao as
+"a remarkable breakthrough towards the Riemann hypothesis (though still very far from
+fully resolving this conjecture)." This is why a bound cannot close GAP-001 and an
+exact-location (determinant/trace) mechanism is required.
 
 ## Corridor after V6.3
 

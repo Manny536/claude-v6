@@ -1,5 +1,8 @@
 # Claude V6 — Trace-Neutral Kakeya Operator
 
+> **V6.4.3 (30 June 2026):** the square-difference `K_σ` determinant lane is **CLOSED-NEGATIVE** (order/genus/zero-density; `σ*_N`≈0.83–0.92 finite-window vs `σ_c`=1 analytic). Determinant target retained only for a prime-carrying operator. See `docs/canon/wall-registry.md#hs-corridor`.
+
+
 **Canon designation:** `PEAICE-CLAUDEV6-WHITEPAPER-001`  
 **Program:** PeAIce Research Program · KakeyaLogic · L²_C Framework  
 **Version state:** Claude V6.3, second-pass buildout  

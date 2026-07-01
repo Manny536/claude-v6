@@ -1,8 +1,8 @@
 # Canonical Status Block
 
 **Canon designation:** `PEAICE-CLAUDEV6-WHITEPAPER-001`  
-**Version:** Claude V6 — Trace-Neutral Kakeya Operator, with V6.3 Heat-Trace Addendum  
-**Date line:** June 2026  
+**Version:** Claude V6 — Trace-Neutral Kakeya Operator · V6.3 Heat-Trace Addendum · **V6.4.3 Hilbert–Schmidt Corridor Closure**  
+**Date line:** June 2026 · **V6.4.3 patch:** 30 June 2026  
 **Program:** PeAIce Research Program · KakeyaLogic · L²_C Framework
 
 ## Primary claim
@@ -38,18 +38,32 @@ H_Φ(u) = ℓ²(ℕ, w_u),    w_n(u) = exp(-πn²e^{4u}).
 - Theorem E — first-order semigroup neutrality and second-moment law.
 - Theorem F — heat-trace rigidity under bounded coupling.
 - WP5-OBS-1 — bounded-coupling heat route is closed.
+- Theorem G — singular values `s_n(K_σ^{reg}) ~ n^{-σ}` to leading order (Weyl symbol `x^{-σ}|ξ|^{σ-1}`; rigorous route Birman–Solomyak). Order/genus/zero-density pincer closes the `K_σ` determinant lane.
 
 ## Falsification event
 
 CSC-F1: the trace-moment κ family detects log-measure and density statistics, not Bateman splitting number. Clause (i) of the Coherence-Splitting Conjecture is falsified in its natural trace-moment realization.
 
-## Open load-bearing targets
+## V6.4.3 corridor verdict
+
+The square-difference realization of the determinant target is **CLOSED-NEGATIVE**:
 
 ```text
-det_ζ(L²_{Φ,K}^{reg} - (z² + 1/4)) = C · Ξ(z)
+det_ζ(L²_{Φ,K}^{reg} - (z² + 1/4)) = C · Ξ(z)     # CLOSED for the D₁² + γ_K K_σ realization
 ```
 
-and the Coleman Conjecture remain OPEN.
+Because `γ_K K_σ^{reg}` is relatively compact w.r.t. `D₁²`, Weyl-class invariance fixes
+`N(Λ) ~ Λ^{1/4}` and it never reaches Riemann–von Mangoldt `√Λ log Λ` (counting); below
+`σ*` the det₂ order exceeds 1 (order); above `σ*` the determinant is genus 0 vs genus-1 Ξ
+(genus). The finite-window crossing `σ*_N ≈ 0.83–0.92` is demoted to a truncation artifact;
+`σ_c = 1` is the analytic Weyl boundary (`s_n ~ n^{-σ}`). See `wall-registry.md#hs-corridor`.
+
+## Open load-bearing targets
+
+The determinant target survives **only** for a prime-carrying length/weight operator
+(lengths `log p^k`, weights `Λ(p^k) p^{-k/2}`, archimedean Γ-density, real spectral
+mechanism) and the Nyman–Beurling / Báez-Duarte distance program. The Coleman Conjecture
+remains OPEN.
 
 ## Live corridor
 

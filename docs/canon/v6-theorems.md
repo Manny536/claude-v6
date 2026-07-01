@@ -185,3 +185,49 @@ The Φ-sector bounded-coupling trace remains
 ```
 
 Therefore the plain bounded-coupling heat-trace route cannot recover the Ξ-side explicit formula.
+
+
+## Theorem G — Singular-value asymptotic and corridor closure [V6.4.3]
+
+**Status:** PROPOSED (asymptotic; Birman–Solomyak route) / FORMAL (closure consequence)
+
+Under the isometry `V` of Theorem B, `K_σ` transfers to the Toeplitz-type kernel
+`T_{mn} = |m²-n²|^{-σ}`. The near-diagonal reduction `T ≈ 2^{-σ} D_w Toep(|m-n|^{-σ}) D_w`,
+`D_w = diag(k^{-σ/2})`, has phase-space symbol
+
+```text
+a(x,ξ) ~ x^{-σ} |ξ|^{σ-1}     (x ≥ 1, ξ ∈ [-π,π]).
+```
+
+The Weyl count `N(t) = #{ s_n > t } ~ (1/2π) vol{a > t}` gives
+
+```text
+N(t) ~ C_σ t^{-1/σ}   ⇒   s_n(K_σ) ~ c_σ n^{-σ},   ρ(K_σ) = 1/σ.
+```
+
+Consistency check (load-bearing): the same volume integral converges iff `σ > 1/2`,
+reproducing the exact Hilbert–Schmidt threshold of Theorem B. `PROPOSED`; the rigorous
+upgrade is Birman–Solomyak singular-value asymptotics for weighted Toeplitz /
+pseudodifferential operators with this singular symbol.
+
+**Corollary G.1 (corridor closure).** `FORMAL`. Combining Theorem G with the order/genus
+argument and L2-5:
+
+```text
+σ < σ* : ρ(K_σ) > 1 ⇒ det₂(I - zK_σ) has order > 1 ≠ order-1 Ξ.
+σ > σ* : K_σ ∈ S₁    ⇒ Fredholm determinant is genus 0 ≠ genus-1 Ξ.
+σ = σ* : power-law spectrum ⇒ zero-density linear in R ≠ (T/2π) log T.
+```
+
+Every power-law spectrum `s_n ~ n^{-α}` yields det-zero counting `~ R^{1/α}`, never
+`T log T`. Hence the entire one-parameter `K_σ` determinant family is closed, and (via the
+relative-compactness of `γ_K K_σ` w.r.t. `D₁²`) the squared-determinant target is
+CLOSED-NEGATIVE for this realization. The finite-window crossing `σ*_N ≈ 0.83–0.92` is a
+truncation artifact; the analytic Weyl boundary is `σ_c = 1`.
+
+**Numerics.** `NUMERICS`. Truncations `N ≤ 4000` (cross-check `N ≤ 1600`) give `α(σ)`
+truncation-stable and monotone with `δ = α − σ → 0⁺` (e.g. `δ ≈ 0.24, 0.20, 0.15, 0.12,
+0.09, 0.06, 0.012, 0.001` across `σ = 0.55 … 1.50`), confirming `α = σ` to three decimals
+at `σ = 1.50`. Reproduction is deterministic only — not evidence for RH.
+
+RH remains `OPEN`. Coleman Conjecture remains `OPEN`. No proof claimed.
