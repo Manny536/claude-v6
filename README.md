@@ -1,11 +1,13 @@
 # Claude V6 — Trace-Neutral Kakeya Operator
 
-> **V6.4.3 (30 June 2026):** the square-difference `K_σ` determinant lane is **CLOSED-NEGATIVE** (order/genus/zero-density; `σ*_N`≈0.83–0.92 finite-window vs `σ_c`=1 analytic). Determinant target retained only for a prime-carrying operator. See `docs/canon/wall-registry.md#hs-corridor`.
+> **V6.5 (1 July 2026):** WP5b bounded lane **CLOSED-NEGATIVE** via Theorem H + WP5-OBS-2 (Krein SSF uniformly bounded). Live: L1 unbounded · WP5c u-flow · prime-carrying L3 (forced). See `docs/research/wp5b-bounded-lane-closure.md`.
+>
+> **V6.4.3 (30 June 2026):** the square-difference `K_σ` determinant lane is **CLOSED-NEGATIVE** (order/genus/zero-density; `σ_c`=1 analytic). See `docs/canon/wall-registry.md#hs-corridor`.
 
 
 **Canon designation:** `PEAICE-CLAUDEV6-WHITEPAPER-001`  
 **Program:** PeAIce Research Program · KakeyaLogic · L²_C Framework  
-**Version state:** Claude V6.3, second-pass buildout  
+**Version state:** Claude V6.5 — WP5b bounded-lane closure  
 **Status:** OPEN — operator constructed, conjecture open, corridor named
 
 This repository is the public canonical buildout for the Claude V6 phase of the Coleman Conjecture / KakeyaLogic research program.
@@ -15,6 +17,7 @@ Claude V6 converts the earlier V5 bridge statement into a corrected operator pro
 ```text
 V6  = K_sigma^reg + Theorems A-C + trace neutrality + L2-5 closed
 V6.3 = Theorems D-F + WP5-OBS-1 + CSC-F1 + surviving corridor
+V6.5 = Theorem H + WP5-OBS-2 + prime-carrying relocation forced
 ```
 
 The core claim discipline remains active:
@@ -62,6 +65,8 @@ papers/
 - Theorem E — first-order semigroup trace neutrality and second-moment coupling law.
 - Theorem F — bounded-coupling heat-trace rigidity.
 - WP5-OBS-1 — the bounded-coupling heat route is closed.
+- Theorem H — Weyl-window law: Krein SSF uniformly bounded, thin support (V6.5).
+- WP5-OBS-2 — bounded-coupling relative-determinant route closed (V6.5).
 
 ### FALSIFIED-IN-REALIZATION
 
@@ -71,8 +76,9 @@ papers/
 
 - Coleman Conjecture: `KB -> Re(s)=1/2`.
 - Determinant target: `det_ζ(L²_{Φ,K}^{reg} - (z² + 1/4)) = C · Ξ(z)`.
-- WP5b — Krein spectral shift and relative determinant route.
+- WP5b-L1 — unbounded / relative spectral-shift category.
 - WP5c — u-flow trace formula route.
+- Prime-carrying ξ spec (L3) — forced relocation target.
 - WP5a — critical coupling regime `σ ≤ 1/2`.
 
 ## Core equations
@@ -102,14 +108,15 @@ Tr_{w_u}(2π²e^{9u} L²_{Φ,K}^{reg}(u)) = Φ(u)
 
 ## Current research entry point
 
-The next live corridor is **WP5b**:
+WP5b bounded lane is **closed** (WP5-OBS-2, July 2026). Live corridors:
 
 ```text
-Compute the Krein spectral shift ξ(λ; L²_{Φ,K}^{reg}, L²_Φ)
-and test whether relative determinant data escapes Theorem F rigidity.
+L1 — unbounded / relative spectral-shift modifications
+L2 — WP5c u-flow trace formula (eigenvector data)
+L3 — prime-carrying ladder (forced: R1 requires unbounded ξ)
 ```
 
-If the determinant-ratio route inherits bounded heat-trace rigidity, WP5b becomes WP5-OBS-2 and the corridor narrows to the u-flow axis alone.
+See `docs/research/wp5b-bounded-lane-closure.md` and `docs/research/wp5c-u-flow-trace-formula.md`.
 
 ## Source grounding
 

@@ -1,8 +1,8 @@
 # Canonical Status Block
 
 **Canon designation:** `PEAICE-CLAUDEV6-WHITEPAPER-001`  
-**Version:** Claude V6 — Trace-Neutral Kakeya Operator · V6.3 Heat-Trace Addendum · **V6.4.3 Hilbert–Schmidt Corridor Closure**  
-**Date line:** June 2026 · **V6.4.3 patch:** 30 June 2026  
+**Version:** Claude V6 — Trace-Neutral Kakeya Operator · V6.3 Heat-Trace Addendum · V6.4.3 Hilbert–Schmidt Corridor Closure · **V6.5 WP5b Bounded-Lane Closure**  
+**Date line:** June 2026 · **V6.4.3 patch:** 30 June 2026 · **V6.5 patch:** 1 July 2026  
 **Program:** PeAIce Research Program · KakeyaLogic · L²_C Framework
 
 ## Primary claim
@@ -39,6 +39,8 @@ H_Φ(u) = ℓ²(ℕ, w_u),    w_n(u) = exp(-πn²e^{4u}).
 - Theorem F — heat-trace rigidity under bounded coupling.
 - WP5-OBS-1 — bounded-coupling heat route is closed.
 - Theorem G — singular values `s_n(K_σ^{reg}) ~ n^{-σ}` to leading order (Weyl symbol `x^{-σ}|ξ|^{σ-1}`; rigorous route Birman–Solomyak). Order/genus/zero-density pincer closes the `K_σ` determinant lane.
+- Theorem H — Weyl-window law: Krein SSF `ξ(λ)` uniformly bounded, thin support (V6.5).
+- WP5-OBS-2 — bounded-coupling relative-determinant route closed (V6.5).
 
 ## Falsification event
 
@@ -65,11 +67,12 @@ The determinant target survives **only** for a prime-carrying length/weight oper
 mechanism) and the Nyman–Beurling / Báez-Duarte distance program. The Coleman Conjecture
 remains OPEN.
 
-## Live corridor
+## Live corridor (post-V6.5)
 
-1. WP5b — spectral shift / relative determinant route.
+1. WP5b-L1 — unbounded / relative spectral-shift category.
 2. WP5c — u-flow trace formula route.
 3. WP5a — critical coupling route, held until a renormalization for `σ ≤ 1/2` is specified.
+4. Prime-carrying ξ spec (L3) — **forced** relocation target (R1/R2/R3).
 
 ## Domain language
 

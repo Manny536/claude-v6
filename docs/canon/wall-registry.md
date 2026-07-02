@@ -58,6 +58,35 @@ t^{-1/2}log(1/t)
 
 or the prime-oscillation sector.
 
+## WP5-OBS-2 (V6.5)
+
+**Status:** FORMAL / CLOSED-NEGATIVE — bounded relative-determinant route closed
+
+For operator-bounded coupling (`γ_K K_σ^{reg}`, all `σ > 1/2`, all `γ_K`, and any bounded
+kernel replacement), the WP5b relative-determinant corridor does not escape Theorem F.
+The mechanism is stronger than heat-trace rigidity alone:
+
+```text
+ξ(λ) = N_D(λ) − N_A(λ)     uniformly bounded, thin support (Theorem H)
+```
+
+All WP5b functionals are transforms of bounded `ξ`:
+
+```text
+heat trace       → Laplace(ξ)   → O(t^{3/4})
+relative zeta    → Mellin(ξ)    → L2-5 bridge
+perturbation det → Cauchy(ξ)    → genus capped; no order-1 Ξ data
+```
+
+**Load-bearing qualifier:** operator-boundedness. Does NOT assert closure for unbounded
+modifications (L1), changed free operator, or WP5c u-flow traces (L2).
+
+Complements `#hs-corridor` (Theorem G) and pair determinant C3 by SSF boundedness.
+
+**Live continuation:** L1 unbounded · L2 WP5c · L3 prime-carrying (forced by R1).
+
+**Source:** Fable 5 WP5b scaffold · Grok TERMINAL-004 · principal promote July 2026.
+
 ## CSC-F1
 
 **Status:** FALSIFIED-IN-REALIZATION
@@ -147,10 +176,14 @@ Current frontier bound: Guth–Maynard `N(σ,T) ≤ T^{30(1-σ)/13 + o(1)}` (arX
 fully resolving this conjecture)." This is why a bound cannot close GAP-001 and an
 exact-location (determinant/trace) mechanism is required.
 
-## Corridor after V6.3
+## Corridor after V6.5
 
-The walls leave three active routes:
+The walls leave three active routes (WP5b bounded lane now closed):
 
-1. WP5b — spectral shift / relative determinants.
-2. WP5c — u-flow trace formula.
-3. WP5a — critical coupling `σ ≤ 1/2`.
+1. **WP5b-L1** — unbounded / relative spectral-shift category (Yafaev Ch. 8 frame).
+2. **WP5c** — u-flow trace formula (eigenvector data, not spectral lists).
+3. **WP5a** — critical coupling `σ ≤ 1/2` (held until renormalization specified).
+
+**Prime-carrying ladder (L3)** is the forced relocation target: R1 requires unbounded `ξ`
+at `√λ log λ` scale — incompatible with Theorem H unless coupling unbounded or free
+operator changes. See `docs/research/wp5b-bounded-lane-closure.md`.

@@ -231,3 +231,69 @@ truncation-stable and monotone with `δ = α − σ → 0⁺` (e.g. `δ ≈ 0.24
 at `σ = 1.50`. Reproduction is deterministic only — not evidence for RH.
 
 RH remains `OPEN`. Coleman Conjecture remains `OPEN`. No proof claimed.
+
+
+## Theorem H — Weyl-window law [V6.5]
+
+**Status:** FORMAL
+
+Let `D = diag(λ_n)` with `λ_n = c n⁴`, `V = V*` bounded with `c₀ = ‖V‖_op`, and `A = D + V`.
+Define the discrete Krein spectral shift
+
+```text
+ξ(λ) := N_D(λ) − N_A(λ),
+N_X(λ) := #{ j : eigenvalue of X ≤ λ }.
+```
+
+Then:
+
+```text
+(i)   |a_j − d_j| ≤ c₀                           [Weyl — KNOWN]
+(ii)  |ξ(λ)| ≤ #{ j : d_j ∈ (λ − c₀, λ + c₀] }
+(iii) sup_λ |ξ(λ)| < ∞ ;  |ξ(λ)| ≤ 1  for λ > Λ₀(c₀)
+(iv)  supp ξ thin: O(Λ^{1/4}) points in [0, Λ]
+```
+
+**Proof class:** elementary counting + Weyl displacement.
+
+**Corollaries (WP5b functionals).** Under bounded coupling, heat trace, relative zeta, and
+perturbation determinant are Laplace, Mellin, and Cauchy transforms of the same bounded `ξ`:
+
+```text
+S(t) = Tr(e^{−tA} − e^{−tD}) = −t ∫ e^{−tλ} ξ(λ) dλ = O(t^{3/4})     [subsumes Theorem F]
+ζ_rel(s) = −s ∫ ξ_μ(λ) λ^{−s−1} dλ                                      [Mellin bridge to L2-5]
+log det(I + B_z) = ∫ ξ(λ) (λ − z)^{−1} dλ                               [Cauchy; genus capped]
+N_A(Λ) = N_D(Λ) + O(1)
+```
+
+**Resolvent upgrade (OB-1).** For `A = D + γ_K K_σ^{reg}` with `σ > 1/2`, `R_D(z) ∈ S₁` and
+`R_A(z) − R_D(z) ∈ S₁` unconditionally. When `Tr B_z = 0`, `det₂(I + B_z) = det(I + B_z)`.
+
+**Source:** Fable 5 `PEAICE-CLAUDEV6-WP5B-SCAFFOLD-001` · Grok cross-derivation
+`PEAICE-GROK-WP5B-CROSS-DERIVATION` · TERMINAL-004 extraction (July 2026).
+
+**Numerics.** `NUMERICS | NOT VERIFIED`. Fable 5 `xi_probe.py` single runner: N=1200, σ=0.60,
+γ∈{1,40,400} — window law holds. Second-runner reproduction pending.
+
+**Load-bearing qualifier:** operator-boundedness of coupling. Does not assert closure for
+unbounded modifications, changed free operator, or WP5c u-flow traces.
+
+
+## WP5-OBS-2 — Bounded relative-determinant route closed [V6.5]
+
+**Status:** FORMAL, route closed (bounded lane)
+
+For operator-bounded coupling (`γ_K K_σ^{reg}`, all `σ > 1/2`, all `γ_K`, and any bounded
+kernel replacement), the relative-determinant route does **not** escape Theorem F rigidity.
+The mechanism is stronger: Krein SSF uniformly bounded with thin support (Theorem H).
+
+```text
+WP5-OBS-2 — bounded-coupling relative-determinant route: CLOSED-NEGATIVE
+```
+
+Heat · relative zeta · perturbation det = Laplace · Mellin · Cauchy transforms of bounded `ξ`.
+Complements Theorem G (order/genus/density pincer on `det₂(I − zK_σ)`) and C3 (pair determinant
+by SSF boundedness). Same verdict class, different objects.
+
+**Live continuation:** L1 unbounded/relative category · L2 WP5c u-flow · L3 prime-carrying ladder.
+Prime-carrying relocation is **forced** (R1 requires unbounded `ξ` at `√λ log λ` scale).

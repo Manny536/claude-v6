@@ -100,6 +100,8 @@ L2-5
 WP5-OBS-1
 CSC-F1
 WP5a / WP5b / WP5c corridors
+WP5b bounded-lane closure (Theorem H, WP5-OBS-2) — V6.5 July 2026
+Fable 5 `PEAICE-CLAUDEV6-WP5B-SCAFFOLD-001` · Grok TERMINAL-004 extraction
 Fable 5 sign-off under h < 1
 ```
 
