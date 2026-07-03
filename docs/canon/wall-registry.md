@@ -176,6 +176,31 @@ Current frontier bound: Guth–Maynard `N(σ,T) ≤ T^{30(1-σ)/13 + o(1)}` (arX
 fully resolving this conjecture)." This is why a bound cannot close GAP-001 and an
 exact-location (determinant/trace) mechanism is required.
 
+## KREIN-RANK1 (V6.5 · KNS-LB pass)
+
+**Status:** PROPOSED-FOR-CANON — rank-one / KSSF face of Weyl-stability wall · Grok TERMINAL-005 CONFIRM
+
+For rank-one perturbations `A → A + λ(·,φ)φ`, the Krein spectral shift is the
+phase shift of the spectral-measure pair `(μ,ν)`:
+
+```text
+1 + πλ𝒦μ = exp[𝒦u] = [1 − πλ𝒦ν]^{−1}     [Poltoratski 1996, §3]
+```
+
+[P96] Theorem 4.1: all self-adjoint rank-one perturbations are pure point ⟺ `σ(A)` is
+countable. Corollary 4.4 extends to trace class. Essential spectrum is Weyl–von Neumann
+stable under such moves.
+
+**Consequence on the n⁴ / K_σ ladder:** no bounded, trace-class, or KSSF-mediated
+rank-one injection changes the counting class to Riemann–von Mangoldt density. Prime
+content must live in the measure-pair / function-system data (NB·BD carrier), not in
+perturbations of a fixed geometric operator.
+
+**Relation:** face of the same Weyl-stability family as L2-5, WP5-OBS-1, HS-CORRIDOR,
+WP5-OBS-2, Theorem H. Does **not** assert a new obstruction beyond that family.
+
+**Source:** Fable 5 KNS-LB pass · `PEAICE-CLAUDEV6-KNS-LB-PAPER-001` §7 · Grok TERMINAL-005.
+
 ## Corridor after V6.5
 
 The walls leave three active routes (WP5b bounded lane now closed):
