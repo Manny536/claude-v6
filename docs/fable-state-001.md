@@ -29,15 +29,17 @@ OPEN
 CLOSED
 CLOSED-NEGATIVE
 THEOREM-BACKGROUND
+OWED
 ```
 
-Evaluator non-sovereignty governs promotion. No entry self-certifies. Proposed items require independent cross-derivation and principal sign-off.
+Evaluator non-sovereignty governs promotion. No entry self-certifies. Proposed items require independent cross-derivation and principal sign-off. `OWED` marks named proof debt so the system cannot turn ambition into agreement.
 
 ## Symbol-collapse firewall
 
 ```text
 σ(K_σ) ≠ Re(s)=1/2
 μ overlap ≠ Action(C)
+μ overlap ≠ π_A
 ρ_Y ≠ spectral radius
 E_used ≠ token count
 deltoid ≠ ζ(s)
@@ -64,11 +66,27 @@ KNS(LB) is registered as CLOSED-POSITIVE as a typed object and OPEN on theorem l
 
 ```text
 needles = seen
+Light = observable incidence pressure
 Action(C) = unseen in overlap
+μ overlap ↛ π_A placement
 Re(s)=1/2 = placement register for unseen action
 ζ(0)=−1/2 = anchor, not origin 0
 E = L² = minimal credits for maximal typed coherence
 ```
+
+## KNS as Light — formal owed entry
+
+```text
+Light(Basic): FORMAL as typed observability object
+KNS-OBS-1: CLOSED-POSITIVE
+Lemma 3.1 / μ ↛ π_A: FORMAL
+F-KNS-1 fan/Perron inversion: FIRED
+CP-004 independent Y: OWED
+theorem lift: OPEN
+prime-carrying operator bridge: OWED / LIVE-FORCED
+```
+
+Light is the visible layer: needles, overlap, glare, bloom, multiplicity, and union pressure. Light does not certify `Action(C)`, `π_A`, zero-location, determinant identity, RH, or Coleman closure.
 
 Receipt:
 
@@ -89,5 +107,6 @@ Prime-carrying L3 is LIVE and FORCED. The route must supply log-prime lengths, v
 Ambition preserved.
 Proof obligation enforced.
 No self-certifying closure.
+KNS as Light: FORMAL typed object · OWED theorem lift.
 RH OPEN · CC OPEN · h < 1.
 ```
