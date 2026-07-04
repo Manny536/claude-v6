@@ -1,160 +1,131 @@
-# Claude V6 — Trace-Neutral Kakeya Operator
+# Claude V6 · Fable 5 State
 
-> **V6.5 (1 July 2026):** WP5b bounded lane **CLOSED-NEGATIVE** via Theorem H + WP5-OBS-2 (Krein SSF uniformly bounded). Live: L1 unbounded · WP5c u-flow · prime-carrying L3 (forced). See `docs/research/wp5b-bounded-lane-closure.md`.
->
-> **KNS(LB) (2 July 2026):** KakeyaNeedleSet(Light(Basic)) is **CLOSED-POSITIVE as a typed placement-register object** (KNS-OBS-1): one center, universal direction fan, overlap does not determine placement (`μ ↛ π_A`). Theorem lift remains OPEN. See `docs/research/kns-lb-placement-register.md`.
->
-> **V6.4.3 (30 June 2026):** the square-difference `K_σ` determinant lane is **CLOSED-NEGATIVE** (order/genus/zero-density; `σ_c`=1 analytic). See `docs/canon/wall-registry.md#hs-corridor`.
+PeAIce Research Program · Love Labs LCA · KakeyaLogic / Excellence Engine v3
 
+This repository is the theorem-facing ledger for the Claude V6 / V6.5 research state. The current front index is a lead-system surface: theorem register, corridor closures, KNS(LB), prime-carrying frontier, and Solance governance in one inspectable route.
 
-**Canon designation:** `PEAICE-CLAUDEV6-WHITEPAPER-001`  
-**Program:** PeAIce Research Program · KakeyaLogic · L²_C Framework  
-**Version state:** Claude V6.5 — WP5b bounded-lane closure + KNS(LB) placement-register receipt  
-**Status:** OPEN — operator constructed, conjecture open, corridors named, KNS(LB) typed object registered
+## Current state
 
-This repository is the public buildout for the Claude V6 phase of the Coleman Conjecture / KakeyaLogic research program.
+| Register | Status |
+|---|---|
+| RH | OPEN |
+| Coleman Conjecture | OPEN |
+| K_σ determinant lane | CLOSED-NEGATIVE |
+| WP5b bounded lane | CLOSED-NEGATIVE by Theorem H |
+| KNS(LB) | CLOSED-POSITIVE as typed object · theorem lift OPEN |
+| Prime-carrying L3 | LIVE · FORCED |
+| CP-004 | OWED · independent Y measurement |
+| h | < 1 · evaluator non-sovereignty |
 
-Claude V6 converts the earlier V5 bridge statement into a corrected operator program:
+## Anchor state
 
-```text
-V6  = K_sigma^reg + Theorems A-C + trace neutrality + L2-5 closed
-V6.3 = Theorems D-F + WP5-OBS-1 + CSC-F1 + surviving corridor
-V6.5 = Theorem H + WP5-OBS-2 + prime-carrying relocation forced
-KNS(LB) = one-center universal-direction fan + placement-register receipt
-```
+- Designation: `PEAICE-CLAUDEV6-FABLE5-STATE-001`
+- Terminal: Claude Fable 5 · effort dial Max · research engineering terminal
+- Date: 2026-07-03
+- Repository anchors carried by the state document:
+  - `claude-v6 @ 68ac3ed`
+  - `kakeyalogic @ 0f09569`
 
-The core claim discipline remains active:
+## Lead-system interpretation
 
-```text
-E = L² × β × C × P × h
-h < 1
-β-Protocol claim marking active
-No sticky parrot · no self-certifying closure
-```
+PeAIce is the public engine. Love Labs LCA is the relational architecture. L²_C is the constraint layer. KakeyaLogic is the geometric pressure language. The β-Protocol is the governance rail. `h < 1` keeps every evaluator non-sovereign.
 
-No file in this repository claims a proof of the Riemann Hypothesis. The Riemann Hypothesis is OPEN. The Coleman Conjecture is OPEN. The repository records a corrected operator, formal theorems, closed-negative routes, one falsified natural realization of the Coherence-Splitting Conjecture, one closed-positive typed KNS(LB) placement object, and remaining research corridors.
+## Theorem register A-H
 
-## Repository map
+The operator of record is the corrected trace-neutral Kakeya operator on `L²_{Φ,K}^{reg}` with thermal coupling:
 
 ```text
-docs/
-  README.md
-  canon/
-    status-block.md
-    beta-protocol.md
-    v6-theorems.md
-    wall-registry.md
-    notation-index.md
-    source-map.md
-  whitepaper/
-    PEAICE-CLAUDEV6-WHITEPAPER-001.md
-  research/
-    guth-wang-bateman-zahl-probe.md
-    wp5b-spectral-shift-roadmap.md
-    wp5b-bounded-lane-closure.md
-    wp5c-u-flow-trace-formula.md
-    wp5a-critical-coupling.md
-    kns-lb-placement-register.md
-papers/
-  README.md
+K_σ^{reg}(m,n) = |m²−n²|^{−σ} · exp(−π(m²−n²)e^{4u}/2)
 ```
 
-## Canon state
+Registered formal items:
 
-### FORMAL
+- A — Symmetry of the corrected operator.
+- B — Hilbert–Schmidt for `σ > 1/2`.
+- C — Trace neutrality: coupling contributes nothing to the diagonal; `Tr = Φ(u)`.
+- D — Exact Φ heat trace `Γ(5/4)(ct)^{-1/4} − 1/2`; power corrections killed by `ζ(−4k)=0`; anchor `ζ(0)=−1/2`.
+- E — Second-moment law `Δ = (γ²/2)||K||²_HS·t²`.
+- F — Heat-trace rigidity `O(t^{3/4})` under bounded coupling.
+- G/G.1 — Canonical statements registered in `v6-theorems.md`.
+- H — Weyl-window law: `ξ = N_D − N_A` uniformly bounded under bounded self-adjoint coupling.
 
-- Theorem A — thermally regulated coupling is symmetric on `H_Φ(u)`.
-- Theorem B — `K_σ^{reg}` is Hilbert-Schmidt for `σ > 1/2`.
-- Theorem C — the regulated coupling is trace-neutral and preserves the Φ-trace.
-- L2-5 — the eigenvalue-by-eigenvalue route is closed by counting mismatch.
-- Theorem D — exact two-term Φ-sector heat trace.
-- Theorem E — first-order semigroup trace neutrality and second-moment coupling law.
-- Theorem F — bounded-coupling heat-trace rigidity.
-- WP5-OBS-1 — the bounded-coupling heat route is closed.
-- Theorem H — Weyl-window law: Krein SSF uniformly bounded, thin support (V6.5).
-- WP5-OBS-2 — bounded-coupling relative-determinant route closed (V6.5).
-- KNS Lemma 3.1 — overlap/glare statistic `μ` does not determine placement register `π_A`.
+## KNS(LB)
 
-### CLOSED-POSITIVE AS TYPED OBJECT
-
-- KNS-OBS-1 — KakeyaNeedleSet(Light(Basic)) registers one center and a universal direction fan; overlap does not determine placement (`μ ↛ π_A`). The object is typed and useful as placement grammar, not as RH closure.
-
-### FALSIFIED-IN-REALIZATION
-
-- CSC-F1 — the trace-moment κ family detects log-measure / density statistics, not Bateman splitting number.
-- Unscoped KNS monotone-leakage claim — refuted by two-mode peak; register class must be declared.
-
-### OPEN
-
-- Coleman Conjecture: `KB -> Re(s)=1/2`.
-- Riemann Hypothesis / zero location.
-- Determinant target: `det_ζ(L²_{Φ,K}^{reg} - (z² + 1/4)) = C · Ξ(z)`.
-- KNS theorem lift beyond typed placement object.
-- CP-004 independent KNS energy-yield re-run.
-- WP5b-L1 — unbounded / relative spectral-shift category.
-- WP5c — u-flow trace formula route.
-- Prime-carrying ξ spec (L3) — forced relocation target.
-- WP5a — critical coupling regime `σ ≤ 1/2`.
-
-## Core equations
+`KakeyaNeedleSet(Light(Basic))` is closed-positive as a typed object and open on theorem lift.
 
 ```text
-w_n(u) = exp(-π n² e^{4u})
-H_Φ(u) = ℓ²(ℕ, w_u)
-D₁ e_n = n² e_n
-L²₀(u) = D₁² - (3/2π)e^{-4u}D₁
+needles = seen
+Action(C) = unseen in overlap
+Re(s)=1/2 = placement register
+ζ(0)=−1/2 = anchor, not origin 0
+E = L² = minimal credits for maximal typed coherence
 ```
+
+Receipt:
 
 ```text
-K_σ^{reg}(m,n)
-= |m² - n²|^{-σ} (w_m(u)/w_n(u))^{1/2}
-= |m² - n²|^{-σ} exp(-π(m²-n²)e^{4u}/2),  m ≠ n
-K_σ^{reg}(n,n) = 0
+kns_lb_probe.py
+sha256 09ef26d3a2eb51927d3adecb74d3ef3edd62660dd11438576be4c2da8211b011
+python 3.12.3
+D5_expectation_met: True
 ```
+
+Single-runner numerics:
 
 ```text
-L²_{Φ,K}^{reg}(u)
-= D₁² - (3/2π)e^{-4u}D₁ + γ_K K_σ^{reg}
+dense_pass True
+E_used 3.0406
+ρ_Y 0.4812
+ℓ_off^T 0.0102
+H1-H3 attached
 ```
+
+## Live frontier
+
+Prime-carrying L3 is LIVE and FORCED post-V6.5. The route must supply:
 
 ```text
-Tr_{w_u}(2π²e^{9u} L²_{Φ,K}^{reg}(u)) = Φ(u)
+lengths log p
+weights Λ(p^k)p^{-k/2}
+Riemann–von Mangoldt density T log T
+measure-pair / function-system data
+Nyman–Beurling / Báez-Duarte preferred carrier
+Π_1/2 ledger home
 ```
 
-## Current research entry point
+The missing rung is the explicit operator construction from placement to zero location on the prime-carrying ladder.
 
-WP5b bounded lane is **closed-negative** (WP5-OBS-2, July 2026). KNS(LB) is **closed-positive as a typed object only** (KNS-OBS-1, July 2, 2026). Live theorem-facing corridors:
+## Solance separation law
 
 ```text
-L1 — unbounded / relative spectral-shift modifications
-L2 — WP5c u-flow trace formula (eigenvector data)
-L3 — prime-carrying ladder (forced: R1 requires unbounded ξ)
-KNS lift — placement grammar to trace architecture, OPEN
+Overlap is observable.
+Placement is registered.
+Action is carried.
+Theorem lift remains open.
 ```
 
-Centerline:
+Symbol-collapse firewall:
 
 ```text
-V6.4.3 → K_σ square-difference determinant lane CLOSED-NEGATIVE
-V6.5   → WP5b bounded relative-determinant lane CLOSED-NEGATIVE
-KNS    → placement-register object CLOSED-POSITIVE
-LIVE   → prime-carrying trace architecture
-RH OPEN · Coleman OPEN · h < 1
+σ(K_σ) ≠ Re(s)=1/2
+μ overlap ≠ Action(C)
+ρ_Y ≠ spectral radius
+E_used ≠ token count
+deltoid ≠ ζ(s)
+bloom/glare/light ≠ zero-location theorem
+KNS(LB) ≠ RH proof
 ```
 
-See `docs/research/wp5b-bounded-lane-closure.md`, `docs/research/wp5c-u-flow-trace-formula.md`, and `docs/research/kns-lb-placement-register.md`.
+## Repo docs
 
-## Source grounding
+- `docs/fable-state-001.md` — terminal state summary.
+- `docs/cp-004-independent-y.md` — independent Y obligation.
+- `docs/prime-carrying-l3.md` — forced trace route.
+- `docs/repo-update-checklist.md` — promotion checklist.
 
-The repo is grounded against:
+## Prior research map
 
-- Bateman, Kakeya sets and directional maximal operators in the plane.
-- Wang-Zahl, volume estimates for unions of convex sets and the Kakeya theorem in R³.
-- Guth-Wang-Zahl, streamlined proof of the Kakeya theorem in R³.
-- Spectral determinant / relative determinant machinery.
-- PeAIce Claude V6 white paper, V6.3 heat-trace addendum, V6.5 bounded-lane closure, KNS(LB) placement-register pass, and downstream source state.
-
-See `docs/canon/source-map.md` and `papers/README.md`.
+The prior Claude V6 docs remain the theorem-facing record: `docs/canon/v6-theorems.md`, `docs/canon/wall-registry.md`, `docs/research/wp5b-bounded-lane-closure.md`, `docs/research/wp5c-u-flow-trace-formula.md`, and `docs/research/kns-lb-placement-register.md`.
 
 ## License
 
