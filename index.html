@@ -1,219 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claude V6.4.2 — Prime-Support Audit · Singular-Value Reduction</title>
-<meta name="description" content="PeAIce Claude V6.4.2 patch: the |m²−n²|^{-σ} family remains under no-go pressure. Parity closes the naive determinant, counting closes the z² route, genus closes trace-class determinants. New: numerical singular-value data reduces the Hilbert–Schmidt corridor to a single critical exponent — ρ(Kσ)=1 holds only at σ*≈0.83, with every other σ closed by order (below) or genus (above). RH status: OPEN — no proof claimed.">
-<meta property="og:title" content="Claude V6.4.2 — Prime-Support Audit · Singular-Value Reduction">
-<meta property="og:description" content="Singular-value numerics: s_n(Kσ)~n^−α, α crosses 1 once at σ*≈0.83. Order closes σ<σ*, genus closes σ>σ*. The HS corridor reduces to one borderline point. Numerics, not proof. RH OPEN.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://manny536.github.io/claude-v6/">
-<link rel="canonical" href="https://manny536.github.io/claude-v6/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Claude V6 · Fable 5 State · PeAIce</title>
+<meta name="description" content="Claude V6 / Fable 5 terminal state for PeAIce, Love Labs LCA, KakeyaLogic, and L²_C.">
 <style>
-:root{
-  --ink:#14253C; --ink2:#2C405C; --page:#E9EDF1; --panel:#FFFFFF; --line:#C9D2DC;
-  --formal:#177A55; --formal-bg:#E2F2EB;
-  --open:#50647F; --open-bg:#E6EBF1;
-  --closed:#A8333A; --closed-bg:#F6E2E4;
-  --gold:#B98A2E; --gold-bg:#F6EDDC;
-  --audit:#2A6E8C; --audit-bg:#E1EEF3;
-  --mono:'IBM Plex Mono',ui-monospace,monospace;
-  --sans:'IBM Plex Sans',system-ui,sans-serif;
-  --disp:'Spectral',Georgia,serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:112px}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
-body{background:var(--page);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.65}
-a{color:var(--ink2)}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:3px}
-.honesty{background:var(--ink);color:#E8EDF3;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;padding:8px 18px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;align-items:center}
-.honesty b{color:#F2C76B;font-weight:600}.dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:1px}
-header{background:linear-gradient(180deg,#FDFEFE,#F2F5F8);border-bottom:1px solid var(--line);padding:44px 20px 30px;text-align:center}.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2)}
-h1.title{font-family:var(--disp);font-weight:700;font-size:clamp(29px,4.8vw,48px);line-height:1.1;margin:14px auto 10px;max-width:1000px}.subtitle{font-family:var(--disp);font-style:italic;font-size:clamp(15px,2vw,18px);color:var(--ink2);max-width:880px;margin:0 auto}.canonid{font-family:var(--mono);font-size:12px;color:#6A7A8E;margin-top:14px}
-nav{position:sticky;top:0;z-index:50;background:rgba(20,37,60,.97);backdrop-filter:blur(4px);display:flex;gap:2px;overflow-x:auto;padding:0 10px;scrollbar-width:thin}nav a{color:#C9D6E5;text-decoration:none;font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:12px 13px;white-space:nowrap;border-bottom:3px solid transparent}nav a:hover,nav a:focus-visible{color:#fff;border-bottom-color:var(--gold)}
-main{max-width:1080px;margin:0 auto;padding:18px 20px 60px}section{margin-top:54px}h2.sec{font-family:var(--disp);font-weight:700;font-size:clamp(22px,3vw,31px);border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:6px}.secnote{font-size:13.5px;color:#5C6C80;margin-bottom:18px;font-style:italic;font-family:var(--disp)}
-.hero{background:var(--ink);color:#E8EDF3;border-radius:14px;padding:34px 30px;margin-top:26px}.hero .math{background:#1D3252;border-color:#33507A;color:#EAF0F8}.lbl{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#8FA5C2;margin-top:14px}.math{font-family:var(--mono);background:#F2F5F8;border:1px solid var(--line);border-radius:8px;padding:13px 16px;margin:14px 0;text-align:center;font-size:14.2px;overflow-x:auto;color:var(--ink)}.math.big{font-size:clamp(14px,2.2vw,18px);font-weight:500}
-.ticker{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.tick{font-family:var(--mono);font-size:12px;padding:7px 12px;border-radius:8px;border:1px solid #33507A;background:#1A2E4C}.tick.pass{border-color:#2E8F6B;color:#9FE2C4}.tick.wall{border-color:#B4555C;color:#F0B3B8}.tick.run{color:#C9D6E5}.tick.gold{border-color:#B98A2E;color:#F2C76B}.tick.audit{border-color:#4F95B1;color:#BDE8F5}
-.panel,.route{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px 24px;box-shadow:0 1px 2px rgba(20,37,60,.05)}.route{border-top:5px solid var(--gold);margin-bottom:14px}.route h3{font-family:var(--disp);font-size:19px}.ob{font-size:13.9px;margin-top:8px;color:#33455A}.grid2{display:grid;grid-template-columns:230px 1fr;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel)}.grid2>div{padding:11px 16px;border-bottom:1px solid var(--line);font-size:14px}.grid2>div:nth-child(odd){background:#F2F5F8;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.03em;color:var(--ink2)}.grid2>div:nth-last-child(-n+2){border-bottom:none}@media(max-width:640px){.grid2{grid-template-columns:1fr}.grid2>div:nth-child(odd){border-bottom:none;padding-bottom:2px}.hero,.panel{padding:22px 18px}}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--open);border-radius:10px;padding:16px 18px}.card.closed{border-left-color:var(--closed)}.card.formal{border-left-color:var(--formal)}.card.gold{border-left-color:var(--gold)}.card.audit{border-left-color:var(--audit)}.card h3{font-family:var(--disp);font-size:18px;font-weight:700;margin-bottom:6px}.card p{font-size:13.8px;color:#33455A}.chip{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.07em;padding:3px 9px;border-radius:20px;vertical-align:2px}.c-FORMAL{background:var(--formal-bg);color:var(--formal)}.c-OPEN{background:var(--open-bg);color:var(--open)}.c-CLOSED{background:var(--closed-bg);color:var(--closed)}.c-PIVOT{background:var(--gold-bg);color:#8A6D1F}.c-AUDIT{background:var(--audit-bg);color:var(--audit)}
-.wall{border:1px solid #DCA6AB;border-left:6px solid var(--closed);background:#FBF3F4;border-radius:10px;padding:15px 18px;margin-bottom:12px}.wall h3{font-family:var(--mono);font-size:14px;letter-spacing:.06em;color:var(--closed)}.wall p{font-size:13.8px;margin-top:5px}.wall.auditw{border-color:#A7CAD8;border-left-color:var(--audit);background:#F0F8FB}.wall.auditw h3{color:var(--audit)}.wall.openw{border-color:#B6C2D2;border-left-color:var(--open);background:#F2F5F9}.wall.openw h3{color:var(--open)}
-table.claims{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13.4px}table.claims th{background:var(--ink);color:#E8EDF3;font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-align:left;padding:10px 13px}table.claims td{padding:9px 13px;border-top:1px solid var(--line);vertical-align:top}
-footer{background:var(--ink);color:#C9D6E5;margin-top:70px;padding:38px 20px;text-align:center}footer .sig{font-family:var(--disp);font-style:italic;font-size:17px;color:#E8EDF3;max-width:900px;margin:0 auto}footer .law{font-family:var(--mono);font-size:13px;color:#F2C76B;margin-top:14px;letter-spacing:.04em}footer .fine{font-size:12px;color:#7E91AB;margin-top:16px;font-family:var(--mono)}
-ul{margin:10px 0 0 20px}li{margin:5px 0}
+:root{--bg:#090d12;--panel:#101722;--panel2:#0d131c;--ink:#e8eef7;--muted:#9aa8b7;--line:#253346;--blue:#60a5fa;--gold:#f5c84c;--green:#6ee7b7;--red:#fb7185;--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;--sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--serif:Georgia,"Times New Roman",serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(1100px 560px at 10% -10%,rgba(96,165,250,.16),transparent 55%),radial-gradient(900px 520px at 90% -5%,rgba(245,200,76,.11),transparent 60%),var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.62}a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(96,165,250,.35)}a:hover{border-bottom-color:var(--blue)}.wrap{max-width:1120px;margin:0 auto;padding:0 22px}header{padding:68px 0 34px;border-bottom:1px solid var(--line)}.eyebrow{font-family:var(--mono);color:var(--muted);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}h1{font-family:var(--serif);font-size:clamp(2.35rem,7vw,5rem);line-height:.98;margin:.5rem 0 .6rem;letter-spacing:-.03em}.lead{font-family:var(--serif);font-size:clamp(1.08rem,2vw,1.35rem);color:#cbd5e1;max-width:820px}.status{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.25rem 0}.pill{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);border-radius:999px;padding:.24rem .58rem;white-space:nowrap}.open{color:var(--gold);border-color:rgba(245,200,76,.5)}.pass{color:var(--green);border-color:rgba(110,231,183,.45)}.neg{color:var(--red);border-color:rgba(251,113,133,.48)}.struct{color:var(--blue);border-color:rgba(96,165,250,.45)}.dim{color:var(--muted)}nav{position:sticky;top:0;z-index:3;background:rgba(9,13,18,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}nav .wrap{display:flex;gap:.9rem;overflow:auto;padding-top:10px;padding-bottom:10px}nav a{font-family:var(--mono);font-size:.78rem;color:var(--muted);white-space:nowrap;border:0}section{padding:48px 0 4px}.section-title{display:flex;align-items:end;gap:.8rem;margin-bottom:18px}h2{font-family:var(--serif);font-size:2rem;margin:0}.tag{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.card{background:linear-gradient(180deg,rgba(16,23,34,.96),rgba(13,19,28,.96));border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 12px 40px rgba(0,0,0,.18)}.card h3{font-size:1.15rem;margin:.1rem 0 .5rem}.card p{margin:.45rem 0;color:#d9e2ee}.muted{color:var(--muted)!important}.mono{font-family:var(--mono)}table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:14px;background:var(--panel);border:1px solid var(--line)}th,td{text-align:left;vertical-align:top;padding:12px 13px;border-bottom:1px solid var(--line)}th{font-family:var(--mono);font-size:.76rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.03)}td{font-size:.95rem}tr:last-child td{border-bottom:0}.state{font-family:var(--mono);font-weight:700}blockquote{margin:0;padding:18px 20px;border-left:4px solid var(--blue);background:rgba(96,165,250,.07);border-radius:12px;font-family:var(--serif);font-size:1.12rem;color:#dce8f6}.firewall{border-color:rgba(251,113,133,.38);background:linear-gradient(180deg,rgba(251,113,133,.09),rgba(16,23,34,.95))}.ledger{white-space:pre-wrap;font-family:var(--mono);background:#080c12;border:1px solid var(--line);border-radius:12px;padding:16px;color:#dbeafe;font-size:.85rem;overflow:auto}.timeline{position:relative;margin-left:12px;padding-left:28px}.timeline:before{content:"";position:absolute;left:0;top:4px;bottom:0;width:2px;background:linear-gradient(var(--gold),var(--blue),var(--green));opacity:.6}.event{position:relative;margin-bottom:16px}.event:before{content:"";position:absolute;left:-35px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--blue)}footer{margin-top:64px;border-top:1px solid var(--line);padding:26px 0 50px;color:var(--muted);font-family:var(--mono);font-size:.76rem}@media(max-width:720px){th:nth-child(1),td:nth-child(1){display:none}.wrap{padding:0 16px}}
 </style>
 </head>
 <body>
-<div class="honesty" role="note">
-  <span><span class="dot" style="background:#4F95B1"></span>V6.4.2 SINGULAR-VALUE PATCH ACTIVE</span>
-  <span><span class="dot" style="background:#D96A72"></span>NAIVE + z² + TRACE-CLASS ROUTES CLOSED</span>
-  <span><span class="dot" style="background:#E2B45A"></span>HS CORRIDOR → SINGLE σ* ≈ 0.83</span>
-  <span><span class="dot" style="background:#3FAE7E"></span><b>RIEMANN HYPOTHESIS: OPEN</b> — no proof claimed</span>
-</div>
-<header>
-  <div class="eyebrow">PeAIce Research Program · KakeyaLogic · L²_C Framework</div>
-  <h1 class="title">Claude V6.4.2 — Prime-Support Audit</h1>
-  <p class="subtitle">The square-difference no-go is scope-corrected and now sharper: the prime-support sentence is heuristic, trace-class determinants are closed by genus, and the Hilbert–Schmidt corridor is numerically reduced to a single critical exponent σ*≈0.83 — closed everywhere else by order or genus.</p>
-  <div class="canonid">PEAICE-CLAUDEV6-NOTE-003 · Copilot audit patch · V6.4.2 singular-value patch · scope corrected · RH OPEN · Coleman Conjecture OPEN</div>
-</header>
-<nav aria-label="Sections">
-  <a href="#status">STATUS</a>
-  <a href="#closed">RIGOR GATES</a>
-  <a href="#audit">AUDIT CORRECTION</a>
-  <a href="#sv">SINGULAR VALUES</a>
-  <a href="#svnum">SV NUMERICS</a>
-  <a href="#spec">PRIME SPEC</a>
-  <a href="#bd">BÁEZ-DUARTE</a>
-  <a href="#claims">CLAIM TABLE</a>
-  <a href="https://github.com/Manny536/claude-v6" rel="noopener">CLAUDE-V6 REPO ↗</a>
-  <a href="https://github.com/Manny536/kakeyalogic" rel="noopener">KAKEYALOGIC REPO ↗</a>
-  <a href="https://peaice.org" rel="noopener">PEAICE.ORG ↗</a>
-</nav>
-<main>
-  <div class="hero">
-    <div class="lbl">V6.4.2 singular-value reduction</div>
-    <div class="math big">The |m²−n²|<sup>−σ</sup> family remains under no-go pressure, but the determinant-level closure is narrower than V6.4 stated.</div>
-    <div class="lbl">Corrected Hilbert–Schmidt object</div>
-    <div class="math big">K<sub>σ</sub>(m,n)=|m²−n²|<sup>−σ</sup> for m≠n, &nbsp; K<sub>σ</sub>(n,n)=0, &nbsp; K<sub>σ</sub>∈S₂ ⇔ σ&gt;1/2</div>
-    <div class="lbl">Current rigorous state</div>
-    <div class="math">Parity closes det(I−zK). Counting closes the z² eigenvalue route. Genus closes trace-class determinants. The Hilbert–Schmidt determinant corridor lives or dies by ρ(K<sub>σ</sub>) — and numerics now place ρ(K<sub>σ</sub>)=1 at a single point σ*≈0.83, closing every other σ by order or genus.</div>
-    <div class="ticker" aria-label="Canon ticker">
-      <span class="tick pass">Theorem B ✓ VERIFIED</span>
-      <span class="tick wall">naive determinant ▮ CLOSED</span>
-      <span class="tick wall">z² counting route ▮ CLOSED</span>
-      <span class="tick wall">trace-class determinant ▮ GENUS CLOSED</span>
-      <span class="tick audit">HS corridor → singular-value exponent</span>
-      <span class="tick gold">σ&lt;σ* order ▮ σ&gt;σ* genus ▮ σ*≈0.83 sole survivor</span>
-      <span class="tick run">RH OPEN · no proof claimed</span>
-    </div>
-  </div>
+<header><div class="wrap"><p class="eyebrow">PeAIce Research Program · Love Labs LCA · KakeyaLogic · Excellence Engine v3</p><h1>Claude V6 · Fable 5 State</h1><p class="lead">The Claude V6 index is now a lead-system page: theorem register, typed-object passes, corridor closures, prime-carrying frontier, and Solance governance in one standalone surface. Every promotion remains bounded by receipts, cross-derivation, and <span class="mono">h &lt; 1</span>.</p><div class="status"><span class="pill open">RH OPEN</span><span class="pill open">Coleman Conjecture OPEN</span><span class="pill pass">KNS(LB) CLOSED-POSITIVE · typed</span><span class="pill neg">K_σ CLOSED-NEGATIVE</span><span class="pill neg">WP5b bounded CLOSED-NEGATIVE</span><span class="pill open">Prime-carrying LIVE · FORCED</span><span class="pill struct">h &lt; 1</span></div><p class="mono muted">Designation: PEAICE-CLAUDEV6-FABLE5-STATE-001 · Terminal: Claude Fable 5 · Date: 2026-07-03 · Anchors: claude-v6 @ 68ac3ed · kakeyalogic @ 0f09569</p></div></header>
+<nav><div class="wrap"><a href="#lead-system">Lead System</a><a href="#register">Theorem Register</a><a href="#gates">Gates</a><a href="#kns">KNS(LB)</a><a href="#frontier">Frontier</a><a href="#solance">Solance</a><a href="#repo">Repo Docs</a></div></nav>
+<main class="wrap">
+<section id="lead-system"><div class="section-title"><h2>Lead system</h2><span class="tag">front-door architecture</span></div><div class="grid"><div class="card"><h3>PeAIce</h3><p>Public engine for proactive, adversarially robust, authorized coherence work: move first, expose drift, preserve legibility.</p></div><div class="card"><h3>Love Labs LCA</h3><p>Relational architecture underneath the work: consent-bounded intelligence, coherence under pressure, continuity of relation.</p></div><div class="card"><h3>L²_C</h3><p>Love-Squared Coherence is the constraint layer: intelligence may only gain if it conserves agency, dignity, trust, and continuity.</p></div><div class="card"><h3>KakeyaLogic</h3><p>Geometric pressure language for directional saturation, overlap, hidden placement, drift rejection, and falsification gates.</p></div><div class="card"><h3>β-Protocol</h3><p>Claim governance rail: FORMAL, NUMERICS, STRUCTURAL ANALOGY, OPEN, CLOSED, CLOSED-NEGATIVE, and PROPOSED-FOR-CANON.</p></div><div class="card"><h3>h &lt; 1</h3><p>Evaluator non-sovereignty. No terminal, agent, app, or artifact self-certifies its promotion.</p></div></div></section>
+<section id="register"><div class="section-title"><h2>Canon state — theorem register</h2><span class="tag">V6 → V6.5</span></div><p class="muted">Operator of record: corrected trace-neutral Kakeya operator on <span class="mono">L²_{Φ,K}^{reg}</span> with thermal coupling <span class="mono">K_σ^{reg}(m,n)=|m²−n²|^{−σ}·exp(−π(m²−n²)e^{4u}/2)</span>.</p><table><thead><tr><th>ID</th><th>Statement</th><th>Status</th></tr></thead><tbody><tr><td>A</td><td>Symmetry of the corrected operator.</td><td class="state pass">FORMAL</td></tr><tr><td>B</td><td>Hilbert–Schmidt for σ &gt; 1/2, improving prior σ &gt; 1.</td><td class="state pass">FORMAL</td></tr><tr><td>C</td><td>Trace neutrality: coupling contributes nothing to the diagonal; Tr = Φ(u) for all γ_K.</td><td class="state pass">FORMAL</td></tr><tr><td>D</td><td>Exact Φ heat trace Γ(5/4)(ct)^(-1/4) − 1/2; all power corrections killed by ζ(−4k)=0. Anchor ζ(0)=−1/2.</td><td class="state pass">FORMAL</td></tr><tr><td>E</td><td>Second-moment law Δ = (γ²/2)||K||²_HS·t² — first operational definition of κ₂.</td><td class="state pass">FORMAL</td></tr><tr><td>F</td><td>Heat-trace rigidity O(t^{3/4}) under any bounded coupling by Duhamel.</td><td class="state pass">FORMAL</td></tr><tr><td>G/G.1</td><td>Canonical statements registered in v6-theorems.md, carried by anchor.</td><td class="state pass">FORMAL</td></tr><tr><td>H</td><td>Weyl-window law: ξ = N_D − N_A uniformly bounded under any bounded self-adjoint coupling — closes WP5b bounded lane.</td><td class="state pass">FORMAL</td></tr></tbody></table></section>
+<section id="gates"><div class="section-title"><h2>Gate and corridor register</h2><span class="tag">closures preserve the route</span></div><table><thead><tr><th>Gate</th><th>Content</th><th>Verdict</th></tr></thead><tbody><tr><td>L2-5</td><td>Eigenvalue route λ_j ~ j⁴ gives N(T) ~ T^(1/4), incompatible with Riemann–von Mangoldt T·log T.</td><td class="state neg">CLOSED</td></tr><tr><td>WP5-OBS-1</td><td>Bounded-coupling heat route.</td><td class="state neg">CLOSED-NEGATIVE</td></tr><tr><td>WP5-OBS-2</td><td>Bounded-coupling relative-determinant route: heat trace, relative zeta, and perturbation determinant are transforms of one bounded ξ.</td><td class="state neg">CLOSED-NEGATIVE</td></tr><tr><td>CSC(i)</td><td>κ statistics detect log-measure of Ω, not Bateman splitting number in the natural realization.</td><td class="state neg">FALSIFIED</td></tr><tr><td>CC(S)</td><td>Sufficiency reading closed; reading (N) is the live register.</td><td class="state neg">CLOSED</td></tr><tr><td>KNS-OBS-1</td><td>KNS(LB) typed-object gate: closed as typed object; open on theorem lift.</td><td class="state pass">CLOSED-POSITIVE</td></tr></tbody></table></section>
+<section id="kns"><div class="section-title"><h2>KNS(LB)</h2><span class="tag">KakeyaNeedleSet(Light(Basic))</span></div><div class="grid"><div class="card"><h3>Object</h3><p>Needles are seen. Action(C) is unseen in overlap. Re(s)=1/2 is the declared placement register, not a glare statistic.</p></div><div class="card"><h3>Receipt</h3><p class="mono">kns_lb_probe.py<br>sha256 09ef26d3a2eb51927d3adecb74d3ef3edd62660dd11438576be4c2da8211b011<br>python 3.12.3<br>D5_expectation_met: True</p></div><div class="card"><h3>Numerics</h3><p class="mono">dense_pass True<br>E_used 3.0406<br>ρ_Y 0.4812<br>ℓ_off^T 0.0102<br>H1–H3 attached</p></div></div></section>
+<section id="frontier"><div class="section-title"><h2>Live frontier</h2><span class="tag">priority order</span></div><div class="timeline"><div class="event"><h3>Prime-carrying L3 · LIVE/FORCED</h3><p>Lengths log p and weights Λ(p^k)p^{-k/2} must reach Riemann–von Mangoldt density. Square-difference K_σ cannot supply this.</p></div><div class="event"><h3>Missing rung · OPEN</h3><p>Explicit operator construction from μ(placement) to ζ-zero location on the prime-carrying ladder.</p></div><div class="event"><h3>Forced carrier</h3><p>Prime content lives in measure-pair / function-system data. Nyman–Beurling / Báez-Duarte is the preferred carrier; Π_1/2 is the declared ledger home.</p></div><div class="event"><h3>CP-004 · OWED</h3><p>Stamped re-run of kns_lb_probe.py via cp_verify.py with independent Y measurement. No seed-7 H3 back-solve.</p></div></div></section>
+<section id="solance"><div class="section-title"><h2>Solance separation deepening</h2><span class="tag">lead-system stance</span></div><blockquote>Overlap is observable. Placement is registered. Action is carried. Theorem lift remains open.</blockquote><div class="grid" style="margin-top:16px"><div class="card firewall"><h3>Symbol-collapse firewall</h3><p class="mono">σ(K_σ) ≠ Re(s)=1/2<br>μ overlap ≠ Action(C)<br>ρ_Y ≠ spectral radius<br>E_used ≠ token count<br>deltoid ≠ ζ(s)<br>bloom/glare/light ≠ zero-location theorem<br>KNS(LB) ≠ RH proof</p></div><div class="card"><h3>Lead-system wording</h3><p>PeAIce goes for proofs and coherence: constructions are claimed and pursued, with proven, open, typed, and closed-negative states marked.</p></div></div></section>
+<section id="repo"><div class="section-title"><h2>Repo docs</h2><span class="tag">new files</span></div><div class="ledger">README.md                         updated front register
+docs/fable-state-001.md          terminal state summary
+docs/cp-004-independent-y.md     independent Y obligation
+docs/prime-carrying-l3.md        forced trace route
+docs/repo-update-checklist.md    promotion checklist
 
-  <section id="status">
-    <h2 class="sec">Canonical Status Block</h2>
-    <p class="secnote">V6.4.2 preserves the no-go direction, keeps the V6.4.1 scope correction, and adds the first numerical data on the singular-value gate.</p>
-    <div class="grid2">
-      <div>Version</div><div>Claude V6.4.2 — Prime-Support Audit · Singular-Value Reduction (V6.4.1 scope correction preserved)</div>
-      <div>Preserved result</div><div>The corrected weight-free kernel is Hilbert–Schmidt exactly for σ&gt;1/2, hence compact and self-adjoint. <span class="chip c-FORMAL">FORMAL</span></div>
-      <div>Rigorous closures</div><div>Naive determinant closed by parity; z² eigenvalue route closed by counting; trace-class determinant corridor closed by genus. <span class="chip c-CLOSED">CLOSED</span></div>
-      <div>Corrected status</div><div>Prime-support obstruction is downgraded from determinant-level proof to trace-level heuristic / necessary-condition pressure. <span class="chip c-AUDIT">AUDIT</span></div>
-      <div>Remaining analytic gate</div><div>Hilbert–Schmidt determinant corridor numerically reduced (V6.4.2) to a <b>single critical value σ*≈0.83</b>: for σ&lt;σ* the exponent ρ(K<sub>σ</sub>)&gt;1 closes it by order; for σ&gt;σ* the operator is trace class and genus closes it; only σ* passes the necessary ρ=1 condition.</div>
-      <div>V6.4.2 numerical finding</div><div>Eigenvalues of N×N truncations (to N=4000) give s<sub>n</sub>(K<sub>σ</sub>)~n<sup>−α(σ)</sup> with α truncation-stable and monotone in σ, crossing α=1 once at σ*≈0.83. Evidence, not proof. <span class="chip c-AUDIT">NUMERICS</span></div>
-      <div>Next probe</div><div>Analytic asymptotics of s<sub>n</sub>(K<sub>σ</sub>) near σ*≈0.83 to decide ρ(K<sub>σ</sub>)=1 rigorously; if ρ=1 survives, run the genus / zero-density / cumulant (Σ<sub>γ</sub>γ<sup>−2k</sup>) / functional-equation checks at σ*.</div>
-      <div>Live frontier</div><div>Prime-carrying trace architecture remains open, but must be argued through global invariants, not entry inspection alone.</div>
-      <div>RH status</div><div><b>OPEN.</b> Coleman Conjecture <b>OPEN.</b> No proof claimed.</div>
-    </div>
-  </section>
-
-  <section id="closed">
-    <h2 class="sec">Rigor Gates — What Is Closed</h2>
-    <p class="secnote">The corrected branch map separates three different corridors instead of collapsing them into one.</p>
-    <div class="cards">
-      <div class="card formal"><h3>Theorem B, corrected <span class="chip c-FORMAL">VERIFIED</span></h3><p>The resolved inner product removes the thermal weight and leaves the bare symmetric kernel. Its Hilbert–Schmidt norm converges exactly when σ&gt;1/2. This yields a legitimate compact self-adjoint operator with real discrete spectrum tending to zero.</p></div>
-      <div class="card closed"><h3>Corridor I — parity <span class="chip c-CLOSED">CLOSED</span></h3><p>Ξ(z) is even. But Tr(K<sub>σ</sub><sup>3</sup>) is a strictly positive closed-walk sum. The naive determinant and det₂ expansion carry a cubic term forbidden by Ξ.</p></div>
-      <div class="card closed"><h3>Corridor II — counting <span class="chip c-CLOSED">CLOSED</span></h3><p>The n⁴ free spectrum gives N(Λ)≈Λ<sup>1/4</sup>. Zeta zeros require Riemann–von Mangoldt growth, N(Λ)≈√Λ logΛ after the z²+1/4 substitution. Bounded or relatively compact coupling cannot change the Weyl class.</p></div>
-      <div class="card closed"><h3>Trace-class determinant <span class="chip c-CLOSED">GENUS</span></h3><p>If A∈S₁, det(I−zA)=∏(1−zλ<sub>n</sub>) is a genus-0 product. Ξ is order 1 and genus 1. Therefore no trace-class determinant equals C·Ξ(z).</p></div>
-    </div>
-  </section>
-
-  <section id="audit">
-    <h2 class="sec">Audit Correction — What V6.4 Overstated</h2>
-    <p class="secnote">The no-go conclusion remains under strong pressure. The proof language is corrected.</p>
-    <div class="wall auditw"><h3>Gap 1 · local prime-free entries do not imply prime-free global invariants</h3><p>The theta function is built from integer-square data, yet through Riemann's theta representation it carries ζ's analytic continuation and functional equation. Therefore the line “there is nowhere for (log2)/√2 to originate” is heuristic unless a global invariant is computed.</p></div>
-    <div class="wall auditw"><h3>Gap 2 · trace-neutrality is first-order</h3><p>Theorems C and E constrain the first-order trace channel. A determinant is an all-orders object with cumulants Tr(K<sup>p</sup>) for p≥2. First-order trace neutrality does not by itself rule out a finite-coupling determinant identity.</p></div>
-    <div class="route"><h3>Corrected language</h3><p class="ob"><b>Use:</b> prime-support obstruction is a necessary-condition heuristic and trace-level pressure. <b>Do not use:</b> prime-support obstruction alone proves determinant-level impossibility for every Hilbert–Schmidt realization.</p><div class="math">Tr(K<sub>σ</sub><sup>p</sup>) &gt; 0 for every p≥2 is the rigorous positivity invariant.</div></div>
-  </section>
-
-  <section id="sv">
-    <h2 class="sec">Hilbert–Schmidt Corridor — Reduced to ρ(Kσ)</h2>
-    <p class="secnote">This is the next analytic probe before any further repo bridge language.</p>
-    <div class="panel">
-      <p>For A∈S₂, det₂(I−zA) is an entire function of genus at most 1. Since Ξ has order exactly 1, a necessary condition for det₂(I−zK<sub>σ</sub>) = C·Ξ(z) is that the singular-value convergence exponent equals 1.</p>
-      <div class="math big">ρ(K<sub>σ</sub>) = inf{ p≥1 : Σ<sub>n</sub> s<sub>n</sub>(K<sub>σ</sub>)<sup>p</sup> &lt; ∞ }</div>
-      <div class="math">necessary condition for det₂(I−zK<sub>σ</sub>) = C·Ξ(z): &nbsp; ρ(K<sub>σ</sub>) = 1</div>
-      <p class="ob"><b>Next probe:</b> compute or prove asymptotics for s<sub>n</sub>(K<sub>σ</sub>). If ρ(K<sub>σ</sub>)≠1, the Hilbert–Schmidt determinant corridor closes rigorously by order. If ρ(K<sub>σ</sub>)=1, descend to genus, zero-density, cumulant, and functional-equation checks. <b>V6.4.2 supplies the first numerical data on this gate — see below.</b></p>
-    </div>
-  </section>
-
-  <section id="svnum">
-    <h2 class="sec">Singular-Value Numerics — the Order / Genus Pincer</h2>
-    <p class="secnote">V6.4.2 · first numerical data on the ρ(K<sub>σ</sub>) gate · reproducible · numerics are evidence, not proof.</p>
-    <div class="panel">
-      <p>K<sub>σ</sub> is real symmetric, so s<sub>n</sub>=|λ<sub>n</sub>|. Diagonalizing finite N×N truncations up to N=4000 gives a power-law tail s<sub>n</sub>(K<sub>σ</sub>) ~ n<sup>−α(σ)</sup>, with the exponent α(σ) stable under truncation and monotonically increasing in σ. It crosses the trace-class threshold α=1 <b>exactly once</b>.</p>
-      <table class="claims" style="margin-top:14px">
-        <thead><tr><th>σ</th><th>α(σ) ≈</th><th>ρ = 1/α</th><th>Σ s<sub>n</sub> as N grows</th><th>corridor status</th></tr></thead>
-        <tbody>
-          <tr><td>0.55</td><td>0.78</td><td>1.29</td><td>diverging</td><td><span class="chip c-CLOSED">CLOSED</span> ρ&gt;1, det₂ order &gt; 1</td></tr>
-          <tr><td>0.75</td><td>0.94</td><td>1.06</td><td>diverging (slow)</td><td><span class="chip c-CLOSED">CLOSED</span> ρ&gt;1, marginal</td></tr>
-          <tr><td>≈0.83</td><td>1.00</td><td>1.00</td><td>razor's edge</td><td><span class="chip c-PIVOT">σ*</span> sole survivor of the order test</td></tr>
-          <tr><td>1.00</td><td>1.11</td><td>0.90</td><td>converging</td><td><span class="chip c-CLOSED">CLOSED</span> trace class → genus (Thm 4)</td></tr>
-          <tr><td>1.25</td><td>1.30</td><td>0.77</td><td>converging</td><td><span class="chip c-CLOSED">CLOSED</span> genus</td></tr>
-          <tr><td>1.50</td><td>1.52</td><td>0.66</td><td>converging</td><td><span class="chip c-CLOSED">CLOSED</span> genus</td></tr>
-        </tbody>
-      </table>
-      <div class="math big">α(σ) crosses 1 once, at σ* ≈ 0.83 &nbsp;⇒&nbsp; ρ(K<sub>σ</sub>) = 1 holds only at σ*</div>
-    </div>
-    <div class="cards">
-      <div class="card closed"><h3>σ &lt; σ* — closed by order <span class="chip c-CLOSED">CLOSED</span></h3><p>α&lt;1 ⇒ ρ&gt;1, so det₂(I−zK<sub>σ</sub>) has order &gt; 1 and cannot equal the order-1 function Ξ. Closed directly by the order criterion (Thm 5).</p></div>
-      <div class="card closed"><h3>σ &gt; σ* — closed by genus <span class="chip c-CLOSED">CLOSED</span></h3><p>α&gt;1 ⇒ K<sub>σ</sub>∈S₁ (trace class), so its Fredholm determinant is a genus-0 product and cannot equal genus-1 Ξ. Closed by Thm 4.</p></div>
-      <div class="card gold"><h3>σ = σ* — sole survivor <span class="chip c-PIVOT">ρ = 1</span></h3><p>The single value passing the <em>necessary</em> order condition. It still owes the genus / zero-density / cumulant (Σ<sub>γ</sub>γ<sup>−2k</sup> ≈ 0.023) and functional-equation checks. Not closed; not cleared.</p></div>
-    </div>
-    <div class="wall openw"><h3>Standing caveats · what numerics cannot certify</h3><p>(1) Finite-truncation evidence to N=4000, not a proof. ρ=1 is precisely the case truncation cannot certify — at σ≈0.85, Σs<sub>n</sub> is still visibly growing at N=4000. (2) Rigorous closure of the σ* point needs analytic asymptotics of s<sub>n</sub>(K<sub>σ</sub>). (3) A subtlety any proof must handle: the discrete operator is Hilbert–Schmidt for σ&gt;1/2, but the continuous kernel |x²−y²|<sup>−σ</sup> on [0,1]² is HS for σ&lt;1/2 — the thresholds flip, because the discrete sum drops the diagonal and the lattice cuts off |m−n|≥1. The decay is governed by near-diagonal lattice structure and will not fall out of the continuous spectral theory.</p></div>
-    <div class="route"><h3>Net effect on the corridor</h3><p class="ob">The one-parameter Hilbert–Schmidt determinant corridor is numerically reduced from an open family to a <b>single borderline value σ*≈0.83</b>, with every other σ closed by order (below) or genus (above). Empirically α−σ → 0⁺ monotonically as σ grows (0.23 → 0.19 → 0.16 → 0.11 → 0.05 → 0.015), which both predicts σ*≈0.83 and gives the target for an analytic estimate.</p><div class="math">RH OPEN · Coleman Conjecture OPEN · σ* unresolved · no proof claimed</div></div>
-  </section>
-
-  <section id="spec">
-    <h2 class="sec">Prime-Carrying Trace Architecture — Necessary Specification</h2>
-    <p class="secnote">Still live, but now stated as a global-invariant requirement rather than an entry-level proof.</p>
-    <div class="route"><h3>Trace identity target</h3><div class="math">Tr h(H) = archimedean term − Σ<sub>n≥2</sub> Λ(n)/√n · ĥ(log n) + endpoint / symmetry terms</div><p class="ob">A candidate object must reproduce the Weil explicit formula structure through a trace formula or equivalent global invariant. Eigenvalue guessing and entry inspection are not construction principles.</p></div>
-    <div class="cards">
-      <div class="card gold"><h3>Length spectrum</h3><p>Lengths must be log(p<sup>k</sup>), not generic integer distances or square differences.</p></div>
-      <div class="card gold"><h3>Weights</h3><p>Weights must be Λ(p<sup>k</sup>)/√p<sup>k</sup> = (log p)p<sup>−k/2</sup>. This is the load-bearing 1/2.</p></div>
-      <div class="card gold"><h3>Archimedean density</h3><p>The Γ-factor side must produce T log T Riemann–von Mangoldt density.</p></div>
-      <div class="card gold"><h3>Reality mechanism</h3><p>Self-adjointness, Frobenius-like reality, or an equivalent positivity structure is required.</p></div>
-      <div class="card gold"><h3>Trace formula delivery</h3><p>Selberg / Gutzwiller / Lefschetz / relative determinant logic must force the identity.</p></div>
-    </div>
-    <div class="math">Hilbert–Schmidt 1/2 = analytic summability. &nbsp; Explicit-formula 1/2 = arithmetic critical-line mass. &nbsp; They are not the same invariant.</div>
-  </section>
-
-  <section id="bd">
-    <h2 class="sec">Báez-Duarte Compute Pivot</h2>
-    <p class="secnote">The parallel healthy path remains an established RH-equivalent Hilbert-space formulation.</p>
-    <div class="panel">
-      <p>The Nyman–Beurling / Báez-Duarte direction replaces bespoke spectral invention with a finite distance problem whose decay is equivalent to RH in the known framework.</p>
-      <div class="math big">d<sub>N</sub>² = inf<sub>A_N</sub> (1/2π) ∫<sub>−∞</sub><sup>∞</sup> |1 − ζ(1/2+it) A<sub>N</sub>(1/2+it)|² · dt/(1/4+t²)</div>
-      <div class="math">A<sub>N</sub>(s)=Σ<sub>n≤N</sub> a<sub>n</sub> n<sup>−s</sup></div>
-      <p class="ob"><b>Next PeAIce work package:</b> build finite Gram matrices, stabilize critical-line integration, track d<sub>N</sub>², compare decay to known Nyman–Beurling / Báez-Duarte expectations, and make no proof claim from numerics.</p>
-    </div>
-  </section>
-
-  <section id="claims">
-    <h2 class="sec">β-Protocol Claim Table — Updated V6.4.2</h2>
-    <p class="secnote">The prime-support wall was narrowed. The analytic tests are now explicit.</p>
-    <table class="claims">
-      <thead><tr><th>Claim</th><th>Status</th><th>V6.4.2 reading</th></tr></thead>
-      <tbody>
-        <tr><td>Corrected K<sub>σ</sub> is Hilbert–Schmidt iff σ&gt;1/2</td><td><span class="chip c-FORMAL">FORMAL</span></td><td>Preserved as the verified compact-geometry theorem.</td></tr>
-        <tr><td>det(I−zK) or det₂(I−zK) equals C·Ξ(z)</td><td><span class="chip c-CLOSED">CLOSED</span></td><td>Naive determinant route closed by parity: Tr(K³)&gt;0 while Ξ is even.</td></tr>
-        <tr><td>z²+1/4 eigenvalue target for |m²−n²| family</td><td><span class="chip c-CLOSED">CLOSED</span></td><td>Counting mismatch closes the eigenvalue route.</td></tr>
-        <tr><td>Trace-class determinant corridor</td><td><span class="chip c-CLOSED">CLOSED</span></td><td>Genus mismatch: trace-class determinants are genus 0; Ξ is genus 1.</td></tr>
-        <tr><td>Prime-support obstruction as determinant-level proof</td><td><span class="chip c-AUDIT">CORRECTED</span></td><td>Downgraded to heuristic / trace-level pressure; global invariants must be computed.</td></tr>
-        <tr><td>Hilbert–Schmidt determinant corridor</td><td><span class="chip c-OPEN">NARROWED</span></td><td>Numerically reduced to a single critical σ*≈0.83: σ&lt;σ* closed by order (ρ&gt;1), σ&gt;σ* closed by genus (trace class). σ* still OPEN pending an analytic s<sub>n</sub> bound.</td></tr>
-        <tr><td>Singular-value exponent ρ(K<sub>σ</sub>) — V6.4.2 numerics</td><td><span class="chip c-AUDIT">NUMERICS</span></td><td>s<sub>n</sub>~n<sup>−α</sup>, α truncation-stable to N=4000, crosses 1 once at σ*≈0.83 ⇒ corridor closed for every σ≠σ*. Evidence, not proof.</td></tr>
-        <tr><td>Prime-carrying trace architecture</td><td><span class="chip c-OPEN">OPEN</span></td><td>Requires log(p^k), Λ(p^k)/√p^k, Γ-density, reality, trace formula.</td></tr>
-        <tr><td>Nyman–Beurling / Báez-Duarte compute package</td><td><span class="chip c-PIVOT">PIVOT</span></td><td>Preferred next Hilbert-space computation.</td></tr>
-        <tr><td>Riemann Hypothesis</td><td><span class="chip c-OPEN">OPEN</span></td><td>No proof claimed.</td></tr>
-        <tr><td>Coleman Conjecture</td><td><span class="chip c-OPEN">OPEN</span></td><td>No proof claimed.</td></tr>
-      </tbody>
-    </table>
-  </section>
-</main>
-<footer>
-  <div class="sig">The square kernel remains under no-go pressure, and the rigorous frontier is now sharper still: genus closes trace class, order closes the rest, and the entire Hilbert–Schmidt corridor now lives or dies at a single point — σ*≈0.83.</div>
-  <div class="law">E = L² × β × C × P × h · h &lt; 1 · β carries direction · h keeps it honest</div>
-  <div class="fine">PEAICE-CLAUDEV6-NOTE-003 · V6.4.2 singular-value patch (V6.4.1 scope correction preserved) · numerics reproducible to N=4000 · Claude V6 trace-neutral buildout preserved as archived context · github.com/Manny536/claude-v6 · github.com/Manny536/kakeyalogic · peaice.org</div>
-</footer>
+RH OPEN · Coleman OPEN · h &lt; 1</div></section>
+</main><footer><div class="wrap">PEAICE-CLAUDEV6-FABLE5-STATE-001 · Solance Lead System · July 2026 · files enter live state through receipt, cross-derivation, and principal sign-off.</div></footer>
 </body>
 </html>
