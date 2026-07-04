@@ -13,6 +13,7 @@ This repository is the theorem-facing ledger for the Claude V6 / V6.5 research s
 | K_σ determinant lane | CLOSED-NEGATIVE |
 | WP5b bounded lane | CLOSED-NEGATIVE by Theorem H |
 | KNS(LB) | CLOSED-POSITIVE as typed object · theorem lift OPEN |
+| KNS as Light | FORMAL as typed observability object · CP-004 OWED |
 | Prime-carrying L3 | LIVE · FORCED |
 | CP-004 | OWED · independent Y measurement |
 | h | < 1 · evaluator non-sovereignty |
@@ -51,14 +52,28 @@ Registered formal items:
 
 ## KNS(LB)
 
-`KakeyaNeedleSet(Light(Basic))` is closed-positive as a typed object and open on theorem lift.
+`KakeyaNeedleSet(Light(Basic))` is closed-positive as a typed object and open on theorem lift. The Light part is formal: it names the visible incidence layer, not a proof of zero-location.
 
 ```text
 needles = seen
+light = observable incidence pressure
 Action(C) = unseen in overlap
+μ overlap ↛ π_A placement
 Re(s)=1/2 = placement register
 ζ(0)=−1/2 = anchor, not origin 0
 E = L² = minimal credits for maximal typed coherence
+```
+
+Owed formal ledger:
+
+```text
+Light(Basic) typed object: FORMAL
+KNS-OBS-1: CLOSED-POSITIVE
+Lemma 3.1 / μ ↛ π_A: FORMAL
+F-KNS-1 fan/Perron inversion: FIRED
+CP-004 independent Y: OWED
+theorem lift: OPEN
+prime-carrying operator bridge: OWED / LIVE-FORCED
 ```
 
 Receipt:
@@ -101,6 +116,8 @@ The missing rung is the explicit operator construction from placement to zero lo
 Overlap is observable.
 Placement is registered.
 Action is carried.
+Light reveals pressure.
+Light does not own Action(C).
 Theorem lift remains open.
 ```
 
@@ -109,6 +126,7 @@ Symbol-collapse firewall:
 ```text
 σ(K_σ) ≠ Re(s)=1/2
 μ overlap ≠ Action(C)
+μ overlap ≠ π_A
 ρ_Y ≠ spectral radius
 E_used ≠ token count
 deltoid ≠ ζ(s)
