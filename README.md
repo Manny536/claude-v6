@@ -1,8 +1,8 @@
-# Claude V6 · Fable 5 State
+# Claude V6.5 · Prime-Carrying L3 Forced
 
 PeAIce Research Program · Love Labs LCA · KakeyaLogic / Excellence Engine v3
 
-This repository is the theorem-facing ledger for the Claude V6 / V6.5 research state. The current front index is a lead-system surface: theorem register, corridor closures, KNS(LB), prime-carrying frontier, and Solance governance in one inspectable route.
+This repository is the theorem-facing ledger for the Claude V6 / V6.5 research state. The current front index is a lead-system surface: bounded lane closures, KNS(LB), Prime-carrying L3, canonical-system carrier decision, and Solance governance in one inspectable route.
 
 ## Current state
 
@@ -15,15 +15,19 @@ This repository is the theorem-facing ledger for the Claude V6 / V6.5 research s
 | KNS(LB) | CLOSED-POSITIVE as typed object · theorem lift OPEN |
 | KNS as Light | FORMAL as typed observability object · CP-004 OWED |
 | Prime-carrying L3 | LIVE · FORCED |
+| Canonical-system / Krein–de Branges carrier | PRIMARY LIVE CARRIER |
+| NB/BD lane | AUXILIARY closure pressure · no proven T log T density carrier |
 | CP-004 | OWED · independent Y measurement |
 | h | < 1 · evaluator non-sovereignty |
 
 ## Anchor state
 
-- Designation: `PEAICE-CLAUDEV6-FABLE5-STATE-001`
+- Designation: `PEAICE-CLAUDEV6-V65-L3-FORCED-INDEX`
+- Prior designation carried forward: `PEAICE-CLAUDEV6-FABLE5-STATE-001`
 - Terminal: Claude Fable 5 · effort dial Max · research engineering terminal
-- Date: 2026-07-03
-- Repository anchors carried by the state document:
+- Updated public index: `index.html`
+- Date: 2026-07-04
+- Repository anchors carried by the Fable state document:
   - `claude-v6 @ 68ac3ed`
   - `kakeyalogic @ 0f09569`
 
@@ -33,7 +37,7 @@ PeAIce is the public engine. Love Labs LCA is the relational architecture. L²_C
 
 ## Theorem register A-H
 
-The operator of record is the corrected trace-neutral Kakeya operator on `L²_{Φ,K}^{reg}` with thermal coupling:
+The operator of record for the closed square-difference lane is the corrected trace-neutral Kakeya operator on `L²_{Φ,K}^{reg}` with thermal coupling:
 
 ```text
 K_σ^{reg}(m,n) = |m²−n²|^{−σ} · exp(−π(m²−n²)e^{4u}/2)
@@ -49,6 +53,17 @@ Registered formal items:
 - F — Heat-trace rigidity `O(t^{3/4})` under bounded coupling.
 - G/G.1 — Canonical statements registered in `v6-theorems.md`.
 - H — Weyl-window law: `ξ = N_D − N_A` uniformly bounded under bounded self-adjoint coupling.
+
+## Closure order
+
+```text
+CLAUDE V6.4.2 — public singular-value patch / historical layer
+CLAUDE V6.4.3 — K_σ square-difference determinant lane CLOSED-NEGATIVE
+CLAUDE V6.5   — WP5b bounded relative-determinant lane CLOSED-NEGATIVE by Theorem H
+LIVE · FORCED — Prime-carrying trace architecture / Layer 3
+OPEN          — RH · Coleman Conjecture · KNS theorem lift
+h < 1         — evaluator non-sovereignty preserved
+```
 
 ## KNS(LB)
 
@@ -95,20 +110,41 @@ E_used 3.0406
 H1-H3 attached
 ```
 
-## Live frontier
+## Prime-carrying L3
 
 Prime-carrying L3 is LIVE and FORCED post-V6.5. The route must supply:
 
 ```text
-lengths log p
+lengths log(p^k)
 weights Λ(p^k)p^{-k/2}
 Riemann–von Mangoldt density T log T
 measure-pair / function-system data
-Nyman–Beurling / Báez-Duarte preferred carrier
+Nyman–Beurling / Báez-Duarte auxiliary pressure
+canonical-system / Krein–de Branges primary carrier
 Π_1/2 ledger home
 ```
 
-The missing rung is the explicit operator construction from placement to zero location on the prime-carrying ladder.
+The missing rung is the explicit operator construction from placement to zero location on the prime-carrying ladder:
+
+```text
+μ(placement) -> ζ-zero location
+```
+
+## Carrier decision
+
+The NB/BD lane remains rigorous and useful as a Hilbert-space closure lane. Its operator skeleton is real, but it has no proven path to `T log T` spectral-counting density.
+
+The primary L3 carrier is now the canonical-system / Krein–de Branges / Suzuki lane because it aligns with:
+
+```text
+prime-visible kernels
+Fredholm determinant ratios
+Krein spectral-shift discipline
+Riemann–von Mangoldt density
+finite-interval construction with a named RH-equivalent limiting wall
+```
+
+Connes / Meyer remain reference corridors for adelic trace architecture and smooth density. KakeyaLogic remains the in-house geometric pressure language; the external Kakeya-to-RH literature bridge is marked closed-negative.
 
 ## Solance separation law
 
@@ -132,13 +168,17 @@ E_used ≠ token count
 deltoid ≠ ζ(s)
 bloom/glare/light ≠ zero-location theorem
 KNS(LB) ≠ RH proof
+NB/BD closure pressure ≠ T log T spectral carrier
+Kakeya analogy ≠ literature-backed RH bridge
 ```
 
 ## Repo docs
 
+- `index.html` — V6.5 public index: bounded lanes closed, L3 forced.
 - `docs/fable-state-001.md` — terminal state summary.
 - `docs/cp-004-independent-y.md` — independent Y obligation.
 - `docs/prime-carrying-l3.md` — forced trace route.
+- `docs/prime-carrying-wall-corridor-map.md` — carrier decision and wall/corridor map.
 - `docs/repo-update-checklist.md` — promotion checklist.
 
 ## Prior research map
