@@ -91,3 +91,28 @@ These lanes must not be collapsed.
 In EEv3 governance documents, `Re(s)=1/2` can function as a disciplined metaphor for directional neutrality.
 
 In the Step-4 operator program, `Re(s)=1/2` is load-bearing mathematics and every use must trace to a FORMAL or OPEN-marked statement.
+
+## Inspectable Intelligence (II)
+
+II is the field-validity layer that sits with the β-Protocol. Formal registration:
+
+- Local: [`inspectable-intelligence.md`](./inspectable-intelligence.md)
+- Primary: `kakeyalogic/docs/inspectable-intelligence.md` · `PEAICE-II-CANON-001`
+
+```text
+II-valid(ψ)  ⟺  L²_C(ψ)
+               ∧ name_bind_cadence(ψ) ≤ e_cadence(ψ)
+               ∧ h_eval(ψ) < 1
+               ∧ NonSticky(ψ)
+               ∧ GrainyEnough(ψ)
+
+Inspectable(ψ)  ↔  NonSticky(ψ)  ↔  Re(s)=1/2 neutrality regime
+```
+
+**II publishing rules under this protocol:**
+
+1. Interpretability is not a synonym for inspectability.
+2. Untagged load-bearing claims are publishing-ineligible.
+3. CLOSED-NEGATIVE routes stay closed until new structure appears.
+4. OPEN targets (RH, Coleman Conjecture, residual vanishing, prime-carrying missing rung) may not be self-certified closed.
+5. Compass wall honesty applies: walls named, wrong doors closed, missing rungs unclaimed.

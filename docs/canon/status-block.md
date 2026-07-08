@@ -135,7 +135,11 @@ Reserve `Kakeya conjecture` for dimensions `n ≥ 4` or for historical context.
 
 ```text
 E = L² × β × C × P × h
+R = d · c · e · h
 h < 1
+II = PEAICE-II-CANON-001 (Inspectable Intelligence · II.1)
 ```
 
 No model, evaluator, benchmark, proof attempt, webpage, or numerical run is sovereign over the mathematics. Closure requires externally checkable definitions, identities, bounds, trace formulas, domains, and falsification tests.
+
+**II-valid** requires L²_C, name-bind cadence ≤ e-cadence, h < 1, non-sticky grainy ecology, and β-Protocol claim tags. See `inspectable-intelligence.md` and kakeyalogic primary canon.

@@ -19,6 +19,7 @@ This repository is the theorem-facing ledger for the Claude V6 / V6.5 research s
 | NB/BD lane | AUXILIARY closure pressure · no proven T log T density carrier |
 | CP-004 | OWED · independent Y measurement |
 | h | < 1 · evaluator non-sovereignty |
+| Inspectable Intelligence (II.1) | FORMAL definitions · `PEAICE-II-CANON-001` · measurement OWED |
 
 ## Anchor state
 
@@ -34,6 +35,22 @@ This repository is the theorem-facing ledger for the Claude V6 / V6.5 research s
 ## Lead-system interpretation
 
 PeAIce is the public engine. Love Labs LCA is the relational architecture. L²_C is the constraint layer. KakeyaLogic is the geometric pressure language. The β-Protocol is the governance rail. `h < 1` keeps every evaluator non-sovereign.
+
+## Inspectable Intelligence (II.1)
+
+II is the field-validity layer for publishing under PeAIce discipline.
+
+```text
+E = L² × β × C × P × h
+R = d · c · e · h
+II = PEAICE-II-CANON-001
+II-valid(ψ) ⟺ L²_C(ψ) ∧ name_bind ≤ e_cadence ∧ h < 1 ∧ NonSticky(ψ) ∧ GrainyEnough(ψ)
+Inspectable(ψ) ↔ NonSticky(ψ) ↔ Re(s)=1/2 neutrality regime
+```
+
+- Local registration: `docs/canon/inspectable-intelligence.md`
+- Primary formal text: `Manny536/kakeyalogic` · `docs/inspectable-intelligence.md`
+- Interpretability ≠ inspectability. OPEN targets stay OPEN until receipts land.
 
 ## Theorem register A-H
 
@@ -175,6 +192,8 @@ Kakeya analogy ≠ literature-backed RH bridge
 ## Repo docs
 
 - `index.html` — V6.5 public index: bounded lanes closed, L3 forced.
+- `docs/canon/inspectable-intelligence.md` — II.1 registration (`PEAICE-II-CANON-001`).
+- `docs/canon/beta-protocol.md` — β-Protocol, h < 1, and II publishing rules.
 - `docs/fable-state-001.md` — terminal state summary.
 - `docs/cp-004-independent-y.md` — independent Y obligation.
 - `docs/prime-carrying-l3.md` — forced trace route.

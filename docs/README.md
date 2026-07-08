@@ -6,6 +6,7 @@ This directory holds the canonical text buildout for Claude V6.
 
 - `canon/status-block.md` — current canonical status block.
 - `canon/beta-protocol.md` — β-Protocol and h < 1 claim discipline.
+- `canon/inspectable-intelligence.md` — II.1 registration (`PEAICE-II-CANON-001`); primary formal text lives in kakeyalogic.
 - `canon/v6-theorems.md` — Theorems A–H, L2-5, WP5-OBS-1, WP5-OBS-2.
 - `canon/wall-registry.md` — closed routes, open walls, falsification events.
 - `canon/notation-index.md` — symbol table.
