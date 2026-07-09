@@ -16,3 +16,15 @@ Do not commit copyrighted full-text PDFs unless their license clearly permits re
 External papers ground terminology and known theorems. They do not by themselves upgrade any PeAIce / KakeyaLogic bridge claim to FORMAL.
 
 Use `docs/canon/source-map.md` for how each source enters the repo.
+
+
+## PeAIce arXiv lane
+
+Submit-facing build tree (primary):  
+https://github.com/Manny536/kakeyalogic/tree/main/arxiv
+
+- ARX-001 Grain Zero residual
+- ARX-002 KNS(LB) typed object
+- Shared BibTeX + grounding register
+
+This `papers/` folder remains for source notes only; do not commit copyrighted full-text PDFs.
