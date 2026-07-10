@@ -6,6 +6,7 @@ Grain Zero deepening pass (2026-07-08): typed residual formalization, threshold 
 
 | File | Role |
 |------|------|
+| `PEAICE-KAKEYALOGIC-DDATL-002-DEEPEN-001.md` | Markdown register for the promoted typed residual state |
 | `PEAICE-KAKEYALOGIC-DDATL-002-DEEPEN-001.pdf` | Deepen note (primary reading surface) |
 | `PEAICE-KAKEYALOGIC-DDATL-002-DEEPEN-001.docx` | Editable twin |
 
