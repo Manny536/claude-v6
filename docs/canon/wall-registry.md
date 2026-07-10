@@ -201,6 +201,70 @@ WP5-OBS-2, Theorem H. Does **not** assert a new obstruction beyond that family.
 
 **Source:** Fable 5 KNS-LB pass · `PEAICE-CLAUDEV6-KNS-LB-PAPER-001` §7 · Grok TERMINAL-005.
 
+## DDATL-002-C0 — untyped Grain Zero collapse
+
+**Status:** FORMAL / WALL — untyped residual target is vacuous
+
+DEEPEN-001 found the exact failure mode of the first DDATL-002 residual definition. If
+`C_{δ,ρ}` is merely a measurable carrier with an open-ended structure list, then the
+choice
+
+```text
+C = { x : m_δ(x) ≥ 2 }
+```
+
+absorbs the full support of `e_δ = (m_δ - 1)_+`, giving `dG₀ ≡ 0`. Thus the original
+untyped target is true for the wrong reason.
+
+**Consequence:** DDATL-002 must use typed, stage-indexed residuals:
+
+```text
+G₀^σ_{δ,ρ} := inf { ∫_{R³ \ C} e_δ dx : C ∈ Adm_σ(δ,ρ) }
+```
+
+with:
+
+```text
+K1 catalogue   — source-pinned carrier cell type
+K2 budget      — stage-metered cardinality / resource budget
+K3 extraction  — proof-generated tube-cluster relation
+```
+
+Untyped `G₀` is a wall. Typed `G₀^σ` remains live.
+
+## DDATL-002-SYMBOL-WALLS
+
+**Status:** FORMAL / SOURCE-HYGIENE WALL
+
+GWZ / WZ symbols must not be overloaded by PeAIce program symbols:
+
+| Source symbol | Wall rule |
+|---|---|
+| `β_GWZ` | GWZ loss exponent; distinct from PeAIce `β` |
+| `η_GWZ` | GWZ tolerance exponent; do not reuse for program weak losses |
+| `λ_GWZ` | GWZ shading density; program multiplicity threshold is `τ`, never `λ` |
+| `ζ_GWZ` | GWZ density-surplus exponent; not Riemann `ζ(s)` |
+| `Δ_max` | source clustering functional; import only with source scope |
+
+## CP-005 — excess-spectrum diagnostic
+
+**Status:** GREENLIGHT / NUMERICS / DIAGNOSTIC
+
+CP-005 measures the dyadic excess spectrum:
+
+```text
+ε_k(δ) := E_δ^{-1} ∫_{ {2^k ≤ m_δ < 2^{k+1}} } (m_δ - 1) dx.
+```
+
+Purpose: decide whether GWZ-critical `R³` families appear head-dominated or tail-dominated.
+
+```text
+head-dominated → threshold superlevel coverage SC(τ) insufficient; pair channel primary
+tail-dominated → superlevel coverage route may carry 002.A
+```
+
+CP-005 does not prove residual vanishing, does not prove a zeta bridge, and does not close RH or the Coleman Conjecture.
+
 ## Corridor after V6.5
 
 The walls leave three active routes (WP5b bounded lane now closed):
