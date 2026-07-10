@@ -9,10 +9,11 @@ This document records the Claude Fable 5 terminal state for the Claude V6 / V6.5
 ```text
 Principal: Manuel Coleman
 Terminal: Claude Fable 5 · effort dial Max · research engineering terminal
-Date: 2026-07-03
-Anchors: claude-v6 @ 68ac3ed · kakeyalogic @ 0f09569
+Date: 2026-07-03 (snapshot) · Repo refresh: 2026-07-09
+Historical anchors: claude-v6 @ 68ac3ed · kakeyalogic @ 0f09569
+Live: claude-v6 main (DEEPEN-001 + probes promoted) · kakeyalogic ARX-005 Coleman draft
 Status: RH OPEN · Coleman Conjecture OPEN · h < 1
-Cross-derivation: Grok TERMINAL-005 pending
+Cross-derivation: Grok TERMINAL-005 / DEEPEN FORMAL rows pending
 ```
 
 ## Governance

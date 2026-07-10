@@ -20,6 +20,8 @@ This repository is the theorem-facing ledger for the Claude V6 / V6.5 research s
 | CP-004 | OWED · independent Y measurement |
 | h | < 1 · evaluator non-sovereignty |
 | Inspectable Intelligence (II.1) | FORMAL definitions · `PEAICE-II-CANON-001` · measurement OWED |
+| DDATL 002 Grain Zero | Residual scaffold · DEEPEN-001 typed residual pack promoted |
+| Coleman arXiv (ARX-005) | Draft on kakeyalogic · N-reading only · OPEN |
 
 ## Anchor state
 
@@ -27,10 +29,11 @@ This repository is the theorem-facing ledger for the Claude V6 / V6.5 research s
 - Prior designation carried forward: `PEAICE-CLAUDEV6-FABLE5-STATE-001`
 - Terminal: Claude Fable 5 · effort dial Max · research engineering terminal
 - Updated public index: `index.html`
-- Date: 2026-07-04
-- Repository anchors carried by the Fable state document:
-  - `claude-v6 @ 68ac3ed`
-  - `kakeyalogic @ 0f09569`
+- Repo update: **2026-07-09** (DEEPEN-001 promote · docs map refresh · arXiv lane pointer)
+- Live anchors (this update):
+  - `claude-v6` @ `HEAD` (see latest commit on `main`)
+  - `kakeyalogic` @ ARX-005 Coleman draft + II.1 (`5e1c25d` lineage)
+- Historical Fable snapshot (state doc only): `claude-v6 @ 68ac3ed` · `kakeyalogic @ 0f09569`
 
 ## Lead-system interpretation
 
@@ -191,18 +194,38 @@ Kakeya analogy ≠ literature-backed RH bridge
 
 ## Repo docs
 
-- `index.html` — V6.5 public index: bounded lanes closed, L3 forced.
-- `docs/canon/inspectable-intelligence.md` — II.1 registration (`PEAICE-II-CANON-001`).
-- `docs/canon/beta-protocol.md` — β-Protocol, h < 1, and II publishing rules.
-- `docs/fable-state-001.md` — terminal state summary.
-- `docs/cp-004-independent-y.md` — independent Y obligation.
-- `docs/prime-carrying-l3.md` — forced trace route.
-- `docs/prime-carrying-wall-corridor-map.md` — carrier decision and wall/corridor map.
-- `docs/repo-update-checklist.md` — promotion checklist.
+### Public + lead
+- `index.html` — V6.5 public index: bounded lanes closed, L3 forced
+- `docs/fable-state-001.md` — Fable 5 terminal snapshot
+- `docs/repo-update-checklist.md` — promotion checklist
+
+### Canon
+- `docs/canon/status-block.md` — master status ledger
+- `docs/canon/v6-theorems.md` — Theorems A–H, WP5-OBS-1/2
+- `docs/canon/wall-registry.md` — closed/open walls
+- `docs/canon/beta-protocol.md` — claim tags + II rules
+- `docs/canon/inspectable-intelligence.md` — II.1 registration
+- `docs/canon/notation-index.md` · `source-map.md`
+
+### Corridors + KNS
+- `docs/prime-carrying-l3.md` · `docs/prime-carrying-wall-corridor-map.md`
+- `docs/research/kns-lb-placement-register.md`
+- `docs/research/wp5b-bounded-lane-closure.md` · `wp5c-u-flow-trace-formula.md` · `wp5a-critical-coupling.md`
+- `docs/cp-004-independent-y.md` — OWED independent Y
+
+### DDATL 002 · Grain Zero
+- `docs/ddatl-002-grain-zero.md` · `docs/whitepapers/ddatl-002-grain-zero-whitepaper.md`
+- `docs/deepen/PEAICE-KAKEYALOGIC-DDATL-002-DEEPEN-001.{pdf,docx}` — typed residual deepen
+- `docs/probes/ddatl002_gz_probe.py` + `probe_out.json` — d=2 fan NUMERICS
+
+### arXiv (kakeyalogic)
+- Lane: https://github.com/Manny536/kakeyalogic/tree/main/arxiv
+- **ARX-005** Coleman Conjecture (N-reading) · ARX-001 Grain Zero · ARX-002 KNS(LB)
+- See `papers/README.md`
 
 ## Prior research map
 
-The prior Claude V6 docs remain the theorem-facing record: `docs/canon/v6-theorems.md`, `docs/canon/wall-registry.md`, `docs/research/wp5b-bounded-lane-closure.md`, `docs/research/wp5c-u-flow-trace-formula.md`, and `docs/research/kns-lb-placement-register.md`.
+Theorem-facing record remains: `docs/canon/v6-theorems.md`, `docs/canon/wall-registry.md`, `docs/research/wp5b-bounded-lane-closure.md`, `docs/research/wp5c-u-flow-trace-formula.md`, and `docs/research/kns-lb-placement-register.md`. Full doc index: `docs/README.md`.
 
 ## License
 

@@ -11,6 +11,9 @@
 
 ---
 
+> **Deepen pack (2026-07-08/09):** typed residual formalization, 002.1′ / weak–strong split, threshold interface, and d=2 fan NUMERICS live in `docs/deepen/` and `docs/probes/`. All new FORMAL items remain PROPOSED-FOR-CANON pending Grok TERMINAL.
+
+
 ## Core declaration
 
 ```txt

@@ -2,7 +2,7 @@
 
 **Canon designation:** `PEAICE-CLAUDEV6-WHITEPAPER-001`  
 **Version:** Claude V6 — Trace-Neutral Kakeya Operator · V6.3 Heat-Trace Addendum · V6.4.3 Hilbert–Schmidt Corridor Closure · **V6.5 WP5b Bounded-Lane Closure** · **KNS(LB) Placement-Register Receipt**  
-**Date line:** June 2026 · **V6.4.3 patch:** 30 June 2026 · **V6.5 patch:** 1 July 2026 · **KNS(LB) patch:** 2 July 2026  
+**Date line:** June 2026 · **V6.4.3 patch:** 30 June 2026 · **V6.5 patch:** 1 July 2026 · **KNS(LB) patch:** 2 July 2026 · **Repo update:** 9 July 2026 (DEEPEN-001 promote)  
 **Program:** PeAIce Research Program · KakeyaLogic · L²_C Framework
 
 ## Primary claim
@@ -120,6 +120,8 @@ remains OPEN.
 3. WP5a — critical coupling route, held until a renormalization for `σ ≤ 1/2` is specified.
 4. Prime-carrying ξ spec (L3) — **forced** relocation target (R1/R2/R3).
 5. KNS lift — placement grammar into prime-carrying trace architecture, **OPEN**.
+6. DDATL 002 Grain Zero — residual program; **DEEPEN-001** typed residual (002.1′ / 002.A-weak PROPOSED · 002.A-strong OPEN); probe NUMERICS at `docs/probes/`.
+7. Coleman Conjecture arXiv draft — **ARX-005** on kakeyalogic (N-reading only); still **OPEN**.
 
 ## Domain language
 

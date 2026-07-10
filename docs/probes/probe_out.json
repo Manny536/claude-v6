@@ -1,0 +1,132 @@
+{
+ "stamp": {
+  "probe": "ddatl002_gz_probe.py",
+  "sha256": "3086659664bb209ca18ae98a865de0a8410a7292d26cd4fbe8ce0e0e26af0992",
+  "python": "3.12.3",
+  "numpy": "2.4.4",
+  "deterministic": true,
+  "rng": null
+ },
+ "results": [
+  {
+   "delta": 0.16,
+   "N": 20,
+   "grid": 1296,
+   "mass_grid": 8.0,
+   "mass_analytic": 8.0085,
+   "mass_relerr": 0.00106,
+   "U": 1.344,
+   "E": 6.656,
+   "identity_resid": 0.0,
+   "R_raw": 0.8311,
+   "profile_slope": NaN,
+   "head_share": 0.0683,
+   "head_thr": 3.36,
+   "supp_e_radius": 0.6505,
+   "spectrum": {
+    "2^1": 0.0683,
+    "2^2": 0.4404,
+    "2^3": 0.225,
+    "2^4": 0.2663
+   }
+  },
+  {
+   "delta": 0.08,
+   "N": 39,
+   "grid": 5041,
+   "mass_grid": 6.998,
+   "mass_analytic": 7.02414,
+   "mass_relerr": 0.00372,
+   "U": 1.0472,
+   "E": 5.9508,
+   "identity_resid": 0.0,
+   "R_raw": 0.8472,
+   "profile_slope": -1.37,
+   "head_share": 0.4071,
+   "head_thr": 6.38,
+   "supp_e_radius": 0.5731,
+   "spectrum": {
+    "2^1": 0.0469,
+    "2^2": 0.4336,
+    "2^3": 0.2595,
+    "2^4": 0.1179,
+    "2^5": 0.1422
+   }
+  },
+  {
+   "delta": 0.04,
+   "N": 79,
+   "grid": 19881,
+   "mass_grid": 6.7197,
+   "mass_analytic": 6.7171,
+   "mass_relerr": 0.00039,
+   "U": 0.9142,
+   "E": 5.8055,
+   "identity_resid": 0.0,
+   "R_raw": 0.8643,
+   "profile_slope": -1.2,
+   "head_share": 0.6016,
+   "head_thr": 10.36,
+   "supp_e_radius": 0.5382,
+   "spectrum": {
+    "2^1": 0.0203,
+    "2^2": 0.433,
+    "2^3": 0.2733,
+    "2^4": 0.1371,
+    "2^5": 0.0614,
+    "2^6": 0.0749
+   }
+  },
+  {
+   "delta": 0.02,
+   "N": 157,
+   "grid": 78961,
+   "mass_grid": 6.47878,
+   "mass_analytic": 6.47729,
+   "mass_relerr": 0.00023,
+   "U": 0.84825,
+   "E": 5.63053,
+   "identity_resid": 0.0,
+   "R_raw": 0.8693,
+   "profile_slope": -1.182,
+   "head_share": 0.7204,
+   "head_thr": 15.3,
+   "supp_e_radius": 0.5189,
+   "spectrum": {
+    "2^1": 0.0101,
+    "2^2": 0.433,
+    "2^3": 0.2773,
+    "2^4": 0.1409,
+    "2^5": 0.0682,
+    "2^6": 0.0318,
+    "2^7": 0.0386
+   }
+  },
+  {
+   "delta": 0.01,
+   "N": 314,
+   "grid": 314721,
+   "mass_grid": 6.37696,
+   "mass_analytic": 6.37865,
+   "mass_relerr": 0.00026,
+   "U": 0.81663,
+   "E": 5.56033,
+   "identity_resid": 0.0,
+   "R_raw": 0.8717,
+   "profile_slope": -1.094,
+   "head_share": 0.7946,
+   "head_thr": 21.21,
+   "supp_e_radius": 0.5096,
+   "spectrum": {
+    "2^1": 0.0048,
+    "2^2": 0.4306,
+    "2^3": 0.2825,
+    "2^4": 0.1408,
+    "2^5": 0.0715,
+    "2^6": 0.034,
+    "2^7": 0.0162,
+    "2^8": 0.0196
+   }
+  }
+ ]
+}
