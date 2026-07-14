@@ -265,6 +265,54 @@ tail-dominated → superlevel coverage route may carry 002.A
 
 CP-005 does not prove residual vanishing, does not prove a zeta bridge, and does not close RH or the Coleman Conjecture.
 
+## DNA-AK-001 — type, involution, and direction-space wall
+
+**Status:** REGISTERED STRUCTURAL ANALOGY / FORMAL IDEALIZED GEOMETRY · CP-DNA-002 NUMERICS · RH OPEN · COLEMAN OPEN
+
+`PEAICE-KAKEYALOGIC-DNA-AK-001-DEEPEN-001` keeps two alphabets separate:
+
+```text
+Q = {A,T,C,G}                       nucleobase identity
+H = {A-DNA,B-DNA,Z-DNA}             conformation / handedness
+x_n = (q_n,H_n,θ_n,z_n)             typed base occurrence
+F_n = 0                              compatibility / relational closure event
+C_DNA^strip = disjoint union_H C_H  proposed conformational bundle
+```
+
+The nontrivial-zero analogy attaches to the resolved condition `F_n = 0`, not to a declaration that the four nucleobase symbols are four literal zeros of `ζ`. The critical-strip analogy attaches to the typed A/B/Z conformational bundle, not to an identification with `{s : 0 < Re(s) < 1}`.
+
+The complex-plane flip is the antiholomorphic involution
+
+```text
+J(s) = 1 − conjugate(s),   Fix(J) = {Re(s)=1/2}.
+```
+
+It may organize a balance-locus comparison. It is not analytic continuation, and fixed-line symmetry is not zero-location.
+
+For an ideal helix `h(t)=(a cos t,a sin t,bt)`, normalized tangent directions have constant axial component and occupy a single latitude circle. `CP-DNA-002` calibrates A/B/Z and records:
+
+```text
+finite A/B/Z worst uncovered angular gap = 48.5854702498799 degrees
+finite union of tangent latitude circles = direction-incomplete
+```
+
+Direction coverage would still be weaker than Kakeya unit-segment containment. Variable axes, pitch, supercoiling, chromatin folding, and transition dynamics remain owed before any larger directional-family claim.
+
+**Coleman boundary:** this object can supply a biological antecedent for the N-reading—iterated local rotation and constrained coupling as prior structural grammar. It cannot supply the closed S-reading `Kakeya(R³) ⇒ RH`, and it does not construct a prime-carrying operator, a faithful RH invariant, or a zero-attractor potential independent of the zeros.
+
+Firewall:
+
+```text
+{A,T,C,G} ≠ nontrivial zeros of ζ
+{A-DNA,B-DNA,Z-DNA} ≠ the critical strip
+F_n=0 relational closure ≠ ζ(ρ)=0
+J-fixed balance ≠ analytic continuation
+finite helix-tangent latitude circles ≠ Kakeya set
+multiple biological scales/configurations ≠ a new hierarchy of mathematical infinities
+zero-attractor field with inserted zero set ≠ independent RH mechanism
+CP-DNA-002 PASS ≠ Kakeya / RH / Coleman certification
+```
+
 ## Corridor after V6.5
 
 The walls leave three active routes (WP5b bounded lane now closed):

@@ -1,0 +1,12 @@
+{
+  "name": "peaice-dna-kakeya-deepen",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Deterministic source for PEAICE-KAKEYALOGIC-DNA-AK-001-DEEPEN-001",
+  "scripts": {
+    "build": "node build_doc.js"
+  },
+  "dependencies": {
+    "docx": "9.6.1"
+  }
+}

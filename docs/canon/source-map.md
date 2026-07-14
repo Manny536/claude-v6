@@ -67,6 +67,40 @@ split(𝒯_Ω) is tree complexity, not measure density.
 
 That distinction drives CSC-F1.
 
+## DNA structural geometry
+
+### A-, B-, and Z-DNA calibration
+
+**Use in repo:** biological grounding for `PEAICE-KAKEYALOGIC-DNA-AK-001-DEEPEN-001` and the source-calibrated `CP-DNA-002` direction-space diagnostic.
+
+Primary anchors carried by the deepen pack:
+
+- Watson and Crick (1953), double-helical molecular structure.
+- Franklin (1953), A/B fiber forms and hydration-dependent structure.
+- Drew et al., B-DNA dodecamer, PDB `1BNA`.
+- Conner et al. (1982), right-handed A-DNA.
+- Wang et al. (1979), left-handed Z-DNA.
+- Saenger, Hunter, and Kennard (1986), A/B/Z hydration energetics.
+- Dickerson (1992), calibrated DNA structural parameters.
+
+Canonical imported objects:
+
+```text
+Q = {A,T,C,G}
+H = {A-DNA,B-DNA,Z-DNA}
+helical radius, pitch, rise, twist, inclination, handedness
+ideal-helix tangent latitude
+typed base occurrence x_n = (q_n,H_n,θ_n,z_n)
+```
+
+Discipline line:
+
+```text
+biological structure is KNOWN; idealized helix equations are FORMAL;
+zeta / critical-strip correspondences are STRUCTURAL ANALOGY;
+CP-DNA-002 is NUMERICS / DIAGNOSTIC.
+```
+
 ## Spectral determinants
 
 ### Spectral determinant reference
@@ -149,6 +183,21 @@ dense_pass: True
 twomode_peak: 0.9662 at δ = 1.0
 ```
 
+### DNA antecedent Kakeya deepen — July 13, 2026
+
+**Use in repo:** typed biological/formal comparison at the Kakeya–Coleman boundary.
+
+```text
+designation: PEAICE-KAKEYALOGIC-DNA-AK-001-DEEPEN-001
+companion: CP-DNA-002
+finite A/B/Z tangent-direction union: direction-incomplete
+worst uncovered angular gap: 48.5854702498799 degrees
+RH: OPEN
+Coleman Conjecture: OPEN
+```
+
+The pack preserves the N-reading of Coleman as an antecedent/dependency proposal only. It does not promote DNA to a Kakeya set or convert complementarity, chirality, multiple scale, or harmonic language into an RH mechanism.
+
 ### Thermal coupling correction
 
 **Use in repo:** source of the corrected operator and native-measure principle:
@@ -187,6 +236,7 @@ Coleman OPEN
 K_σ CLOSED-NEGATIVE
 WP5b bounded CLOSED-NEGATIVE
 KNS(LB) CLOSED-POSITIVE as typed object only
+DNA/Kakeya DEEPEN-001 registered as structural analogy / formal geometry only
 Prime-carrying trace architecture LIVE · FORCED
 h < 1
 ```

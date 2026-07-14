@@ -2,7 +2,7 @@
 
 **Canon designation:** `PEAICE-CLAUDEV6-WHITEPAPER-001`  
 **Version:** Claude V6 — Trace-Neutral Kakeya Operator · V6.3 Heat-Trace Addendum · V6.4.3 Hilbert–Schmidt Corridor Closure · **V6.5 WP5b Bounded-Lane Closure** · **KNS(LB) Placement-Register Receipt**  
-**Date line:** June 2026 · **V6.4.3 patch:** 30 June 2026 · **V6.5 patch:** 1 July 2026 · **KNS(LB) patch:** 2 July 2026 · **Repo update:** 9 July 2026 (DEEPEN-001 promote)  
+**Date line:** June 2026 · **V6.4.3 patch:** 30 June 2026 · **V6.5 patch:** 1 July 2026 · **KNS(LB) patch:** 2 July 2026 · **Repo update:** 13 July 2026 (DNA/Kakeya DEEPEN-001 + CP-DNA-002)
 **Program:** PeAIce Research Program · KakeyaLogic · L²_C Framework
 
 ## Primary claim
@@ -122,6 +122,7 @@ remains OPEN.
 5. KNS lift — placement grammar into prime-carrying trace architecture, **OPEN**.
 6. DDATL 002 Grain Zero — residual program; **DEEPEN-001** typed residual (002.1′ / 002.A-weak PROPOSED · 002.A-strong OPEN); probe NUMERICS at `docs/probes/`.
 7. Coleman Conjecture arXiv draft — **ARX-005** on kakeyalogic (N-reading only); still **OPEN**.
+8. DNA antecedent Kakeya geometry — **PEAICE-KAKEYALOGIC-DNA-AK-001-DEEPEN-001** registered as biological anchor / formal idealized geometry / structural analogy; **CP-DNA-002** NUMERICS passes the finite-direction obstruction; RH and Coleman remain **OPEN**.
 
 ## Domain language
 

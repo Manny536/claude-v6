@@ -39,6 +39,14 @@ Canonical text buildout for Claude V6 / **V6.5** (prime-carrying L3 forced).
 - `deepen/` — **DEEPEN-001** typed residual pack (PDF/DOCX)
 - `probes/ddatl002_gz_probe.py` — d=2 fan NUMERICS + `probe_out.json`
 
+## DNA · antecedent Kakeya geometry
+
+- `deepen/dna-kakeya/` — **PEAICE-KAKEYALOGIC-DNA-AK-001-DEEPEN-001** (PDF/DOCX, source, build pin)
+- `probes/dna_kakeya_calibrated_probe.py` — **CP-DNA-002** source-calibrated direction-space diagnostic
+- `probes/dna_kakeya_calibrated_probe_out.json` — stamped deterministic receipt
+
+**Claim discipline:** KNOWN biological anchor · FORMAL idealized helix geometry · STRUCTURAL ANALOGY · NUMERICS. A/B/Z helix-tangent circles are not direction-complete; DNA is not identified with a Kakeya set, zeta-zero carrier, prime generator, RH proof, or Coleman proof.
+
 ## Probes
 
 - `probes/README.md` — how to run receipts
