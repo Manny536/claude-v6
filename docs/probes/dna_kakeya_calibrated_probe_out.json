@@ -1,0 +1,57 @@
+{
+  "calibration_source": "Dickerson 1992 (Methods Enzymol. 211); Franklin 1953",
+  "checks": {
+    "abz_latitudes_are_distinct": true,
+    "each_conformation_is_a_single_latitude_circle": true,
+    "finite_abz_union_not_direction_complete": true,
+    "single_conformations_not_direction_complete": true,
+    "tangent_coverage_is_not_kakeya_certification": true
+  },
+  "designation": "CP-DNA-002",
+  "direction_space": "unoriented lines (v ~ -v)",
+  "finite_abz_union": {
+    "mean_gap_deg": 11.101923721264676,
+    "worst_gap_deg": 48.5854702498799
+  },
+  "firewall": [
+    "tangent-direction coverage is not unit-segment containment",
+    "a finite union of latitude circles is measure zero on S^2",
+    "CP-DNA-002 does not certify a Kakeya set, RH, or the Coleman Conjecture"
+  ],
+  "pass": true,
+  "per_conformation": {
+    "A-DNA": {
+      "axial_component": 0.3680308386254017,
+      "handedness": "right",
+      "mean_gap_deg": 19.15345312333633,
+      "pitch_A": 28.6,
+      "radius_A": 11.5,
+      "tangent_colatitude_from_axis_deg": 68.40577484270182,
+      "tangent_latitude_deg": 21.59422515729818,
+      "worst_gap_deg": 65.87343038538975
+    },
+    "B-DNA": {
+      "axial_component": 0.4940102808943738,
+      "handedness": "right",
+      "mean_gap_deg": 18.05947656528282,
+      "pitch_A": 35.7,
+      "radius_A": 10.0,
+      "tangent_colatitude_from_axis_deg": 60.3954917059211,
+      "tangent_latitude_deg": 29.6045082940789,
+      "worst_gap_deg": 57.863147258721945
+    },
+    "Z-DNA": {
+      "axial_component": 0.6277210521489163,
+      "handedness": "left",
+      "mean_gap_deg": 19.211350590882148,
+      "pitch_A": 45.6,
+      "radius_A": 9.0,
+      "tangent_colatitude_from_axis_deg": 51.11781468284084,
+      "tangent_latitude_deg": 38.88218531715917,
+      "worst_gap_deg": 48.5854702498799
+    }
+  },
+  "samples_per_helix": 720,
+  "spherical_targets": 1024,
+  "status": "NUMERICS / DIAGNOSTIC (source-calibrated)"
+}

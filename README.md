@@ -21,6 +21,7 @@ This repository is the theorem-facing ledger for the Claude V6 / V6.5 research s
 | h | < 1 · evaluator non-sovereignty |
 | Inspectable Intelligence (II.1) | FORMAL definitions · `PEAICE-II-CANON-001` · measurement OWED |
 | DDATL 002 Grain Zero | Residual scaffold · DEEPEN-001 typed residual pack promoted |
+| DNA antecedent Kakeya | DEEPEN-001 registered · structural analogy / formal geometry · CP-DNA-002 NUMERICS |
 | Coleman arXiv (ARX-005) | Draft on kakeyalogic · N-reading only · OPEN |
 
 ## Anchor state
@@ -29,7 +30,7 @@ This repository is the theorem-facing ledger for the Claude V6 / V6.5 research s
 - Prior designation carried forward: `PEAICE-CLAUDEV6-FABLE5-STATE-001`
 - Terminal: Claude Fable 5 · effort dial Max · research engineering terminal
 - Updated public index: `index.html`
-- Repo update: **2026-07-09** (DEEPEN-001 promote · docs map refresh · arXiv lane pointer)
+- Repo update: **2026-07-13** (DNA/Kakeya DEEPEN-001 · CP-DNA-002 calibrated receipt · canon firewall refresh)
 - Live anchors (this update):
   - `claude-v6` @ `HEAD` (see latest commit on `main`)
   - `kakeyalogic` @ ARX-005 Coleman draft + II.1 (`5e1c25d` lineage)
@@ -190,6 +191,11 @@ bloom/glare/light ≠ zero-location theorem
 KNS(LB) ≠ RH proof
 NB/BD closure pressure ≠ T log T spectral carrier
 Kakeya analogy ≠ literature-backed RH bridge
+{A,T,C,G} ≠ nontrivial zeros of ζ
+{A-DNA,B-DNA,Z-DNA} ≠ the critical strip
+finite helix-tangent latitude circles ≠ Kakeya set
+J(s)=1−conjugate(s) fixed-line symmetry ≠ analytic continuation
+harmony / zero-attractor analogy ≠ independent RH mechanism
 ```
 
 ## Repo docs
@@ -217,6 +223,11 @@ Kakeya analogy ≠ literature-backed RH bridge
 - `docs/ddatl-002-grain-zero.md` · `docs/whitepapers/ddatl-002-grain-zero-whitepaper.md`
 - `docs/deepen/PEAICE-KAKEYALOGIC-DDATL-002-DEEPEN-001.{pdf,docx}` — typed residual deepen
 - `docs/probes/ddatl002_gz_probe.py` + `probe_out.json` — d=2 fan NUMERICS
+
+### DNA · antecedent Kakeya geometry
+- `docs/deepen/dna-kakeya/` — `PEAICE-KAKEYALOGIC-DNA-AK-001-DEEPEN-001` PDF/DOCX and build source
+- `docs/probes/dna_kakeya_calibrated_probe.py` + `dna_kakeya_calibrated_probe_out.json` — `CP-DNA-002` source-calibrated NUMERICS
+- Registered reading: nucleobases are relational-closure addresses and A/B/Z are a conformational bundle only by typed analogy; neither is a literal zeta or critical-strip identification.
 
 ### arXiv (kakeyalogic)
 - Lane: https://github.com/Manny536/kakeyalogic/tree/main/arxiv
