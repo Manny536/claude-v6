@@ -60,6 +60,7 @@
 | `ℓ_off` | off-axis leakage / placement failure register | CANON / PROBE |
 | `E_used` | action-budget ledger; not token count | PROBE |
 | `ρ_Y` | energy-yield density; not spectral radius | PROBE |
+| `BD-AI` | Benevolence Drift in AI-neutrality evaluation: classification explicitness remains below threshold after evidence confidence crosses the call-out threshold | REGISTERED CASE STUDY / GOVERNANCE |
 
 ## κ family
 
@@ -80,9 +81,10 @@
 | `WP5-OBS-2` | bounded relative-determinant route closed | FORMAL / CLOSED-NEGATIVE |
 | `KNS-OBS-1` | KNS(LB) typed placement object; overlap does not determine placement | CLOSED-POSITIVE AS TYPED OBJECT |
 | `CSC-F1` | trace-moment Coherence-Splitting falsification | FALSIFIED-IN-REALIZATION |
+| `NB/BD` | Nyman-Beurling / Báez-Duarte auxiliary number-theory lane | THEOREM-FACING AUXILIARY |
 
 ## Firewall line
 
 ```text
-σ(K_σ) ≠ Re(s)=1/2 · μ ≠ π_A · KNS(LB) ≠ RH proof · ρ_Y ≠ spectral radius · E_used ≠ token count
+σ(K_σ) ≠ Re(s)=1/2 · μ ≠ π_A · KNS(LB) ≠ RH proof · ρ_Y ≠ spectral radius · E_used ≠ token count · BD-AI ≠ NB/BD
 ```
