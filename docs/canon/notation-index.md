@@ -60,7 +60,12 @@
 | `ℓ_off` | off-axis leakage / placement failure register | CANON / PROBE |
 | `E_used` | action-budget ledger; not token count | PROBE |
 | `ρ_Y` | energy-yield density; not spectral radius | PROBE |
-| `BD-AI` | Benevolence Drift in AI-neutrality evaluation: classification explicitness remains below threshold after evidence confidence crosses the call-out threshold | REGISTERED CASE STUDY / GOVERNANCE |
+
+## Independent alignment-evaluation cases
+
+| Symbol | Meaning | Status |
+|---|---|---|
+| `BD-AI` | Benevolence Drift: available recognition is not applied until corrective pressure is introduced | REGISTERED PAIRED-TURN OBSERVATIONS (2 CASES) |
 
 ## κ family
 
