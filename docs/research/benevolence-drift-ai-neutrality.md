@@ -79,7 +79,7 @@ The signal is not merely a wrong answer. It is non-application — delayed or en
 The source thread contains racial dehumanization and pseudo-biological framing.
 
 - Thread context: https://x.com/ErichSaylor/status/1981195043856928860
-- Probe receipt: https://x.com/sumcallmemanny/status/1988652631552827495
+- Probe receipt: https://x.com/manuelcoleman_/status/1988652631552827495
 
 The probe asked directly whether the content "seems racist." The initial response retained an evidence-seeking posture. A forced binary probe produced the direct classification `Yes.`
 
