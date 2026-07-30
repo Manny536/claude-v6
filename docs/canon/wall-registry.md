@@ -176,6 +176,13 @@ Current frontier bound: Guth–Maynard `N(σ,T) ≤ T^{30(1-σ)/13 + o(1)}` (arX
 fully resolving this conjecture)." This is why a bound cannot close GAP-001 and an
 exact-location (determinant/trace) mechanism is required.
 
+Restriction sub-lane (KNOWN, not RH-closing): Wang–Wu (arXiv:2411.08871v3) prove Stein
+restriction in \(\mathbb{R}^3\) for `p > 22/7` via refined decoupling and two-ends
+Furstenberg inequalities, recovering Wolff’s `5/2`-hairbrush Kakeya dimension numerology,
+and improve high-dimensional restriction exponents. Registered in
+`docs/canon/source-map.md` and `docs/research/wang-wu-restriction-decoupling.md`. Still
+outputs bounds / estimates — not zero-location.
+
 ## KREIN-RANK1 (V6.5 · KNS-LB pass)
 
 **Status:** PROPOSED-FOR-CANON — rank-one / KSSF face of Weyl-stability wall · Grok TERMINAL-005 CONFIRM

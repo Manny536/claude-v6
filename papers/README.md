@@ -24,8 +24,12 @@ Local deepen pack (not a substitute for ARX LaTeX): `docs/deepen/PEAICE-KAKEYALO
 
 1. Wang–Zahl — Kakeya in ℝ³ (arXiv:2502.17655)
 2. Guth–Wang–Zahl — streamlined Kakeya ℝ³ (arXiv:2601.14411)
-3. Bateman — directional maximal operators in the plane
-4. Guth–Maynard — Dirichlet large values (arXiv:2405.20552)
-5. Spectral / Krein / canonical-system references — see `docs/canon/source-map.md`
+3. Wang–Wu — restriction via decoupling + two-ends Furstenberg (arXiv:2411.08871)
+4. Bateman — directional maximal operators in the plane
+5. Guth–Maynard — Dirichlet large values (arXiv:2405.20552)
+6. Spectral / Krein / canonical-system references — see `docs/canon/source-map.md`
+
+Research note: `docs/research/wang-wu-restriction-decoupling.md`  
+Upstream BibTeX / grounding table: `Manny536/kakeyalogic` · `arxiv/bibliography/`
 
 External papers ground terminology. They do not by themselves upgrade PeAIce bridge claims to FORMAL.

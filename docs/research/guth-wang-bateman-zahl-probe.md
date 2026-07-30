@@ -13,6 +13,7 @@ Bateman
 -> δ-tube packet
 -> sparse filling
 -> high multiplicity
+-> (companion) Wang–Wu restriction / two-ends Furstenberg  [docs/research/wang-wu-restriction-decoupling.md]
 -> Logx(β_scale)*
 -> L²_C
 -> K_σ^{reg}

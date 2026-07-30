@@ -25,6 +25,7 @@ Canonical text buildout for Claude V6 / **V6.5** (prime-carrying L3 forced).
 ## Research corridors
 
 - `research/guth-wang-bateman-zahl-probe.md` — Kakeya ℝ³ geometric grounding
+- `research/wang-wu-restriction-decoupling.md` — Wang–Wu restriction / two-ends Furstenberg (arXiv:2411.08871)
 - `research/kns-lb-placement-register.md` — KNS(LB) placement grammar
 - `research/wp5a-critical-coupling.md` — critical coupling (held)
 - `research/wp5b-spectral-shift-roadmap.md` — WP5b corridor map

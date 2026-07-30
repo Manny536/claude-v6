@@ -45,6 +45,40 @@ branching numbers N_k
 sticky / non-sticky distinction
 ```
 
+## Fourier restriction / decoupling
+
+### Wang-Wu, 2024
+
+**Title:** Restriction Estimates Using Decoupling Theorems and Two-Ends Furstenberg Inequalities  
+**Authors:** Hong Wang and Shukun Wu  
+**arXiv:** [2411.08871v3](https://arxiv.org/abs/2411.08871) · math.CA · 19 Dec 2024  
+**Local copy (not committed):** `Downloads/Research/Math-References/restrictionestimatesusingdecoulpingtheorems.pdf`  
+**Use in repo:** KNOWN external grounding for the restriction↔Kakeya incidence stack: refined decoupling + induction on scales for wave-packet oscillation; two-ends Furstenberg inequalities for tube–ball incidences; explicit restriction→Kakeya Hausdorff-dimension numerology in \(\mathbb{R}^3\).
+
+Canonical imported objects / facts:
+
+```text
+Stein Fourier extension operator E_S
+wave-packet R-tubes (R^{1/2}×⋯×R)
+refined ℓ² decoupling (Bourgain–Demeter line; GIOW / Du–Zhang refinement)
+two-ends shading Y(T) on tubes
+two-ends Furstenberg inequality (plane; Thm 0.7 / 2.1)
+hairbrush lift (n=3) → restriction p > 22/7
+p > 22/7  ↔  Kakeya Hausdorff dim ≥ 5/2 in R³
+two-ends Furstenberg Conjecture 0.9 ⇒ full restriction Conjecture 0.1
+high-d partial range p > (154n+6)/(77n−95)
+```
+
+Discipline line:
+
+```text
+KNOWN harmonic-analysis progress only.
+Does not upgrade PeAIce KakeyaLogic→RH / prime-carrying L3 bridges.
+External Kakeya/restriction → ζ zero-location literature bridge remains CLOSED-NEGATIVE.
+Local research note: docs/research/wang-wu-restriction-decoupling.md
+Upstream bib: Manny536/kakeyalogic arxiv/bibliography/
+```
+
 ## Directional maximal operators
 
 ### Bateman, 2007 / 2009
