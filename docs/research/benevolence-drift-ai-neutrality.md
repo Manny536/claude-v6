@@ -270,6 +270,8 @@ BD-AI != NB/BD
 
 Cross-repo references must use the full `BD-AI` label.
 
+**Outcomes link:** BD-AI is joined methodologically (not as a math theorem) in the PeAIce Outcomes memorandum — conjecture custody vs automatic neutrality. Public surface: https://peaice.org/outcomes · downstream pin: `docs/research/peaice-outcomes-grok-rundown.md` · upstream Grok rundown: `kakeyalogic/docs/outcomes/PEAICE-GROK-OUTCOMES-RUNDOWN-001.md`.
+
 ## Registered statement
 
 ```text

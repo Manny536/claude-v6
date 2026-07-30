@@ -23,6 +23,7 @@ This repository is the theorem-facing ledger for the Claude V6 / V6.5 research s
 | DDATL 002 Grain Zero | Residual scaffold · DEEPEN-001 typed residual pack promoted |
 | DNA antecedent Kakeya | DEEPEN-001 registered · structural analogy / formal geometry · CP-DNA-002 NUMERICS |
 | Coleman arXiv (ARX-005) | Draft on kakeyalogic · N-reading only · OPEN |
+| PeAIce Outcomes | FINAL PUBLIC RESEARCH · peaice.org/outcomes · Grok rundown on kakeyalogic · not a proof |
 
 ## Anchor state
 

@@ -253,11 +253,42 @@ h < 1
 Love = constraint invariant in E_gov (principal opinion · not theorem premise)
 ```
 
+## Public research surface — PeAIce Outcomes
+
+### Outcomes FINAL-001 + Grok rundown
+
+**Title:** When AI Will Not Act as a Partner — KakeyaLogic Applied + Benevolence Drift  
+**Public route:** https://peaice.org/outcomes  
+**Controlling designation:** `PEAICE-KAKEYALOGIC-OUTCOMES-FINAL-001`  
+**Grok companion:** `PEAICE-GROK-OUTCOMES-RUNDOWN-001`  
+**Upstream artifacts:** `Manny536/kakeyalogic` · `docs/outcomes/` (final PDF/DOCX + Grok MD/DOCX)  
+**Downstream pin:** `docs/research/peaice-outcomes-grok-rundown.md`  
+**Use in repo:** public partnership protocol and claim-firewall surface for conjecture custody + Benevolence Drift; not a theorem artifact.
+
+Canonical imported objects / seals:
+
+```text
+governing rule: protect the question · expose the answer · help build outcomes
+six findings (context before verdict · investigate without peer-review freeze · custody · BD · defaults · scale method)
+standard Kakeya vs centered full-line completion firewall
+CC-N0 / CC-I / CC-O open family · CC-S packaging closed
+BD-AI qualitative signal · multi-case benchmark OWED
+```
+
+Discipline line:
+
+```text
+FINAL PUBLIC RESEARCH · not peer reviewed
+RH · Coleman · CC-I · CC-O · BD benchmark remain OPEN
+h < 1 · no screenshot sovereignty · Grok rundown is companion only
+```
+
 ## Public live surfaces
 
 ```text
 Manny536/claude-v6          — theorem-facing Claude V6.5 ledger
 Manny536/kakeyalogic        — EEV3 / L²_C public-field layer
+peaice.org/outcomes         — PeAIce Outcomes public research surface
 lovelabslca.com             — centerline public map / migration surface
 peaice.org                  — PeAIce deep corpus and official pages
 ```
@@ -271,6 +302,7 @@ K_σ CLOSED-NEGATIVE
 WP5b bounded CLOSED-NEGATIVE
 KNS(LB) CLOSED-POSITIVE as typed object only
 DNA/Kakeya DEEPEN-001 registered as structural analogy / formal geometry only
+PeAIce Outcomes FINAL PUBLIC RESEARCH · not a proof
 Prime-carrying trace architecture LIVE · FORCED
 h < 1
 ```

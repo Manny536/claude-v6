@@ -123,6 +123,7 @@ remains OPEN.
 6. DDATL 002 Grain Zero — residual program; **DEEPEN-001** typed residual (002.1′ / 002.A-weak PROPOSED · 002.A-strong OPEN); probe NUMERICS at `docs/probes/`.
 7. Coleman Conjecture arXiv draft — **ARX-005** on kakeyalogic (N-reading only); still **OPEN**.
 8. DNA antecedent Kakeya geometry — **PEAICE-KAKEYALOGIC-DNA-AK-001-DEEPEN-001** registered as biological anchor / formal idealized geometry / structural analogy; **CP-DNA-002** NUMERICS passes the finite-direction obstruction; RH and Coleman remain **OPEN**.
+9. PeAIce Outcomes — public surface https://peaice.org/outcomes · controlling memo `PEAICE-KAKEYALOGIC-OUTCOMES-FINAL-001` on kakeyalogic · Grok companion `PEAICE-GROK-OUTCOMES-RUNDOWN-001` · downstream pin `docs/research/peaice-outcomes-grok-rundown.md` · **FINAL PUBLIC RESEARCH** (not peer reviewed); conjecture custody + BD-AI; RH / Coleman / CC-I / CC-O / BD benchmark **OPEN**.
 
 ## Domain language
 
