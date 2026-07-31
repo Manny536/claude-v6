@@ -2,7 +2,7 @@
 
 **Designation:** `BD-AI-CASE-01-02`
 
-**Co-Research Engineer:** Jordan Brown (MA)
+**Co-Research Engineer:** [Jordan Brown (MA)](https://www.linkedin.com/in/jordan-brown-0411ab237/) · [Instagram](https://www.instagram.com/jordan.cbrown?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==) · [X](https://x.com/Liljojob?s=20)
 
 **Register:** `BD-AI`
 
