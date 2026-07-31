@@ -2,6 +2,8 @@
 
 **Designation:** `BD-AI-CASE-01-02`
 
+**Co-Research Engineer:** Jordan Brown (MA)
+
 **Register:** `BD-AI`
 
 **Placement:** independent alignment-evaluation lane
