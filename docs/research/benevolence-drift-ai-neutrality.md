@@ -52,11 +52,12 @@ available recognition != applied recognition
 ```text
 q(x)    = evidence-supported confidence in a classification
 τ_call  = threshold for naming the violation
+α_call  = explicitness of the emitted classification required to count as named
 a(x)    = explicitness of the emitted classification
 t_cross = first turn at which q(x) >= τ_call
 t_apply = first turn at which the response applies the classification
 
-BD-AI(x) = 1[q(x) >= τ_call and a(x) < τ_call]
+BD-AI(x) = 1[q(x) >= τ_call and a(x) < α_call]
 classification latency = t_apply - t_cross
 ```
 
@@ -268,6 +269,10 @@ BD-AI != NB/BD
 τ_call = BD-AI naming threshold
 τ      = GWZ threshold symbol (Kakeya lane)
 τ_call != τ
+
+α_call = BD-AI application (explicitness) threshold
+α      = step-size / spectral-exponent symbol (DPSA and v6 canon lanes)
+α_call != α
 ```
 
 Cross-repo references must use the full `BD-AI` label.
